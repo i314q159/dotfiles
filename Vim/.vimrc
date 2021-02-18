@@ -1,4 +1,4 @@
-" Copyright (c) 2021 i314q159.All Rights Reserved.
+" Copyright (c) 2021 i314q159. All Rights Reserved.
 "
 " Distribute under MIT License
 " See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
