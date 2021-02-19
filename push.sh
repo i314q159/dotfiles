@@ -3,7 +3,8 @@
 git add .
 
 cur_dateTime="`date +%Y-%m-%d,%H:%m:%S`"
-git commit -m "update $cur_dateTime"
-# TODO: fea commit manually.
+read -P "git commit -m:" Commit 
+git commit -m "$Commit $cur_dateTime"
+# XXX: Make git info less.
 
 git push
