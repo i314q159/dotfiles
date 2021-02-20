@@ -4,16 +4,19 @@
 " See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
 
 
-" Enable syntax highlighting.
+"Enable syntax highlighting"
 syntax on
 
-" Show line number.
+"Show line number"
 set number
 
-" Auto change working directory.
+"Auto change working directory"
 set autochdir
 
-" Bracket auto-complete.
+"No swapfile"
+"set noswapfile
+
+"Bracket auto-complete"
 inoremap ' ''<esc>i
 inoremap " ""<esc>i
 inoremap ( ()<esc>i
