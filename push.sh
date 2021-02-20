@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-read -p "git commit -m:" Commit
+read -p "Commit: " Commit
 
 git add .
 
