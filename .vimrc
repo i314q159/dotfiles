@@ -3,26 +3,26 @@
 " Distribute under MIT License
 " See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
 
-" Theme
+" Basic 
 syntax on
-
-" show mode
 set showmode
+set showcmd
+set showmatch
+set number	" Show line number"
+set autochdir	" Auto change working directory"
+set scrolloff=5	" scrolloff
+set autoindent	" Indents the next line into line pervious line.  
+set wildmenu
+set wrap
+set encoding=utf-8
 
-" Show line number"
-set number
-
-" Auto change working directory"
-set autochdir
-
-" scrolloff
-set scrolloff=5
-
-" Splite
+" Windows Behavior
+"" Splite Right
 set splitright
 map sd :vsplit<SPACE>
 
-" Bracket auto-complete"
+" Code Completion
+"" Bracket auto-complete"
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
@@ -30,20 +30,28 @@ inoremap [ []<ESC>i
 inoremap { {}<ESC>i
 inoremap < <><ESC>i
 
-" Indents the next line into line pervious line.  
-set autoindent
-
-" Figlet
-map tx :r !figlet<SPACE>
-
-" f1 to open a terminal.
+" Open Terminal.
 map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
-" NERDTree config
+" Quick Insert
+"" Figlet
+map ft :r !figlet<SPACE>
+
+"" Date&Time
+map <silent>  \dt a<C-R>=strftime("%Y/%m/%d %A %H:%M:%S")<CR>
+
+" Quick Jump
+"" TODO
+map td /TODO<CR>
+
+" Plug Setting
+"" NERDTree
 map ff :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
 " Vim-plug 
 call plug#begin('~/.vim/plugged')
+"" Tree
 Plug 'scrooloose/nerdtree'
+
 call plug#end() 
