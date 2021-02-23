@@ -18,19 +18,23 @@ set autochdir
 " scrolloff
 set scrolloff=5
 
+" Splite
+set splitright
+map sr :vsplit<SPACE>
+
 " Bracket auto-complete"
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap ( ()<esc>i
-inoremap [ []<esc>i
-inoremap { {}<esc>i
-inoremap < <><esc>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
 
 " Indents the next line into line pervious line.  
 set autoindent
 
 " Figlet
-map tx :r !figlet<space>
+map tx :r !figlet<SPACE>
 
 " f1 to open a terminal.
 map <F1> <ESC>:w<CR> <ESC>:bel :ter++rows=10
