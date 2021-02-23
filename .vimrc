@@ -20,7 +20,7 @@ set scrolloff=5
 
 " Splite
 set splitright
-map sr :vsplit<SPACE>
+map sd :vsplit<SPACE>
 
 " Bracket auto-complete"
 inoremap ' ''<ESC>i
@@ -37,10 +37,10 @@ set autoindent
 map tx :r !figlet<SPACE>
 
 " f1 to open a terminal.
-map <F1> <ESC>:w<CR> <ESC>:bel :ter++rows=10
+map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
 " NERDTree config
-map <F2> :NERDTreeToggle<CR>
+map ff :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
 " Vim-plug 
