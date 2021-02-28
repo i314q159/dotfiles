@@ -43,15 +43,3 @@ map <silent>  \dt a<C-R>=strftime("%Y/%m/%d %A %H:%M:%S")<CR>
 " Quick Jump
 "" TODO
 map td /TODO<CR>
-
-" Plug Setting
-"" NERDTree
-map ff :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
-
-" Vim-plug 
-call plug#begin('~/.vim/plugged')
-"" Tree
-Plug 'scrooloose/nerdtree'
-
-call plug#end() 
