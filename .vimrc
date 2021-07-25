@@ -1,45 +1,22 @@
-" Copyright (c) 2021 i314q159. All Rights Reserved.
-"
-" Distribute under MIT License
-" See file LICENSE for detail or copy at https://opensource.org/licenses/MIT
-
-" Basic 
-syntax on
-set showmode
-set showcmd
-set showmatch
-set number	" Show line number"
-set autochdir	" Auto change working directory"
-set scrolloff=5	" scrolloff
-set autoindent	" Indents the next line into line pervious line.  
-set wildmenu
-set wrap
-set encoding=utf-8
-
-" Windows Behavior
-"" Splite Right
-set splitright
-map sd :vsplit<SPACE>
-
-" Code Completion
-"" Bracket auto-complete"
-inoremap ' ''<ESC>i
-inoremap " ""<ESC>i
-inoremap ( ()<ESC>i
-inoremap [ []<ESC>i
-inoremap { {}<ESC>i
-inoremap < <><ESC>i
-
-" Open Terminal.
-map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
-
-" Quick Insert
-"" Figlet
-map ft :r !figlet<SPACE>
-
-"" Date&Time
-map <silent>  \dt a<C-R>=strftime("%Y/%m/%d %A %H:%M:%S")<CR>
-
-" Quick Jump
-"" TODO
-map td /TODO<CR>
+:set nu
+:set autochdir
+:set autoindent
+:set smartindent
+:set noerrorbells
+:set spell
+:set ts=4
+:set showmode
+:set showcmd
+:set noexpandtab
+:set mouse=a
+:set ruler
+:syntax on
+:filetype indent on
+:inoremap ' ''<ESC>i
+:inoremap " ""<ESC>i
+:inoremap ( ()<ESC>i
+:inoremap [ []<ESC>i
+:inoremap { {}<ESC>i
+:inoremap < <><ESC>i
+:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=15
+:map td /TODO<CR>
