@@ -1,3 +1,3 @@
-# vim-conf
+# dotfiles
                        _           
-i314q159的Vim自用无插件配置
+i314q159's dotfiles
