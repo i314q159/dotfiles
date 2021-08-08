@@ -1,3 +1,1 @@
-# dotfiles
-        
-i314q159's dotfiles
+# i314q159’s dotfiles
