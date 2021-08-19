@@ -18,5 +18,6 @@
 :inoremap [ []<ESC>i
 :inoremap { {}<ESC>i
 :inoremap < <><ESC>i
-:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=15
+:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 :map td /TODO<CR>
+:colorscheme delek 
