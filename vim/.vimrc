@@ -10,6 +10,7 @@
 :set noexpandtab
 :set mouse=a
 :set ruler
+:set title
 :syntax on
 :filetype indent on
 :inoremap ' ''<ESC>i
