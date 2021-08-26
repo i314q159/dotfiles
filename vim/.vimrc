@@ -1,6 +1,8 @@
 :set nu
+:set si
 :set autochdir
 :set autoindent
+:set cindent
 :set smartindent
 :set noerrorbells
 :set spell
@@ -8,17 +10,28 @@
 :set showmode
 :set showcmd
 :set noexpandtab
-:set mouse=a
 :set ruler
 :set title
-:syntax on
-:filetype indent on
+:set noeb
+:set nocompatible 
+:set tabstop=4
+:set softtabstop=4
+:set shiftwidth=4
+:set showcmd
+set completeopt=longest,preview,menu
+
 :inoremap ' ''<ESC>i
 :inoremap " ""<ESC>i
 :inoremap ( ()<ESC>i
 :inoremap [ []<ESC>i
 :inoremap { {}<ESC>i
 :inoremap < <><ESC>i
+
+:autocmd InsertLeave * se nocul
+:autocmd InsertEnter * se cul
+:colorscheme murphy 
+:syntax on
+:filetype indent on
+
 :map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 :map td /TODO<CR>
-:colorscheme ron
