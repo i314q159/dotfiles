@@ -17,11 +17,7 @@
 :set noexpandtab
 :set noerrorbells
 
-"4 character as a tab"
 :set tabstop=4
-:set softtabstop=4
-:set shiftwidth=4
-:set smarttab
 
 :set showcmd
 :set completeopt=longest,preview,menu
@@ -44,8 +40,3 @@
 :map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
 :map td /TODO<CR>
-
-:map <C-l> <C-W>l "C-l 移动到右侧窗口"
-:map <C-h> <C-W>h "C-h 移动到左侧窗口"
-:map <C-j> <C-W>j "C-j 移动到下方窗口"
-:map <C-k> <C-W>k "C-k 移动到上方窗口"
