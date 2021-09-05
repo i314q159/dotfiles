@@ -1,9 +1,7 @@
 :set number
-:set si
 :set autochdir
 
 "对齐"
-:set cindent
 :set smartindent
 :set autoindent
 
@@ -12,8 +10,10 @@
 
 "边框设置"
 :set showmode
-:set showcmd
+:set cmdheight=1
+"":set showcmd
 :set title
+:set ruler
 
 "No"
 :set noruler
@@ -21,6 +21,7 @@
 :set nocompatible
 :set noexpandtab
 :set noerrorbells
+:set nowrap
 
 "tab"
 :set tabstop=4
@@ -50,7 +51,7 @@
 
 "色彩管理"
 ":colorscheme koehler
-:syntax enable
+:syntax on
 :set background=dark
 
 "在底端打开终端"
