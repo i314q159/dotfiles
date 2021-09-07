@@ -1,17 +1,13 @@
 :set number
 :set autochdir
 
-"对齐"
-:set smartindent
+:set cindent
 :set autoindent
 
-"语言设置"
 :set encoding=utf-8
 
-"边框设置"
 :set showmode
 :set cmdheight=1
-"":set showcmd
 :set title
 :set ruler
 
@@ -29,14 +25,12 @@
 :set expandtab
 :set smarttab
 
-"搜索增强"
 :set incsearch
 :set hlsearch
 
-"补全"
+:set wildmenu
 :set completeopt=longest,preview,menu
 
-"括号匹配"
 :inoremap ' ''<ESC>i
 :inoremap " ""<ESC>i
 :inoremap ( ()<ESC>i
@@ -49,16 +43,34 @@
 :autocmd InsertLeave * se nocul
 :autocmd InsertEnter * se cul
 
-"色彩管理"
-":colorscheme koehler
 :syntax on
-:set background=dark
+"":set background=dark
 
-"在底端打开终端"
-:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
-
-"搜索TODO"
 :map td /TODO<CR>
-
-"格式化"
 :map ff <ESC>gg=G
+:map <C-j> <ESC>:w<CR> <ESC>:bel :ter++rows=10<CR>
+
+:filetype on
+:filetype plugin on
+
+""autocmd VimEnter * PlugInstall --sync | source $MYVIMR
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+call plug#end()
+
+""nerftree
+:map <C-n> :NERDTreeToggle<CR>
+
+""vim-airline
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = '❯'
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = '❮'
