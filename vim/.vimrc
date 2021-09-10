@@ -33,16 +33,15 @@
 :set wildmenu
 :set completeopt=longest,preview,menu
 
-:inoremap ' ''<ESC>i
-:inoremap " ""<ESC>i
-:inoremap ( ()<ESC>i
-:inoremap [ []<ESC>i
-:inoremap { {}<ESC>i
-:inoremap < <><ESC>i
+":inoremap ' ''<ESC>i
+":inoremap " ""<ESC>i
+":inoremap ( ()<ESC>i
+":inoremap [ []<ESC>i
+":inoremap { {}<ESC>i
+":inoremap < <><ESC>i
 :set showmatch
 
 ":set colorcolumn=120
-
 "用浅色高亮当前行
 :autocmd InsertLeave * se nocul
 :autocmd InsertEnter * se cul
@@ -70,6 +69,7 @@ Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "nerftree
