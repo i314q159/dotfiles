@@ -74,8 +74,8 @@ call plug#end()
 :map <C-n> :NERDTreeToggle<CR>
 
 "nerdcommenter
-map <C-\> \cc
-map <C-]> \cu
+:map <C-\> \cc
+:map <C-]> \cu
 
 "ale
 let g:ale_sign_error = '✗'
