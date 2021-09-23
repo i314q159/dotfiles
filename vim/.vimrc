@@ -61,8 +61,6 @@
 "autocmd VimEnter * PlugInstall --sync | source $MYVIMR
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'luochen1990/rainbow'
@@ -74,17 +72,6 @@ call plug#end()
 
 "nerftree
 :map <C-n> :NERDTreeToggle<CR>
-
-"vim-airline
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = '❯'
-"let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = '❮'
 
 "nerdcommenter
 map <C-\> \cc
