@@ -1,4 +1,4 @@
-:set number
+set number
 :set autochdir
 
 :set cindent
@@ -33,14 +33,17 @@
 :set wildmenu
 :set completeopt=longest,preview,menu
 
-":inoremap ' ''<ESC>i
-":inoremap " ""<ESC>i
-":inoremap ( ()<ESC>i
-":inoremap [ []<ESC>i
-":inoremap { {}<ESC>i
-":inoremap < <><ESC>i
+"match
+:inoremap ' ''<ESC>i
+:inoremap " ""<ESC>i
+:inoremap ( ()<ESC>i
+:inoremap [ []<ESC>i
+:inoremap { {}<ESC>i
+:inoremap < <><ESC>i
 :set showmatch
 
+"closetag
+let g:closetag_html_style=1
 ":set colorcolumn=120
 "用浅色高亮当前行
 :autocmd InsertLeave * se nocul
@@ -52,7 +55,7 @@
 "map
 :map td /TODO<CR>
 :map ff <ESC>gg=G
-:map <C-j> <ESC>:w<CR> <ESC>:bel :ter++rows=10<CR>
+:map <C-j> <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
 "filetype
 :filetype on
@@ -61,17 +64,17 @@
 "autocmd VimEnter * PlugInstall --sync | source $MYVIMR
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'jiangmiao/auto-pairs'
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 "nerftree
-:map <C-n> :NERDTreeToggle<CR>
+:map <C-t> :NERDTreeToggle<CR>
 
 "nerdcommenter
 :map <C-\> \cc
