@@ -1,4 +1,4 @@
-set number
+:set number
 :set autochdir
 
 :set cindent
