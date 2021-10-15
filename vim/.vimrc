@@ -42,8 +42,6 @@
 :inoremap < <><ESC>i
 :set showmatch
 
-"closetag
-let g:closetag_html_style=1
 ":set colorcolumn=120
 "用浅色高亮当前行
 :autocmd InsertLeave * se nocul
