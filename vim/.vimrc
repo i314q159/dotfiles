@@ -42,10 +42,9 @@
 :inoremap < <><ESC>i
 :set showmatch
 
-":set colorcolumn=120
 "用浅色高亮当前行
-:autocmd InsertLeave * se nocul
-:autocmd InsertEnter * se cul
+":autocmd InsertLeave * se nocul
+":autocmd InsertEnter * se cul
 
 :syntax on
 "":set background=dark
