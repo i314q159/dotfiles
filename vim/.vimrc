@@ -52,7 +52,7 @@
 "map
 :map td /TODO<CR>
 :map ff <ESC>gg=G
-:map <C-j> <ESC>:w<CR> <ESC>:bel :ter++rows=10
+:map <C-d> <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
 "filetype
 :filetype on
@@ -68,6 +68,7 @@ Plug 'dense-analysis/ale'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "nerftree
@@ -83,3 +84,6 @@ let g:ale_sign_warning = '⚡'
 
 "rainbow
 let g:rainbow_active = 1
+
+"lightline
+:set laststatus=2
