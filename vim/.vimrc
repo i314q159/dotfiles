@@ -47,12 +47,11 @@
 ":autocmd InsertEnter * se cul
 
 :syntax on
-"":set background=dark
 
 "map
 :map td /TODO<CR>
 :map ff <ESC>gg=G
-:map <C-d> <ESC>:w<CR> <ESC>:bel :ter++rows=10
+:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
 
 "filetype
 :filetype on
@@ -69,10 +68,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
+Plug 'preservim/tagbar'
 call plug#end()
 
 "nerftree
-:map <C-t> :NERDTreeToggle<CR>
+:map tr :NERDTreeToggle<CR>
 
 "nerdcommenter
 :map <C-\> \cc
@@ -87,3 +87,6 @@ let g:rainbow_active = 1
 
 "lightline
 :set laststatus=2
+
+"tagbar
+:map fu :TagbarToggle<CR> 
