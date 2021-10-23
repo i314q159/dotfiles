@@ -59,20 +59,15 @@
 
 "autocmd VimEnter * PlugInstall --sync | source $MYVIMR
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'preservim/tagbar'
 call plug#end()
-
-"nerftree
-:map tr :NERDTreeToggle<CR>
 
 "nerdcommenter
 :map <C-\> \cc
