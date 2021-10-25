@@ -1,17 +1,19 @@
+:syntax on
 :set number
 :set autochdir
+:set encoding=utf-8
 
 :set cindent
 :set autoindent
 
-:set encoding=utf-8
-
 :set showmode
-:set cmdheight=1
 :set title
 :set ruler
 
-"No
+"show 5 lines
+:set scrolloff=5
+
+"^no
 :set noruler
 :set noeb
 :set nocompatible
@@ -42,20 +44,18 @@
 :inoremap < <><ESC>i
 :set showmatch
 
-"用浅色高亮当前行
-":autocmd InsertLeave * se nocul
-":autocmd InsertEnter * se cul
-
-:syntax on
-
 "map
-:map td /TODO<CR>
+:map td /TODO:<CR>
 :map ff <ESC>gg=G
-:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=10
+:map vs :vsplit<SPACE>
+:map sp :split<SPACE>
+:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=13
 
 "filetype
-:filetype on
-:filetype plugin on
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
 
 "autocmd VimEnter * PlugInstall --sync | source $MYVIMR
 call plug#begin('~/.vim/plugged')
