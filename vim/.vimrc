@@ -60,7 +60,6 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
-Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
@@ -69,10 +68,6 @@ call plug#end()
 "nerdcommenter
 :map <C-\> \cc
 :map <C-]> \cu
-
-"ale
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚡'
 
 "rainbow
 let g:rainbow_active = 1
