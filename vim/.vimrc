@@ -35,7 +35,7 @@
 :set wildmenu
 :set completeopt=longest,preview,menu
 
-"match
+match
 :inoremap ' ''<ESC>i
 :inoremap " ""<ESC>i
 :inoremap ( ()<ESC>i
@@ -57,16 +57,13 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
-"autocmd VimEnter * PlugInstall --sync | source $MYVIMR
 call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
 Plug 'luochen1990/rainbow'
 Plug 'preservim/nerdcommenter'
 Plug 'dense-analysis/ale'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'preservim/tagbar'
 call plug#end()
 
 "nerdcommenter
@@ -82,6 +79,5 @@ let g:rainbow_active = 1
 
 "lightline
 :set laststatus=2
-
-"tagbar
-:map fu :TagbarToggle<CR> 
+let g:lightline = { 'colorscheme': 'one', }
+:set background=dark
