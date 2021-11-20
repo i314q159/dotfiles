@@ -28,14 +28,10 @@
 :set expandtab
 :set smarttab
 
-"search
-:set incsearch
-:set hlsearch
-
 :set wildmenu
 :set completeopt=longest,preview,menu
 
-match
+"match
 :inoremap ' ''<ESC>i
 :inoremap " ""<ESC>i
 :inoremap ( ()<ESC>i
@@ -51,6 +47,15 @@ match
 :map sp :split<SPACE>
 :map tt <ESC>:w<CR> <ESC>:bel :ter++rows=13
 
+""Allow gf to open non-existent file
+:map gf :edit <cfile><cr>
+
+""Quicker switching between windows
+:nmap <silent> <C-h> <C-w>h
+:nmap <silent> <C-j> <C-w>j
+:nmap <silent> <C-k> <C-w>k
+:nmap <silent> <C-l> <C-w>l
+
 "filetype
 filetype on
 filetype indent on
@@ -58,21 +63,9 @@ filetype plugin on
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-Plug 'luochen1990/rainbow'
-Plug 'preservim/nerdcommenter'
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
-Plug 'itchyny/lightline.vim'
+:source ~/.vim/plugins/html5.vim
+:source ~/.vim/plugins/emmet.vim
+:source ~/.vim/plugins/rainbow.vim
+:source ~/.vim/plugins/lightline.vim
+:source ~/.vim/plugins/nerdcommenter.vim
 call plug#end()
-
-"nerdcommenter
-:map <C-\> \cc
-:map <C-]> \cu
-
-"rainbow
-let g:rainbow_active = 1
-
-"lightline
-:set laststatus=2
-let g:lightline = { 'colorscheme': 'one', }
-:set background=dark
