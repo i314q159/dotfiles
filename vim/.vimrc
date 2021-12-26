@@ -34,7 +34,8 @@
 "maps
 :map td /TODO:<CR>
 :map ff <ESC>gg=G
-:map fzf <ESC>:FZF<CR>
+:noremap pf :Files<CR>
+:noremap <C-p> :GFiles<CR>
 :map vs :vsplit<SPACE>
 :map sp :split<SPACE>
 :map tt <ESC>:w<CR> <ESC>:bel :ter++rows=13
