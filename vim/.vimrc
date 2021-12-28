@@ -34,11 +34,16 @@
 "maps
 :map td /TODO:<CR>
 :map ff <ESC>gg=G
-:noremap pf :Files<CR>
-:noremap <C-p> :GFiles<CR>
 :map vs :vsplit<SPACE>
 :map sp :split<SPACE>
-:map tt <ESC>:w<CR> <ESC>:bel :ter++rows=13
+:noremap tt :bel :ter++rows=13
+:noremap pf :Files<CR>
+:noremap <C-p> :GFiles<CR>
+
+"vim tab
+:map <C-o> :tabedit<SPACE>
+:map <C-c> :tabclose<CR>
+
 
 ""Allow gf to open non-existent file
 :map gf :edit <cfile><cr>
@@ -58,7 +63,7 @@
 :inoremap < <><ESC>i
 :set showmatch
 
-"filetype
+"file type
 filetype on
 filetype indent on
 filetype plugin on
