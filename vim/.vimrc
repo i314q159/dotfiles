@@ -43,6 +43,7 @@
 "vim tab
 :map <C-o> :tabedit<SPACE>
 :map <C-c> :tabclose<CR>
+:map <C-t> :tabnext<CR>
 
 
 ""Allow gf to open non-existent file
@@ -55,12 +56,12 @@
 :nmap <silent> <C-l> <C-w>l
 
 ""match
-:inoremap ' ''<ESC>i
-:inoremap " ""<ESC>i
-:inoremap ( ()<ESC>i
-:inoremap [ []<ESC>i
-:inoremap { {}<ESC>i
-:inoremap < <><ESC>i
+":inoremap ' ''<ESC>i
+":inoremap " ""<ESC>i
+":inoremap ( ()<ESC>i
+":inoremap [ []<ESC>i
+":inoremap { {}<ESC>i
+":inoremap < <><ESC>i
 :set showmatch
 
 "file type
@@ -77,4 +78,6 @@ call plug#begin('~/.vim/plugged')
 :source ~/.vim/plugins/lightline.vim
 :source ~/.vim/plugins/nerdcommenter.vim
 :source ~/.vim/plugins/fzf.vim
+:source ~/.vim/plugins/rust.vim
+:source ~/.vim/plugins/auto-pairs.vim
 call plug#end()
