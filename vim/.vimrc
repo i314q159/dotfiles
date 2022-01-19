@@ -36,6 +36,7 @@
 :map ff <ESC>gg=G
 :map vs :vsplit<SPACE>
 :map sp :split<SPACE>
+:map S :source $MYVIMRC<CR>
 :noremap tt :bel :ter++rows=13
 :noremap pf :Files<CR>
 :noremap <C-p> :GFiles<CR>
@@ -45,9 +46,8 @@
 :map <C-c> :tabclose<CR>
 :map <C-t> :tabnext<CR>
 
-
 ""Allow gf to open non-existent file
-:map gf :edit <cfile><cr>
+:map gf :tabedit <cfile><cr>
 
 ""Quicker switching between windows
 :nmap <silent> <C-h> <C-w>h
@@ -61,13 +61,11 @@
 ":inoremap ( ()<ESC>i
 ":inoremap [ []<ESC>i
 ":inoremap { {}<ESC>i
-":inoremap < <><ESC>i
+:inoremap < <><ESC>i
 :set showmatch
 
 "file type
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
@@ -81,4 +79,6 @@ call plug#begin('~/.vim/plugged')
 :source ~/.vim/plugins/rust.vim
 :source ~/.vim/plugins/mkdir.vim
 :source ~/.vim/plugins/java-unused-imports.vim
+:source ~/.vim/plugins/startify.vim
+:source ~/.vim/plugins/fugitlive.vim
 call plug#end()
