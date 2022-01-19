@@ -1,4 +1,4 @@
 #!/usr/bin/bash
 git add .
-git commit -m "daily update"
+git commit -m "update"
 git push
