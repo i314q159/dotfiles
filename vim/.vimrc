@@ -68,7 +68,6 @@
 filetype on
 filetype indent on
 filetype plugin on
-filetype plugin indent on
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
@@ -78,6 +77,8 @@ call plug#begin('~/.vim/plugged')
 :source ~/.vim/plugins/lightline.vim
 :source ~/.vim/plugins/nerdcommenter.vim
 :source ~/.vim/plugins/fzf.vim
-:source ~/.vim/plugins/rust.vim
 :source ~/.vim/plugins/auto-pairs.vim
+:source ~/.vim/plugins/rust.vim
+:source ~/.vim/plugins/mkdir.vim
+:source ~/.vim/plugins/java-unused-imports.vim
 call plug#end()
