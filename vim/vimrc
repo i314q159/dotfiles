@@ -13,7 +13,7 @@
 :set wildmenu
 :set completeopt=longest,preview,menu
 
-""show 5 lines
+""show 8 lines
 :set scrolloff=8
 
 ""^no
@@ -23,6 +23,7 @@
 :set noexpandtab
 :set noerrorbells
 :set nowrap
+:set noswapfile 
 
 ""tab
 :set tabstop=4
@@ -64,7 +65,9 @@
 :inoremap < <><ESC>i
 :set showmatch
 
-"file type
+"tree view 
+let g:netrw_liststyle=3
+
 filetype plugin indent on
 
 "vim-plug
