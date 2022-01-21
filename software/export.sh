@@ -1,3 +1,3 @@
 #!/usr/bin/bash
-apt list --installed | cut -d "/" -f 1 > apt.txt
+apt list --installed | grep "install" > apt.txt
 zap list | cut -d " " -f 2 > zap.txt
