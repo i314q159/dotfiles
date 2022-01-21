@@ -72,16 +72,48 @@ filetype plugin indent on
 
 "vim-plug
 call plug#begin('~/.vim/plugged')
-:source ~/.vim/plugins/html5.vim
-:source ~/.vim/plugins/emmet.vim
-:source ~/.vim/plugins/rainbow.vim
-:source ~/.vim/plugins/lightline.vim
-:source ~/.vim/plugins/commentary.vim
-:source ~/.vim/plugins/fzf.vim
-:source ~/.vim/plugins/auto-pairs.vim
-:source ~/.vim/plugins/rust.vim
-:source ~/.vim/plugins/mkdir.vim
-:source ~/.vim/plugins/java-unused-imports.vim
-:source ~/.vim/plugins/startify.vim
-:source ~/.vim/plugins/fugitlive.vim
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/vim-gitbranch'
+Plug 'othree/html5.vim'
+Plug 'akhaku/vim-java-unused-imports'
+Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'luochen1990/rainbow'
+Plug 'mhinz/vim-startify'
+Plug 'rust-lang/rust.vim'
 call plug#end()
+
+"Plug 'tpope/vim-commentary'
+:map <C-\> gcc
+
+"Plug 'mattn/emmet-vim'
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key='<C-l>'
+autocmd FileType html,css,jsp EmmetInstall
+
+"Plug 'itchyny/lightline.vim'
+:set laststatus=2
+:set background=dark
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
+
+"Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+
+"Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+
+"Plug 'mhinz/vim-startify'
+let g:startify_custom_header=0

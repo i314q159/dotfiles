@@ -2,5 +2,3 @@
 
 # vim
 cp ~/.vimrc vimrc
-rm -rf ./plugins
-cp ~/.vim/plugins -r ./
