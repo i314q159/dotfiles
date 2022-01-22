@@ -1,6 +1,7 @@
 :syntax on
+:set background=dark
 
-"sets
+" sets
 :set number
 :set relativenumber
 :set autochdir
@@ -11,12 +12,12 @@
 :set title
 :set ruler
 :set wildmenu
-:set completeopt=longest,preview,menu
+:set laststatus=2
 
-""show 8 lines
+" show 8 lines
 :set scrolloff=8
 
-""^no
+" ^no
 :set noruler
 :set noeb
 :set nocompatible
@@ -25,52 +26,53 @@
 :set nowrap
 :set noswapfile 
 
-""tab
+" tab
 :set tabstop=4
 :set softtabstop=4
 :set shiftwidth=4
 :set expandtab
 :set smarttab
 
-"maps
+" maps
 :map td /TODO:<CR>
 :map ff <ESC>gg=G
 :map vs :vsplit<SPACE>
 :map sp :split<SPACE>
 :map S :source $MYVIMRC<CR>
-:noremap tt :bel :ter++rows=13
+" :noremap tt :bel :ter++rows=13
+:noremap tt :vert term<CR>
 :noremap pf :Files<CR>
-:noremap <C-p> :GFiles<CR>
+:noremap <C-g> :GFiles<CR>
 
-"vim tab
+" vim tabbuffer
 :map <C-o> :tabedit<SPACE>
 :map <C-c> :tabclose<CR>
 :map <C-t> :tabnext<CR>
 
-""Allow gf to open non-existent file
+" Allow gf to open non-existent file
 :map gf :tabedit <cfile><cr>
 
-""Quicker switching between windows
+" Quicker switching between windows
 :nmap <silent> <C-h> <C-w>h
 :nmap <silent> <C-j> <C-w>j
 :nmap <silent> <C-k> <C-w>k
 :nmap <silent> <C-l> <C-w>l
 
-""match
-":inoremap ' ''<ESC>i
-":inoremap " ""<ESC>i
-":inoremap ( ()<ESC>i
-":inoremap [ []<ESC>i
-":inoremap { {}<ESC>i
+" match
+" :inoremap ' ''<ESC>i
+" :inoremap " ""<ESC>i
+" :inoremap ( ()<ESC>i
+" :inoremap [ []<ESC>i
+" :inoremap { {}<ESC>i
 :inoremap < <><ESC>i
 :set showmatch
 
-"tree view 
+"netrw tree view 
 let g:netrw_liststyle=3
 
 filetype plugin indent on
 
-"vim-plug
+" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
@@ -85,35 +87,34 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-startify'
 Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-"Plug 'tpope/vim-commentary'
+" tpope/vim-commentary
 :map <C-\> gcc
 
-"Plug 'mattn/emmet-vim'
+" mattn/emmet-vim'
 let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key='<C-l>'
 autocmd FileType html,css,jsp EmmetInstall
 
-"Plug 'itchyny/lightline.vim'
-:set laststatus=2
-:set background=dark
+" itchyny/lightline.vim
+" itchyny/vim-gitbranch
 let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
-      \ }
+            \ 'colorscheme': 'one',
+            \ 'active': {
+                \   'left': [ [ 'mode', 'paste' ],
+                \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+                \ },
+                \ 'component_function': {
+                    \   'gitbranch': 'gitbranch#name'
+                    \ },
+                    \ }
 
-"Plug 'luochen1990/rainbow'
+" luochen1990/rainbow
 let g:rainbow_active = 1
 
-"Plug 'rust-lang/rust.vim'
+" rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
 
-"Plug 'mhinz/vim-startify'
+" mhinz/vim-startify
 let g:startify_custom_header=0
