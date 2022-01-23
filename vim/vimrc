@@ -88,6 +88,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-startify'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " tpope/vim-commentary
