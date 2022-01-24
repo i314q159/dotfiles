@@ -3,7 +3,7 @@
 
 " sets
 :set number
-:set relativenumber
+" :set relativenumber
 :set autochdir
 :set encoding=utf-8
 :set cindent
@@ -25,6 +25,7 @@
 :set noerrorbells
 :set nowrap
 :set noswapfile 
+:set nocompatible
 
 " tab
 :set tabstop=4
@@ -36,18 +37,16 @@
 " maps
 :map td /TODO:<CR>
 :map ff <ESC>gg=G
-:map vs :vsplit<SPACE>
-:map sp :split<SPACE>
 :map S :source $MYVIMRC<CR>
 " :noremap tt :bel :ter++rows=13
 :noremap tt :vert term<CR>
-:noremap pf :Files<CR>
+:noremap <C-f> :Files<CR>
 :noremap <C-g> :GFiles<CR>
 
 " vim tabbuffer
 :map <C-o> :tabedit<SPACE>
 :map <C-c> :tabclose<CR>
-:map <C-t> :tabnext<CR>
+:map <C-t> :tabNext<CR>
 
 " Allow gf to open non-existent file
 :map gf :tabedit <cfile><cr>
@@ -87,9 +86,20 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'luochen1990/rainbow'
 Plug 'mhinz/vim-startify'
 Plug 'rust-lang/rust.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/indentLine'
 call plug#end()
+
+" Bootstrapping vim-plug automatically
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+" Automatically install missing plugins on startup
+if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall | q
+endif
 
 " tpope/vim-commentary
 :map <C-\> gcc
