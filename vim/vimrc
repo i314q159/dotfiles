@@ -1,53 +1,57 @@
-:syntax on
-:set background=dark
+" File  : .vimrc
+" Author: i314q159
+" Date  : 2022.01.25
+
+syntax on
+set background=dark
 
 " sets
-:set number
-" :set relativenumber
-:set autochdir
-:set encoding=utf-8
-:set cindent
-:set autoindent
-:set showmode
-:set title
-:set ruler
-:set wildmenu
-:set laststatus=2
+set number
+" set relativenumber
+set autochdir
+set encoding=utf-8
+set cindent
+set autoindent
+set showmode
+set title
+set ruler
+set wildmenu
+set laststatus=2
 
 " show 8 lines
-:set scrolloff=8
+set scrolloff=8
 
 " ^no
-:set noruler
-:set noeb
-:set nocompatible
-:set noexpandtab
-:set noerrorbells
-:set nowrap
-:set noswapfile 
-:set nocompatible
+set noruler
+set noeb
+set nocompatible
+set noexpandtab
+set noerrorbells
+set nowrap
+set noswapfile 
+set nocompatible
 
 " tab
-:set tabstop=4
-:set softtabstop=4
-:set shiftwidth=4
-:set expandtab
-:set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
 
 " maps
 let mapleader=";"
-:nnoremap ff <ESC>gg=G
-:nnoremap S :source $MYVIMRC<CR>
+nnoremap ff <ESC>gg=G
+nnoremap S :source $MYVIMRC<CR>
 " :nnoremap tt :bel :ter++rows=13
-:nnoremap <leader>t :vert term<CR>
+nnoremap <leader>t :vert term<CR>
 
 " vim tabbuffer
-:nnoremap <leader>e :tabedit<SPACE>
-:nnoremap <leader>c :tabclose<CR>
-:nnoremap <leader>n :tabNext<CR>
+nnoremap <leader>e :tabedit<SPACE>
+nnoremap <leader>c :tabclose<CR>
+nnoremap <leader>n :tabNext<CR>
 
 " Allow gf to open non-existent file
-:nnoremap gf :tabedit <cfile><cr>
+nnoremap gf :tabedit <cfile><cr>
 
 " match
 " :inoremap ' ''<ESC>i
@@ -55,8 +59,8 @@ let mapleader=";"
 " :inoremap ( ()<ESC>i
 " :inoremap [ []<ESC>i
 " :inoremap { {}<ESC>i
-:inoremap < <><ESC>i
-:set showmatch
+inoremap < <><ESC>i
+set showmatch
 
 "netrw tree view 
 let g:netrw_liststyle=3
@@ -91,7 +95,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 " tpope/vim-commentary
-:nmap <C-\> gcc
+nmap <C-\> gcc
 
 " mattn/emmet-vim'
 let g:user_emmet_install_global = 0
@@ -129,11 +133,12 @@ let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 
 " alpertuna/vim-header
+nnoremap <F4> :AddHeader<CR>
 let g:header_field_author = 'i314q159'
-
-" alpertuna/vim-header
-let g:header_auto_update_header = 1
+let g:header_field_modified_by = 0
+let g:header_field_modified_timestamp = 0
+let g:header_field_timestamp_format = '%Y.%m.%d'
 
 " junegunn/fzf.vim
-:nnoremap <leader>f :Files<CR>
-:nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :GFiles<CR>
