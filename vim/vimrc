@@ -7,12 +7,13 @@ set background=dark
 
 " sets
 set number
-" set relativenumber
+set relativenumber
 set autochdir
 set encoding=utf-8
 set cindent
 set autoindent
 set showmode
+set showcmd
 set title
 set ruler
 set wildmenu
