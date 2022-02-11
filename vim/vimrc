@@ -71,11 +71,11 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-speeddating'
 Plug 'junegunn/fzf', { 'do': {-> fzf#install()} }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'othree/html5.vim'
-Plug 'akhaku/vim-java-unused-imports'
 Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'pbrisbin/vim-mkdir'
@@ -85,6 +85,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
 call plug#end()
 
 " Bootstrapping vim-plug automatically
@@ -102,21 +104,16 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsp EmmetInstall
 
 " itchyny/lightline.vim
-" itchyny/vim-gitbranch
 let g:lightline = {
             \ 'colorscheme': 'one',
             \ 'active': {
                 \   'left': [ [ 'mode', 'paste' ],
-                \             [ 'gitbranch', 'readonly', 'filename', 'modified' , 'vim'] ]
+                \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ]
                 \ },
                 \ 'component_function': {
-                    \   'gitbranch': 'gitbranch#name'
-                    \ },
-                    \'component': {
-                        \   'vim': 'VIM'
-                        \ },
-                        \ }
-
+                    \'gitbranch': 'gitbranch#name'
+                    \ }
+                    \ }
 
 " luochen1990/rainbow
 let g:rainbow_active = 1
