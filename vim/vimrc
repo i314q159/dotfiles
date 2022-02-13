@@ -42,8 +42,7 @@ set smarttab
 let mapleader=";"
 nnoremap ff <ESC>gg=G
 nnoremap S :source $MYVIMRC<CR>
-" :nnoremap tt :bel :ter++rows=13
-nnoremap <leader>t :vert term<CR>
+map <leader>t :tab term ++close<CR>
 
 " vim tabbuffer
 nnoremap <leader>e :tabedit<SPACE>
@@ -105,10 +104,10 @@ autocmd FileType html,css,jsp EmmetInstall
 
 " itchyny/lightline.vim
 let g:lightline = {
-            \ 'colorscheme': 'wombat',
+            \ 'colorscheme': 'one',
             \ 'active': {
                 \   'left': [ [ 'mode', 'paste' ],
-                \             [ 'gitbranch', 'absolutepath'] ]
+                \             [ 'gitbranch', 'filename'] ]
                 \ },
                 \ 'component_function': {
                     \'gitbranch': 'gitbranch#name'
