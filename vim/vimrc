@@ -1,6 +1,6 @@
 " File  : .vimrc
 " Author: i314q159
-" Date  : 2022.01.25
+" Date  : 2022.02.13
 
 syntax on
 set background=dark
@@ -105,10 +105,10 @@ autocmd FileType html,css,jsp EmmetInstall
 
 " itchyny/lightline.vim
 let g:lightline = {
-            \ 'colorscheme': 'one',
+            \ 'colorscheme': 'wombat',
             \ 'active': {
                 \   'left': [ [ 'mode', 'paste' ],
-                \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ]
+                \             [ 'gitbranch', 'absolutepath'] ]
                 \ },
                 \ 'component_function': {
                     \'gitbranch': 'gitbranch#name'
