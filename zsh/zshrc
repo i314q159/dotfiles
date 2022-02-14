@@ -1,3 +1,18 @@
+source /usr/share/zplug/init.zsh
+
+zplug 'dracula/zsh', as:theme
+zplug "plugins/git",   from:oh-my-zsh
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
 # alias
 alias bat='batcat'
 alias fd='fdfind'
