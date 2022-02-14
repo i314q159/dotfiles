@@ -1,9 +1,19 @@
+# zplug
 source /usr/share/zplug/init.zsh
 
-zplug 'dracula/zsh', as:theme
-zplug "plugins/git",   from:oh-my-zsh
+## awesome zsh plugins
+zplug "plugins/git", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "plugins/extract", from:oh-my-zsh
+zplug "rupa/z", use:z.sh
+zplug "zpm-zsh/ls"
+zplug "dracula/zsh", as:theme
 
-# Install plugins if there are plugins that have not been installed
+## Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -11,7 +21,29 @@ if ! zplug check --verbose; then
     fi
 fi
 
+## zplug load
 zplug load
+
+# touchpad natural scrolling
+synclient VertScrollDelta=-103
+synclient HorizScrollDelta=-103
+
+# zsh_command_not_found
+if [[ -x /usr/lib/command-not-found ]] ; then
+    if (( ! ${+functions[command_not_found_handler]} )) ; then
+        function command_not_found_handler {
+            [[ -x /usr/lib/command-not-found ]] || return 1
+            /usr/lib/command-not-found -- ${1+"$1"} && :
+        }
+    fi
+fi
+
+# flutter
+export PATH="$PATH:/media/i314q159/1T/sdk_d/flutter/bin"
+
+# golang
+export GO111MODE=on
+export GOPROXY=https://goproxy.io,direct
 
 # alias
 alias bat='batcat'
@@ -30,3 +62,4 @@ alias apti="sudo apt install -y"
 alias apts="apt search --names-only"
 alias aptp="sudo apt purge -y"
 alias weather="curl wttr.in"
+alias btop="bpytop"

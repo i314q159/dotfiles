@@ -85,8 +85,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
 call plug#end()
+
+" dracula/vim
 
 " Bootstrapping vim-plug automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
