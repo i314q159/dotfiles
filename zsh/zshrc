@@ -7,11 +7,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-history-substring-search"
 zplug "plugins/extract", from:oh-my-zsh
 zplug "rupa/z", use:z.sh
-zplug "zpm-zsh/ls"
-zplug "dracula/zsh", as:theme
+zplug "themes/simple", from:oh-my-zsh
 
 ## Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -63,3 +61,10 @@ alias apts="apt search --names-only"
 alias aptp="sudo apt purge -y"
 alias weather="curl wttr.in"
 alias btop="bpytop"
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'
+alias ip='ip --color=auto'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls='ls --color=auto'
