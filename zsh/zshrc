@@ -59,6 +59,7 @@ alias aptli="apt list --installed"
 alias apti="sudo apt install -y"
 alias apts="apt search --names-only"
 alias aptp="sudo apt purge -y"
+alias aptc="sudo apt autoremove -y"
 alias weather="curl wttr.in"
 alias btop="bpytop"
 alias grep='grep --color=auto'
@@ -68,3 +69,4 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
+alias ..="cd .."
