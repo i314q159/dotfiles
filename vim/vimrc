@@ -1,6 +1,6 @@
 " File  : .vimrc
 " Author: i314q159
-" Date  : 2022.02.13
+" Date  : 2022.02.17
 
 syntax on
 set background=dark
@@ -40,7 +40,6 @@ set smarttab
 
 " maps
 let mapleader=";"
-nnoremap ff <ESC>gg=G
 nnoremap S :source $MYVIMRC<CR>
 map <leader>t :tab term ++close<CR>
 
@@ -70,7 +69,6 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-speeddating'
 Plug 'junegunn/fzf', { 'do': {-> fzf#install()} }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-gitbranch'
@@ -84,10 +82,8 @@ Plug 'rust-lang/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
-Plug 'dart-lang/dart-vim-plugin'
+Plug 'sbdchd/neoformat'
 call plug#end()
-
-" dracula/vim
 
 " Bootstrapping vim-plug automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -147,3 +143,6 @@ nnoremap <leader>g :GFiles<CR>
 " Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 110
+
+" sbdchd/neoformat
+nmap ff :Neoformat<CR>
