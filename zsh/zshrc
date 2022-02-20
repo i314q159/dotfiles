@@ -4,12 +4,13 @@ source /usr/share/zplug/init.zsh
 ## awesome zsh plugins
 zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "plugins/extract", from:oh-my-zsh
 zplug "rupa/z", use:z.sh
-zplug "themes/simple", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh
+zplug "themes/simple", from:oh-my-zsh, as:theme
+zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "paulirish/git-open"
 
 ## Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -37,7 +38,7 @@ if [[ -x /usr/lib/command-not-found ]] ; then
 fi
 
 # flutter
-export PATH="$PATH:/media/i314q159/1T/sdk_d/flutter/bin"
+export PATH="$PATH:/mnt/1T/sdk_d/flutter/bin"
 
 # golang
 export GO111MODE=on
@@ -47,6 +48,9 @@ export GOPROXY=https://goproxy.io,direct
 alias bat='batcat'
 alias fd='fdfind'
 alias tm="trash"
+alias tm-l="trash-list"
+alias tm-r="trash-restore"
+alias tm-c="trash-empty"
 alias py3="python3"
 alias ip="ip --color=auto"
 alias icdiff="icdiff --color=auto"
@@ -69,4 +73,3 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
-alias ..="cd .."
