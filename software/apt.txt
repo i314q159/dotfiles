@@ -80,16 +80,16 @@ bsdmainutils
 bsdutils
 bubblewrap
 build-essential
-buku
 bulk-extractor
 bully
 bundler
-busybox
+busybox-static
 bzip2-doc
 bzip2
 ca-certificates-java
 ca-certificates-mono
 ca-certificates
+cabextract
 caca-utils
 cadaver
 caffeine
@@ -259,6 +259,7 @@ fakeroot
 faraday-angular-frontend
 faraday-client
 faraday
+fastboot
 fd-find
 fdisk
 fern-wifi-cracker
@@ -286,6 +287,8 @@ firmware-ti-connectivity
 firmware-zd1211
 flac
 flatpak
+fluid-soundfont-gm
+fluid-soundfont-gs
 font-manager-common
 font-manager
 font-viewer
@@ -317,6 +320,7 @@ fonts-noto-ui-core
 fonts-noto-ui-extra
 fonts-noto-unhinted
 fonts-noto
+fonts-open-sans
 fonts-quicksand
 fonts-urw-base35
 fonts-wqy-microhei
@@ -426,6 +430,7 @@ glx-alternative-mesa
 glx-alternative-nvidia
 glx-diversions
 gnome-accessibility-themes
+gnome-audio
 gnome-backgrounds
 gnome-bluetooth
 gnome-boxes
@@ -591,6 +596,7 @@ ike-scan
 im-config
 imagemagick-6-common
 imagemagick-6.q16
+imagemagick
 impacket-scripts
 inetsim
 inetutils-inetd
@@ -625,6 +631,7 @@ jackd
 java-common
 java-wrappers
 javascript-common
+jd-gui
 john-data
 john
 joplin
@@ -1101,7 +1108,6 @@ libextractor3
 libextutils-depends-perl
 libfaad2
 libfakeroot
-libfam0
 libfastjson4
 libfcgi-perl
 libfcgi0ldbl
@@ -1130,6 +1136,7 @@ libfile-stripnondeterminism-perl
 libfindbugs-ant-java
 libfindbugs-java
 libflac8
+libflashrom1
 libflite1
 libfluidsynth3
 libfmt8
@@ -1148,6 +1155,7 @@ libfribidi-dev
 libfribidi0
 libfstrm0
 libfsverity0
+libftdi1-2
 libfuse2
 libfuse3-3
 libgail-3-0
@@ -1536,6 +1544,7 @@ liblapack-dev
 liblapack3
 liblbfgsb0
 liblcms2-2
+libldacbt-enc2
 libldap-2.4-2
 libldap-common
 libldb2
@@ -1604,9 +1613,9 @@ libmaven-resolver-java
 libmaven-shared-utils-java
 libmaven3-core-java
 libmaxminddb0
-libmbedcrypto3
-libmbedtls12
-libmbedx509-0
+libmbedcrypto7
+libmbedtls14
+libmbedx509-1
 libmbim-glib4
 libmbim-proxy
 libmcrypt4
@@ -1697,6 +1706,7 @@ libmpfr6
 libmpg123-0
 libmplex2-2.1-0
 libmro-compat-perl
+libmspack0
 libmtdev1
 libmtp-common
 libmtp-runtime
@@ -1822,11 +1832,11 @@ libobjc-11-dev
 libobjc4
 libobjenesis-java
 libobs0
-libofa0
 libogg0
 libonig5
 libopenal-data
 libopenal1
+libopenaptx0
 libopenblas0-pthread
 libopencore-amrnb0
 libopencore-amrwb0
@@ -2053,6 +2063,7 @@ librtlsdr0
 librtmp1
 librubberband2
 libruby2.7
+libruby3.0
 librygel-core-2.6-2
 librygel-db-2.6-2
 librygel-renderer-2.6-2
@@ -2183,8 +2194,6 @@ libsys-meminfo-perl
 libsystemd0
 libtag1v5-vanilla
 libtag1v5
-libtaglibs-standard-impl-java
-libtaglibs-standard-spec-java
 libtalloc2
 libtasn1-6
 libtcl8.6
@@ -2333,7 +2342,7 @@ libvulkan1
 libvulkan1
 libwacom-bin
 libwacom-common
-libwacom2
+libwacom9
 libwagon-file-java
 libwagon-http-java
 libwagon-http-shaded-java
@@ -2363,7 +2372,6 @@ libwireshark15
 libwiretap12
 libwmf-0.2-7
 libwmf-bin
-libwmf0.2-7
 libwmflite-0.2-7
 libwnck-3-0
 libwnck-3-common
@@ -2547,6 +2555,7 @@ libzstd1
 libzstd1
 libzvbi-common
 libzvbi0
+libzxingcore1
 libzzip-0-13
 light
 lintian
@@ -2554,10 +2563,14 @@ linux-base
 linux-compiler-gcc-11-x86
 linux-headers-5.15.0-kali3-amd64
 linux-headers-5.15.0-kali3-common
+linux-headers-5.16.0-kali1-amd64
+linux-headers-5.16.0-kali1-common
 linux-headers-amd64
 linux-image-5.15.0-kali3-amd64
+linux-image-5.16.0-kali1-amd64
 linux-image-amd64
 linux-kbuild-5.15
+linux-kbuild-5.16
 linux-libc-dev
 litecli
 llvm-11-dev
@@ -2973,7 +2986,6 @@ node-text-table
 node-through2
 node-through
 node-time-stamp
-node-tinycolor
 node-tmatch
 node-tmp
 node-to-regex-range
@@ -3703,6 +3715,7 @@ rubygems-integration
 runit-helper
 rust-all
 rust-clippy
+rust-doc
 rust-gdb
 rustc
 rustfmt
@@ -3816,11 +3829,7 @@ tlp
 tnftp
 toilet-fonts
 toilet
-tomcat9-admin
 tomcat9-common
-tomcat9-docs
-tomcat9-examples
-tomcat9-user
 tomcat9
 tor-geoipdb
 tor
@@ -3836,6 +3845,7 @@ tree
 trojan
 tshark
 ttf-bitstream-vera
+ttf-mscorefonts-installer
 tumbler-common
 tumbler
 tzdata
@@ -3872,6 +3882,7 @@ vboot-kernel-utils
 vboot-utils
 vdpau-driver-all
 vim-common
+vim-nox
 vim-runtime
 vim-tiny
 vim
@@ -3982,6 +3993,7 @@ yarnpkg
 yelp-xsl
 yelp
 youtube-dl
+youtubedl-gui
 yt-dlp
 zbar-tools
 zenity-common
