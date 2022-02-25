@@ -6,8 +6,8 @@ syntax on
 set background=dark
 
 " sets
-set number
-" set relativenumber
+" set number
+set relativenumber
 set autochdir
 set encoding=utf-8
 set cindent
@@ -83,6 +83,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'sbdchd/neoformat'
+Plug 'vim-scripts/matchit.zip'
 call plug#end()
 
 " Bootstrapping vim-plug automatically
