@@ -7,9 +7,10 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:z.sh
-zplug "plugins/extract", from:oh-my-zsh
+zplug "plugins/extract", from:oh-my-zsh, as:theme
 zplug "themes/simple", from:oh-my-zsh, as:theme
 zplug "plugins/colored-man-pages", from:oh-my-zsh
+zplug "plugins/sudo", from:oh-my-zsh
 zplug "paulirish/git-open"
 
 ## Install plugins if there are plugins that have not been installed
@@ -39,6 +40,8 @@ fi
 
 # flutter
 export PATH="$PATH:/mnt/1T/sdk_d/flutter/bin"
+export FLUTTER_STORAGE_BASE_URL="https://mirrors.tuna.tsinghua.edu.cn/flutter"
+export PUB_HOSTED_URL="https://mirrors.tuna.tsinghua.edu.cn/dart-pub"
 
 # golang
 export GO111MODE=on
@@ -47,29 +50,38 @@ export GOPROXY=https://goproxy.io,direct
 # alias
 alias bat='batcat'
 alias fd='fdfind'
+alias gi="vim .gitignore"
+alias weather="curl wttr.in"
+alias btop="bpytop"
+
+## trash
 alias tm="trash"
 alias tm-l="trash-list"
 alias tm-r="trash-restore"
 alias tm-c="trash-empty"
+
+## python
 alias py3="python3"
-alias ip="ip --color=auto"
-alias icdiff="icdiff --color=auto"
-alias gi="vim .gitignore"
 alias pv="virtualenv .venv"
+
+## apt
 alias aptud="sudo apt update"
 alias aptug="sudo apt upgrade -y"
-alias aptlu="apt list --upgradable"
 alias aptli="apt list --installed"
 alias apti="sudo apt install -y"
 alias apts="apt search --names-only"
 alias aptp="sudo apt purge -y"
 alias aptc="sudo apt autoremove -y"
-alias weather="curl wttr.in"
-alias btop="bpytop"
+
+## color
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-alias ll='ls -l'
+alias ip="ip --color=auto"
+alias icdiff="icdiff --color=auto"
+
+## ls
+alias ll='ls -hl'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'

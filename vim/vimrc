@@ -6,8 +6,7 @@ syntax on
 set background=dark
 
 " sets
-" set number
-set relativenumber
+set number
 set autochdir
 set encoding=utf-8
 set cindent

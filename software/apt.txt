@@ -1,4 +1,5 @@
 7zip
+aapt
 accountsservice
 acl
 adb
@@ -6,11 +7,22 @@ adduser
 adwaita-icon-theme
 aglfn
 aircrack-ng
+alacarte
 alien
 alsa-utils
 amass-common
 amass
 amd64-microcode
+android-framework-res
+android-libaapt
+android-libandroidfw
+android-libbacktrace
+android-libbase
+android-libcutils
+android-liblog
+android-libunwind
+android-libutils
+android-libziparchive
 android-sdk-platform-tools-common
 ant-optional
 ant
@@ -21,6 +33,7 @@ apache2-data
 apache2-utils
 apache2
 apg
+apktool
 apparmor
 appstream
 apt-config-icons
@@ -48,6 +61,7 @@ autopsy
 autotools-dev
 avahi-daemon
 axel
+balena-etcher-electron
 base-files
 base-passwd
 base58
@@ -65,6 +79,8 @@ binutils
 binwalk
 bleachbit
 blt
+bluefish-data
+bluefish-plugins
 blueman
 bluez-firmware
 bluez-hcidump
@@ -101,6 +117,7 @@ catfish
 cava
 cewl
 cgpt
+cgroupfs-mount
 chafa
 checkinstall
 cheese-common
@@ -123,6 +140,7 @@ colord
 command-not-found
 console-setup-linux
 console-setup
+containerd
 convmv
 coreutils
 cowsay
@@ -135,6 +153,7 @@ cracklib-runtime
 crackmapexec
 cramfsswap
 creddump7
+criu
 cron
 crunch
 cryptcat
@@ -208,6 +227,8 @@ dnsenum
 dnsmasq-base
 dnsrecon
 docbook-xml
+docker.io
+docker
 dos2unix
 dosfstools
 dotnet-apphost-pack-3.1
@@ -269,9 +290,12 @@ fierce
 fig2dev
 file-roller
 file
+filezilla-common
 findbugs
 findutils
 finger
+firebird3.0-common-doc
+firebird3.0-common
 firefox-esr
 firmware-amd-graphics
 firmware-atheros
@@ -286,7 +310,6 @@ firmware-sof-signed
 firmware-ti-connectivity
 firmware-zd1211
 flac
-flatpak
 fluid-soundfont-gm
 fluid-soundfont-gs
 font-manager-common
@@ -350,6 +373,7 @@ gcc-9-base
 gcc
 gconf-service
 gconf2-common
+gconf2
 gcr
 gdb
 gdebi-core
@@ -421,6 +445,7 @@ gir1.2-xfconf-0
 git-man
 git
 github-desktop
+gitk
 gjs
 gkbd-capplet
 glib-networking-common
@@ -573,9 +598,12 @@ hostname
 hotpatch
 hping3
 httpie
+httrack
 hunspell-en-us
 hwinfo
 hwloc
+hydra-gtk
+hydra
 hyperion
 i2c-tools
 i965-va-driver
@@ -596,7 +624,6 @@ ike-scan
 im-config
 imagemagick-6-common
 imagemagick-6.q16
-imagemagick
 impacket-scripts
 inetsim
 inetutils-inetd
@@ -638,6 +665,7 @@ joplin
 jp2a
 jpegoptim
 jq
+jsql-injection
 junit-doc
 junit4-doc
 junit4
@@ -713,7 +741,6 @@ libapache2-mod-php8.1
 libapparmor1
 libappindicator1
 libappindicator3-1
-libappstream-glib8
 libappstream4
 libapr1
 libaprutil1-dbd-sqlite3
@@ -812,6 +839,7 @@ libbsd0
 libbsd0
 libbsf-java
 libbsh-java
+libbson-1.0-0
 libbtbb1
 libbytes-random-secure-perl
 libbz2-1.0
@@ -965,7 +993,6 @@ libdaxctl1
 libdazzle-1.0-0
 libdazzle-common
 libdb5.3
-libdbd-mariadb-perl
 libdbi-perl
 libdbus-1-3
 libdbus-1-dev
@@ -1109,6 +1136,7 @@ libextutils-depends-perl
 libfaad2
 libfakeroot
 libfastjson4
+libfbclient2
 libfcgi-perl
 libfcgi0ldbl
 libfdisk1
@@ -1133,6 +1161,8 @@ libfile-listing-perl
 libfile-mimeinfo-perl
 libfile-slurp-perl
 libfile-stripnondeterminism-perl
+libfilezilla-common
+libfilezilla24
 libfindbugs-ant-java
 libfindbugs-java
 libflac8
@@ -1296,6 +1326,7 @@ libgsf-1-common
 libgsl27
 libgslcblas0
 libgsm1
+libgsoap-2.8.117
 libgsound0
 libgspell-1-2
 libgspell-1-common
@@ -1326,6 +1357,7 @@ libgtop2-common
 libgts-0.7-5
 libgts-bin
 libguava-java
+libgucharmap-2-90-7
 libgudev-1.0-0
 libguice-java
 libgupnp-1.2-1
@@ -1369,6 +1401,7 @@ libhttp-parser2.9
 libhttp-server-simple-perl
 libhttpclient-java
 libhttpcore-java
+libhttrack2
 libhunspell-1.7-0
 libhwloc-plugins
 libhwloc15
@@ -1585,6 +1618,7 @@ liblwp-mediatypes-perl
 liblwp-protocol-https-perl
 liblz4-1
 liblz4-dev
+liblzf1
 liblzma-dev
 liblzma5
 liblzma5
@@ -1624,6 +1658,7 @@ libmd0
 libmd4c0
 libmediaart-2.0-0
 libmediainfo0v5
+libmemcached11
 libmfx1
 libmhash2
 libminizip1
@@ -1639,6 +1674,8 @@ libmodule-implementation-perl
 libmodule-runtime-conflicts-perl
 libmodule-runtime-perl
 libmodule-scandeps-perl
+libmongoc-1.0-0
+libmongocrypt0
 libmono-accessibility4.0-cil
 libmono-btls-interface4.0-cil
 libmono-corlib4.5-cil
@@ -1856,7 +1893,6 @@ libosgi-compendium-java
 libosgi-core-java
 libosinfo-1.0-0
 libosinfo-bin
-libostree-1-1
 libout123-0
 libp11-kit0
 libpackage-deprecationmanager-perl
@@ -1904,7 +1940,7 @@ libpcsclite1
 libpeas-1.0-0
 libpeas-common
 libperl4-corelibs-perl
-libperl5.32
+libperl5.34
 libperlio-gzip-perl
 libperlio-utf8-strict-perl
 libpfm4
@@ -1961,6 +1997,7 @@ libproxy1v5
 libpsl5
 libptexenc1
 libpthread-stubs0-dev
+libpugixml1v5
 libpulse-mainloop-glib0
 libpulse0
 libpulsedsp
@@ -1982,7 +2019,9 @@ libqdox-java
 libqhull-r8.0
 libqmi-glib5
 libqmi-proxy
+libqpdf28
 libqrencode4
+libqrtr-glib0
 libqscintilla2-qt5-15
 libqscintilla2-qt5-l10n
 libqt5charts5
@@ -2116,6 +2155,7 @@ libslf4j-java
 libslirp0
 libsm-dev
 libsm6
+libsmali-java
 libsmartcols1
 libsmbclient
 libsmf0
@@ -2174,6 +2214,7 @@ libstemmer0d
 libstrictures-perl
 libstring-crc32-perl
 libstring-random-perl
+libstringtemplate-java
 libstringtemplate4-java
 libsub-exporter-perl
 libsub-exporter-progressive-perl
@@ -2237,6 +2278,7 @@ libtirpc3
 libtirpc3
 libtk8.6
 libtomcat9-java
+libtommath1
 libtool
 libtorrent-rasterbar2.0
 libtotem-plparser-common
@@ -2328,6 +2370,7 @@ libvlc5
 libvlccore9
 libvmdk1
 libvncclient1
+libvncserver1
 libvo-aacenc0
 libvo-amrwbenc0
 libvolume-key1
@@ -2503,6 +2546,7 @@ libxml2-utils
 libxml2
 libxml2
 libxmlb2
+libxmlunit-java
 libxmu6
 libxmuu1
 libxnvctrl0
@@ -2603,6 +2647,7 @@ lsof
 lua-lpeg
 lua5.4
 lvm2
+lynis
 lzip
 lzop
 m4
@@ -2670,7 +2715,6 @@ nautilus-extension-gnome-terminal
 nautilus-filename-repairer
 nautilus-gtkhash
 nautilus-image-converter
-nautilus-scripts-manager
 nautilus
 nbtscan
 ncal
@@ -3084,6 +3128,7 @@ ophcrack-cli
 ophcrack
 optipng
 oracle-instantclient-basic
+oracle-instantclient-sqlplus
 orca
 os-prober
 osinfo-db
@@ -3109,10 +3154,12 @@ pci.ids
 pciutils
 pdf-parser
 pdfid
+pdftk-java
+pdftk
 peek
 perl-base
 perl-doc
-perl-modules-5.32
+perl-modules-5.34
 perl-openssl-defaults
 perl-tk
 perl
@@ -3135,6 +3182,7 @@ pipewire-bin
 pipewire-pulse
 pipewire
 pixiewps
+pkexec
 pkg-config
 plocate
 plymouth-theme-breeze
@@ -3144,6 +3192,7 @@ polenum
 policycoreutils
 policykit-1
 polkit-kde-agent-1
+polkitd
 poppler-data
 poppler-utils
 postgresql-13
@@ -3527,7 +3576,6 @@ python3-tqdm
 python3-traitlets
 python3-translationstring
 python3-trie
-python3-twisted-bin
 python3-twisted
 python3-txaio
 python3-typing-extensions
@@ -3544,6 +3592,7 @@ python3-urwid
 python3-uvicorn
 python3-uvloop
 python3-venusian
+python3-venv
 python3-virtualenv-clone
 python3-virtualenv
 python3-watchdog
@@ -3597,6 +3646,7 @@ qml-module-qtquick-dialogs
 qml-module-qtquick-privatewidgets
 qml-module-qtquick-window2
 qml-module-qtquick2
+qpdf
 qrencode
 qsslcaudit
 qt5-image-formats-plugins
@@ -3712,6 +3762,7 @@ ruby2.7-dev
 ruby2.7
 ruby
 rubygems-integration
+runc
 runit-helper
 rust-all
 rust-clippy
@@ -3744,6 +3795,7 @@ sgml-base
 sgml-data
 shared-mime-info
 shellcheck
+shfmt
 skipfish
 sleuthkit
 smartmontools
@@ -3820,6 +3872,7 @@ tig
 tightvncpasswd
 tightvncserver
 timgm6mb-soundfont
+tini
 tk8.6-blt2.5
 tk8.6
 tk
@@ -3886,6 +3939,9 @@ vim-nox
 vim-runtime
 vim-tiny
 vim
+virtualbox-dkms
+virtualbox-qt
+virtualbox
 vlan
 vlc-bin
 vlc-data
@@ -3932,6 +3988,7 @@ wireshark-common
 wireshark-qt
 wireshark
 wkhtmltopdf
+wmdocker
 wordlists
 wpasupplicant
 wpscan
@@ -3947,6 +4004,7 @@ xauth
 xbitmaps
 xbrlapi
 xclip
+xcvt
 xdg-dbus-proxy
 xdg-desktop-portal-gtk
 xdg-desktop-portal
@@ -3996,6 +4054,7 @@ youtube-dl
 youtubedl-gui
 yt-dlp
 zbar-tools
+zeal
 zenity-common
 zenity
 zip
