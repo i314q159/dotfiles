@@ -7,7 +7,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "rupa/z", use:z.sh
-zplug "plugins/extract", from:oh-my-zsh, as:theme
+zplug "plugins/extract", from:oh-my-zsh
 zplug "themes/simple", from:oh-my-zsh, as:theme
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "plugins/sudo", from:oh-my-zsh
@@ -61,7 +61,6 @@ alias tm-r="trash-restore"
 alias tm-c="trash-empty"
 
 ## python
-alias py3="python3"
 alias pv="virtualenv .venv"
 
 ## apt
