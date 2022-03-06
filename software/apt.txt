@@ -61,14 +61,12 @@ autopsy
 autotools-dev
 avahi-daemon
 axel
-balena-etcher-electron
 base-files
 base-passwd
 base58
 bash-completion
 bash
 bat
-beekeeper-studio
 bind9-dnsutils
 bind9-host
 bind9-libs
@@ -79,8 +77,6 @@ binutils
 binwalk
 bleachbit
 blt
-bluefish-data
-bluefish-plugins
 blueman
 bluez-firmware
 bluez-hcidump
@@ -96,6 +92,7 @@ bsdmainutils
 bsdutils
 bubblewrap
 build-essential
+buildah
 bulk-extractor
 bully
 bundler
@@ -113,7 +110,6 @@ calendar
 cargo-doc
 cargo
 caribou
-catfish
 cava
 cewl
 cgpt
@@ -124,6 +120,10 @@ cheese-common
 chntpw
 chrome-gnome-shell
 cifs-utils
+clamav-base
+clamav-freshclam
+clamav
+clamtk
 clang-11
 clang-13
 clang-9
@@ -138,9 +138,11 @@ code
 colord-data
 colord
 command-not-found
+conmon
 console-setup-linux
 console-setup
 containerd
+containernetworking-plugins
 convmv
 coreutils
 cowsay
@@ -190,6 +192,7 @@ debian-archive-keyring
 debian-keyring
 debianutils
 debootstrap
+deborphan
 debtags
 debugedit
 default-jdk-doc
@@ -290,7 +293,6 @@ fierce
 fig2dev
 file-roller
 file
-filezilla-common
 findbugs
 findutils
 finger
@@ -312,6 +314,7 @@ firmware-zd1211
 flac
 fluid-soundfont-gm
 fluid-soundfont-gs
+folks-common
 font-manager-common
 font-manager
 font-viewer
@@ -356,6 +359,7 @@ freerdp2-x11
 freetds-common
 frei0r-plugins
 ftp
+fuse-overlayfs
 fuse3
 fzf
 g++-10
@@ -373,7 +377,6 @@ gcc-9-base
 gcc
 gconf-service
 gconf2-common
-gconf2
 gcr
 gdb
 gdebi-core
@@ -448,6 +451,7 @@ github-desktop
 gitk
 gjs
 gkbd-capplet
+glances
 glib-networking-common
 glib-networking-services
 glib-networking
@@ -457,6 +461,7 @@ glx-diversions
 gnome-accessibility-themes
 gnome-audio
 gnome-backgrounds
+gnome-bluetooth-common
 gnome-bluetooth
 gnome-boxes
 gnome-calculator
@@ -524,6 +529,9 @@ gnustep-gui-common
 gnustep-gui-runtime
 golang-1.17-go
 golang-1.17-src
+golang-github-containernetworking-plugin-dnsname
+golang-github-containers-common
+golang-github-containers-image
 golang-go
 golang-src
 google-chrome-stable
@@ -665,7 +673,6 @@ joplin
 jp2a
 jpegoptim
 jq
-jsql-injection
 junit-doc
 junit4-doc
 junit4
@@ -709,6 +716,7 @@ lbd
 lbzip2
 ldap-utils
 less
+lftp
 lib2geom1.1.0
 lib32gcc-s1
 lib32stdc++6
@@ -792,7 +800,8 @@ libavahi-core7
 libavahi-glib1
 libavahi-ui-gtk3-0
 libavc1394-0
-libavcodec58
+libavcodec-extra58
+libavcodec-extra
 libavdevice58
 libavfilter7
 libavformat58
@@ -897,6 +906,7 @@ libchafa0
 libcheese-gtk25
 libcheese8
 libchromaprint1
+libclamav9
 libclang-common-11-dev
 libclang-common-13-dev
 libclang-common-9-dev
@@ -1085,6 +1095,7 @@ libemail-address-xs-perl
 libenca0
 libenchant-2-2
 libencode-locale-perl
+libencode-perl
 libepoxy-dev
 libepoxy0
 libept1.6.0
@@ -1161,8 +1172,6 @@ libfile-listing-perl
 libfile-mimeinfo-perl
 libfile-slurp-perl
 libfile-stripnondeterminism-perl
-libfilezilla-common
-libfilezilla24
 libfindbugs-ant-java
 libfindbugs-java
 libflac8
@@ -1170,6 +1179,8 @@ libflashrom1
 libflite1
 libfluidsynth3
 libfmt8
+libfolks-eds26
+libfolks26
 libfont-ttf-perl
 libfontconfig-dev
 libfontconfig1-dev
@@ -1283,6 +1294,7 @@ libglx-nvidia0
 libglx0
 libglx0
 libgme0
+libgmime-3.0-0
 libgmp-dev
 libgmp10
 libgmpxx4ldbl
@@ -1357,7 +1369,6 @@ libgtop2-common
 libgts-0.7-5
 libgts-bin
 libguava-java
-libgucharmap-2-90-7
 libgudev-1.0-0
 libguice-java
 libgupnp-1.2-1
@@ -1608,6 +1619,7 @@ liblsan0
 libltc11
 libltdl-dev
 libltdl7
+liblua5.1-0
 liblua5.2-0
 liblua5.3-0
 liblua5.4-0
@@ -1786,7 +1798,7 @@ libnettle8
 libnewt0.52
 libnfnetlink0
 libnfs13
-libnfsidmap2
+libnfsidmap1
 libnftables1
 libnftnl11
 libnghttp2-14
@@ -1893,6 +1905,7 @@ libosgi-compendium-java
 libosgi-core-java
 libosinfo-1.0-0
 libosinfo-bin
+libostree-1-1
 libout123-0
 libp11-kit0
 libpackage-deprecationmanager-perl
@@ -1997,15 +2010,11 @@ libproxy1v5
 libpsl5
 libptexenc1
 libpthread-stubs0-dev
-libpugixml1v5
 libpulse-mainloop-glib0
 libpulse0
 libpulsedsp
 libpwquality-common
 libpwquality1
-libpython2-stdlib
-libpython2.7-minimal
-libpython2.7-stdlib
 libpython3-dev
 libpython3-stdlib
 libpython3.10-minimal
@@ -2223,6 +2232,7 @@ libsub-install-perl
 libsub-name-perl
 libsub-override-perl
 libsub-quote-perl
+libsubid4
 libsvn1
 libswresample3
 libswscale5
@@ -2249,12 +2259,15 @@ libtevent0
 libtexlua53
 libtexluajit2
 libtext-charwidth-perl
+libtext-csv-perl
+libtext-csv-xs-perl
 libtext-glob-perl
 libtext-iconv-perl
 libtext-levenshteinxs-perl
 libtext-markdown-discount-perl
 libtext-wrapi18n-perl
 libtext-xslate-perl
+libtfm1
 libthai-data
 libthai-dev
 libthai0
@@ -2340,8 +2353,8 @@ libva-drm2
 libva-wayland2
 libva-x11-2
 libva2
-libvala-0.54-0
-libvalacodegen-0.54-0
+libvala-0.56-0
+libvalacodegen-0.56-0
 libvariable-magic-perl
 libvdeplug2
 libvdpau-dev
@@ -2438,6 +2451,7 @@ libx11-protocol-perl
 libx11-xcb1
 libx11-xcb1
 libx264-160
+libx264-163
 libx265-199
 libx86-1
 libx86emu3
@@ -2583,6 +2597,7 @@ libyaml-libyaml-perl
 libyaml-snake-java
 libyara8
 libyelp0
+libytnef0
 libz3-4
 libz3-4
 libz3-dev
@@ -2605,15 +2620,11 @@ light
 lintian
 linux-base
 linux-compiler-gcc-11-x86
-linux-headers-5.15.0-kali3-amd64
-linux-headers-5.15.0-kali3-common
 linux-headers-5.16.0-kali1-amd64
 linux-headers-5.16.0-kali1-common
 linux-headers-amd64
-linux-image-5.15.0-kali3-amd64
 linux-image-5.16.0-kali1-amd64
 linux-image-amd64
-linux-kbuild-5.15
 linux-kbuild-5.16
 linux-libc-dev
 litecli
@@ -2644,6 +2655,8 @@ lsb-base
 lsb-release
 lshw
 lsof
+lua-bitop
+lua-cjson
 lua-lpeg
 lua5.4
 lvm2
@@ -3109,7 +3122,6 @@ obs-plugins
 obs-studio
 ocl-icd-libopencl1
 ocl-icd-opencl-dev
-offsec-awae-python2
 onesixtyone
 opencl-c-headers
 opencl-clhpp-headers
@@ -3188,6 +3200,7 @@ plocate
 plymouth-theme-breeze
 po-debconf
 pocl-opencl-icd
+podman
 polenum
 policycoreutils
 policykit-1
@@ -3213,19 +3226,15 @@ publicsuffix
 pulseaudio-module-bluetooth
 pulseaudio-utils
 pulseaudio
+putty-tools
+putty
 pwnat
 pyqt5-dev-tools
 python-apt-common
 python-babel-localedata
-python-cffi-backend
-python-cffi
-python-is-python2
+python-is-python3
 python-matplotlib-data
 python-pastedeploy-tpl
-python2-minimal
-python2.7-minimal
-python2.7
-python2
 python3-adblockparser
 python3-aiocmd
 python3-aioconsole
@@ -3294,6 +3303,7 @@ python3-dateutil
 python3-dbus
 python3-debian
 python3-decorator
+python3-defusedxml
 python3-deprecation
 python3-dev
 python3-dicttoxml
@@ -3304,6 +3314,7 @@ python3-distutils
 python3-django
 python3-dnslib
 python3-dnspython
+python3-docker
 python3-docx
 python3-dotenv
 python3-ecdsa
@@ -3341,9 +3352,6 @@ python3-gexf
 python3-gi-cairo
 python3-gi
 python3-gpg
-python3-graphene
-python3-graphql-core
-python3-graphql-relay
 python3-greenlet
 python3-h11
 python3-h2
@@ -3362,6 +3370,7 @@ python3-idna
 python3-impacket
 python3-importlib-metadata
 python3-incremental
+python3-influxdb
 python3-iniconfig
 python3-invoke
 python3-ipaddr
@@ -3461,7 +3470,6 @@ python3-png
 python3-portend
 python3-pptx
 python3-prettytable
-python3-promise
 python3-prompt-toolkit
 python3-protobuf
 python3-psutil
@@ -3502,6 +3510,9 @@ python3-pyqtgraph
 python3-pyramid
 python3-pyric
 python3-pyrsistent
+python3-pysmi
+python3-pysnmp4
+python3-pystache
 python3-pytest
 python3-pytzdata
 python3-pyudev
@@ -3521,7 +3532,6 @@ python3-routes
 python3-rq
 python3-ruamel.yaml.clib
 python3-ruamel.yaml
-python3-rx
 python3-samba
 python3-scapy
 python3-scipy
@@ -3647,7 +3657,6 @@ qml-module-qtquick-privatewidgets
 qml-module-qtquick-window2
 qml-module-qtquick2
 qpdf
-qrencode
 qsslcaudit
 qt5-image-formats-plugins
 qt5-qmake-bin
@@ -3696,6 +3705,8 @@ reaver
 rebind
 recon-ng
 recordmydesktop
+redis-server
+redis-tools
 redsocks
 remmina-common
 remmina-plugin-rdp
@@ -3798,6 +3809,7 @@ shellcheck
 shfmt
 skipfish
 sleuthkit
+slirp4netns
 smartmontools
 smbclient
 smbmap
@@ -3906,6 +3918,7 @@ ucf
 udev
 udisks2
 udptunnel
+uidmap
 ukui-touchpadserver
 unar
 unattended-upgrades
@@ -3927,7 +3940,7 @@ uuid-runtime
 v2ray
 v2raya
 va-driver-all
-valac-0.54-vapi
+valac-0.56-vapi
 valac-bin
 valac
 variety
@@ -3975,7 +3988,6 @@ wget
 whatweb
 whiptail
 whois
-wifi-qr
 wifiphisher
 wifite
 window-size
@@ -4053,8 +4065,6 @@ yelp
 youtube-dl
 youtubedl-gui
 yt-dlp
-zbar-tools
-zeal
 zenity-common
 zenity
 zip
@@ -4063,9 +4073,7 @@ zlib1g-dev
 zlib1g
 zlib1g
 zplug
-zsh-autosuggestions
 zsh-common
 zsh-doc
-zsh-syntax-highlighting
 zsh
 zstd

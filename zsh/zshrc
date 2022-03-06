@@ -53,12 +53,10 @@ alias fd='fdfind'
 alias gi="vim .gitignore"
 alias weather="curl wttr.in"
 alias btop="bpytop"
+alias yarn="yarnpkg"
 
 ## trash
 alias tm="trash"
-alias tm-l="trash-list"
-alias tm-r="trash-restore"
-alias tm-c="trash-empty"
 
 ## python
 alias pv="virtualenv .venv"
@@ -84,3 +82,4 @@ alias ll='ls -hl'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
+
