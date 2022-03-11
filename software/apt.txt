@@ -465,6 +465,7 @@ gir1.2-xfconf-0
 gir1.2-zpj-0.0
 git-man
 git
+github-desktop
 gjs
 gkbd-capplet
 glances
@@ -2666,12 +2667,7 @@ linux-base
 linux-compiler-gcc-11-x86
 linux-headers-5.16.0-kali1-amd64
 linux-headers-5.16.0-kali1-common
-linux-headers-5.16.0-kali3-amd64
-linux-headers-5.16.0-kali3-common
-linux-headers-amd64
 linux-image-5.16.0-kali1-amd64
-linux-image-5.16.0-kali3-amd64
-linux-image-amd64
 linux-kbuild-5.16
 linux-libc-dev
 litecli
