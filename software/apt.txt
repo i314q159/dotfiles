@@ -54,8 +54,6 @@ aspnetcore-targeting-pack-3.1
 at-spi2-core
 atftpd
 atool
-atril-common
-atril
 attr
 autoconf
 automake
@@ -236,6 +234,7 @@ dnsenum
 dnsmasq-base
 dnsrecon
 docbook-xml
+docker-clean
 docker.io
 docker
 dos2unix
@@ -409,13 +408,11 @@ gir1.2-caribou-1.0
 gir1.2-clutter-1.0
 gir1.2-cogl-1.0
 gir1.2-coglpango-1.0
-gir1.2-dazzle-1.0
 gir1.2-evince-3.0
 gir1.2-freedesktop
 gir1.2-gck-1
 gir1.2-gcr-3
 gir1.2-gda-5.0
-gir1.2-gdata-0.0
 gir1.2-gdesktopenums-3.0
 gir1.2-gdkpixbuf-2.0
 gir1.2-gdm-1.0
@@ -425,9 +422,7 @@ gir1.2-glib-2.0
 gir1.2-gmenu-3.0
 gir1.2-gnomebluetooth-1.0
 gir1.2-gnomedesktop-3.0
-gir1.2-goa-1.0
 gir1.2-graphene-1.0
-gir1.2-grilo-0.3
 gir1.2-gst-plugins-bad-1.0
 gir1.2-gst-plugins-base-1.0
 gir1.2-gstreamer-1.0
@@ -441,7 +436,6 @@ gir1.2-ibus-1.0
 gir1.2-javascriptcoregtk-4.0
 gir1.2-json-1.0
 gir1.2-malcontent-0
-gir1.2-mediaart-2.0
 gir1.2-mutter-9
 gir1.2-nm-1.0
 gir1.2-nma-1.0
@@ -451,18 +445,14 @@ gir1.2-pango-1.0
 gir1.2-peas-1.0
 gir1.2-polkit-1.0
 gir1.2-rb-3.0
-gir1.2-rest-0.7
 gir1.2-rsvg-2.0
 gir1.2-secret-1
 gir1.2-soup-2.4
-gir1.2-totemplparser-1.0
-gir1.2-tracker-3.0
 gir1.2-upowerglib-1.0
 gir1.2-vte-2.91
 gir1.2-webkit2-4.0
 gir1.2-wnck-3.0
 gir1.2-xfconf-0
-gir1.2-zpj-0.0
 git-man
 git
 github-desktop
@@ -494,14 +484,12 @@ gnome-desktop-3-tests
 gnome-desktop-testing
 gnome-desktop3-data
 gnome-disk-utility
-gnome-documents
 gnome-font-viewer
 gnome-icon-theme
 gnome-keyring-pkcs11
 gnome-keyring
 gnome-logs
 gnome-menus
-gnome-music
 gnome-nettool
 gnome-online-accounts
 gnome-online-miners
@@ -726,7 +714,6 @@ kismet-capture-ti-cc-2540
 kismet-capture-ubertooth-one
 kismet-core
 kismet-logtools
-kismet
 klibc-utils
 kmod
 kpartx
@@ -810,8 +797,6 @@ libatkmm-1.6-1v5
 libatomic1
 libatomic1
 libatopology2
-libatrildocument3
-libatrilview3
 libatspi2.0-0
 libatspi2.0-dev
 libattr1
@@ -902,7 +887,6 @@ libcairo-script-interpreter2
 libcairo2-dev
 libcairo2
 libcairomm-1.0-1v5
-libcaja-extension1
 libcamel-1.2-63
 libcanberra-gtk-module
 libcanberra-gtk0
@@ -2288,6 +2272,8 @@ libtag1v5-vanilla
 libtag1v5
 libtalloc2
 libtasn1-6
+libtbb-dev
+libtbb2
 libtcl8.6
 libtcnative-1
 libtdb1
@@ -2505,7 +2491,6 @@ libxaw7
 libxbean-reflect-java
 libxcb-composite0
 libxcb-cursor0
-libxcb-damage0
 libxcb-dri2-0
 libxcb-dri2-0
 libxcb-dri3-0
@@ -2706,6 +2691,8 @@ lvm2
 lxappearance
 lxde-settings-daemon
 lynis
+lynx-common
+lynx
 lzip
 lzop
 m4
@@ -2764,6 +2751,7 @@ mousepad
 mpg123
 mpv
 mtd-utils
+mtools
 multimac
 mutter-common
 mycli
@@ -3234,11 +3222,9 @@ php8.1-opcache
 php8.1-readline
 php8.1
 php
-picom
 pigz
 pinentry-curses
 pinentry-gnome3
-pip-check-reqs
 pipal
 pipenv
 pipewire-bin
@@ -3396,7 +3382,6 @@ python3-flask-sqlalchemy
 python3-flask
 python3-flaskext.wtf
 python3-flatbuffers
-python3-fonttools
 python3-frozenlist
 python3-fs
 python3-future
@@ -3440,8 +3425,6 @@ python3-kaitaistruct
 python3-kismetcapturebtgeiger
 python3-kismetcapturefreaklabszigbee
 python3-kismetcapturertl433
-python3-kismetcapturertladsb
-python3-kismetcapturertlamr
 python3-kiwisolver
 python3-ldap3
 python3-ldapdomaindump
@@ -3462,7 +3445,6 @@ python3-marshmallow-enum
 python3-marshmallow-sqlalchemy
 python3-marshmallow
 python3-matplotlib-inline
-python3-matplotlib
 python3-mechanize
 python3-minidump
 python3-minikerberos
@@ -3487,7 +3469,6 @@ python3-networkx
 python3-newt
 python3-nplusone
 python3-ntlm-auth
-python3-numpy
 python3-openpyxl
 python3-openssl
 python3-packaging
@@ -3557,7 +3538,6 @@ python3-pyqrcode
 python3-pyqt5.qtopengl
 python3-pyqt5.sip
 python3-pyqt5
-python3-pyqtgraph
 python3-pyramid
 python3-pyric
 python3-pyrsistent
@@ -3585,7 +3565,6 @@ python3-ruamel.yaml.clib
 python3-ruamel.yaml
 python3-samba
 python3-scapy
-python3-scipy
 python3-scour
 python3-secure
 python3-selenium
@@ -3644,7 +3623,6 @@ python3-typing-inspect
 python3-tz
 python3-u-msgpack
 python3-ubjson
-python3-ufolib2
 python3-ujson
 python3-unicodecsv
 python3-unidecode
@@ -3684,8 +3662,6 @@ python3-zc.lockfile
 python3-zipp
 python3-zope.deprecation
 python3-zope.interface
-python3.10-minimal
-python3.10
 python3.9-dev
 python3.9-minimal
 python3.9-venv
@@ -3748,7 +3724,6 @@ r-recommended
 racc
 radare2
 rake
-ranger
 rar
 rarcrack
 rdesktop
