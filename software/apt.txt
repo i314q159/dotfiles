@@ -246,8 +246,6 @@ dotnet-runtime-3.1
 dotnet-runtime-deps-3.1
 dotnet-sdk-3.1
 dotnet-targeting-pack-3.1
-doublecmd-common
-doublecmd-plugins
 dpkg-dev
 dpkg
 dracut-core
@@ -386,7 +384,6 @@ gcc-9-base
 gcc
 gconf-service
 gconf2-common
-gconf2
 gcr
 gdb
 gdebi-core
@@ -589,6 +586,8 @@ gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
 gstreamer1.0-pulseaudio
 gstreamer1.0-x
+gthumb-data
+gthumb
 gtk-update-icon-cache
 gtk2-engines-pixbuf
 gtk2-engines
@@ -1446,7 +1445,6 @@ libhunspell-1.7-0
 libhwloc-plugins
 libhwloc15
 libhyphen0
-libhz0
 libi2c0
 libibus-1.0-5
 libibverbs1
@@ -2090,7 +2088,6 @@ libqt5multimediawidgets5
 libqt5network5
 libqt5opengl5-dev
 libqt5opengl5
-libqt5pas1
 libqt5positioning5
 libqt5printsupport5
 libqt5qml5
@@ -2112,6 +2109,9 @@ libqt5test5
 libqt5waylandclient5
 libqt5waylandcompositor5
 libqt5webchannel5
+libqt5webengine-data
+libqt5webenginecore5
+libqt5webenginewidgets5
 libqt5webkit5
 libqt5widgets5
 libqt5x11extras5
@@ -2125,8 +2125,10 @@ libradare2-dev
 librados2
 libraqm0
 libraw1394-11
+libraw20
 librbd1
 librdmacm1
+libre2-9
 libreadline-dev
 libreadline8
 libreadonly-perl
@@ -2648,6 +2650,7 @@ libyaml-0-2
 libyaml-libyaml-perl
 libyaml-snake-java
 libyara8
+libyara9
 libyelp0
 libytnef0
 libz3-4
@@ -3392,7 +3395,6 @@ python3-apispec-webframeworks
 python3-apispec
 python3-appdirs
 python3-apt
-python3-argon2
 python3-asciitree
 python3-asgiref
 python3-asn1crypto
@@ -3434,7 +3436,6 @@ python3-colorama
 python3-commonmark
 python3-configobj
 python3-constantly
-python3-construct
 python3-cryptography
 python3-cups
 python3-cupshelpers
@@ -3464,7 +3465,6 @@ python3-engineio
 python3-et-xmlfile
 python3-ewmh
 python3-exifread
-python3-eyed3
 python3-faraday-agent-parameters-types
 python3-faraday-plugins
 python3-fastapi
@@ -3562,7 +3562,6 @@ python3-msgpack
 python3-msldap
 python3-multidict
 python3-mutagen
-python3-mygpoclient
 python3-mypy-extensions
 python3-nacl
 python3-nassl
@@ -3606,7 +3605,6 @@ python3-pluggy
 python3-pluginbase
 python3-ply
 python3-png
-python3-podcastparser
 python3-portend
 python3-pptx
 python3-prettytable
@@ -3617,7 +3615,6 @@ python3-psycopg2
 python3-ptyprocess
 python3-publicsuffix2
 python3-publicsuffixlist
-python3-pwquality
 python3-py
 python3-pyaes
 python3-pyasn1-modules
@@ -3633,7 +3630,6 @@ python3-pyee
 python3-pygments
 python3-pygraphviz
 python3-pyinotify
-python3-pykeepass
 python3-pylnk3
 python3-pymssql
 python3-pymysql
@@ -4073,6 +4069,7 @@ udptunnel
 ufw
 uidmap
 ukui-touchpadserver
+unace
 unar
 unattended-upgrades
 unicode-data
