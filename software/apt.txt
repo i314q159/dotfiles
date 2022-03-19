@@ -138,7 +138,6 @@ cloc
 cmake-data
 cmake
 cmatrix
-code
 colord-data
 colord
 command-not-found
@@ -251,7 +250,6 @@ dpkg
 dracut-core
 driftnet
 dsniff
-duf
 dunst
 dvisvgm
 dwz
@@ -378,8 +376,9 @@ gcc-10-base
 gcc-10-base
 gcc-10
 gcc-11-base
-gcc-11-base
 gcc-11
+gcc-12-base
+gcc-12-base
 gcc-9-base
 gcc
 gconf-service
@@ -694,6 +693,7 @@ junit-doc
 junit4-doc
 junit4
 junit
+kaboxer
 kali-archive-keyring
 kali-debtags
 kali-defaults-desktop
@@ -1187,6 +1187,7 @@ libfftw3-double3
 libfftw3-single3
 libfido2-1
 libfile-basedir-perl
+libfile-copy-recursive-perl
 libfile-desktopentry-perl
 libfile-fcntllock-perl
 libfile-find-rule-perl
@@ -1637,7 +1638,7 @@ liblist-someutils-xs-perl
 liblist-utilsby-perl
 libllvm11
 libllvm12
-libllvm12
+libllvm13
 libllvm13
 libllvm9
 liblmdb0
@@ -2109,9 +2110,6 @@ libqt5test5
 libqt5waylandclient5
 libqt5waylandcompositor5
 libqt5webchannel5
-libqt5webengine-data
-libqt5webenginecore5
-libqt5webenginewidgets5
 libqt5webkit5
 libqt5widgets5
 libqt5x11extras5
@@ -2128,7 +2126,6 @@ libraw1394-11
 libraw20
 librbd1
 librdmacm1
-libre2-9
 libreadline-dev
 libreadline8
 libreadonly-perl
@@ -2782,6 +2779,8 @@ mutter-common
 mycli
 mysql-common
 mystiq
+naabu
+name-that-hash
 nasm
 nautilus-data
 nautilus-extension-brasero
@@ -3350,7 +3349,6 @@ polkitd
 polybar
 poppler-data
 poppler-utils
-postgresql-13
 postgresql-14
 postgresql-client-13
 postgresql-client-14
@@ -3457,6 +3455,7 @@ python3-django
 python3-dnslib
 python3-dnspython
 python3-docker
+python3-dockerpty
 python3-docx
 python3-dotenv
 python3-ecdsa
@@ -3492,6 +3491,8 @@ python3-future
 python3-gexf
 python3-gi-cairo
 python3-gi
+python3-git
+python3-gitdb
 python3-gpg
 python3-greenlet
 python3-h11
@@ -3687,6 +3688,7 @@ python3-sip
 python3-six
 python3-slowapi
 python3-smbc
+python3-smmap
 python3-snappy
 python3-sniffio
 python3-socketio
