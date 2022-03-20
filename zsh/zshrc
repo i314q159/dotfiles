@@ -57,13 +57,13 @@ alias tm="trash"
 alias pv="virtualenv .venv"
 
 ## apt
-alias aptud="sudo apt update"
-alias aptug="sudo apt upgrade -y"
-alias aptli="apt list --installed"
-alias apti="sudo apt install -y"
-alias apts="apt search --names-only"
-alias aptp="sudo apt purge -y"
-alias aptc="sudo apt autoremove -y"
+# alias aptud="sudo apt update"
+# alias aptug="sudo apt upgrade -y"
+# alias aptli="apt list --installed"
+# alias apti="sudo apt install -y"
+# alias apts="apt search --names-only"
+# alias aptp="sudo apt purge -y"
+# alias aptc="sudo apt autoremove -y"
 
 ## color
 alias grep='grep --color=auto'
@@ -77,4 +77,3 @@ alias ll='ls -hl'
 alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls --color=auto'
-
