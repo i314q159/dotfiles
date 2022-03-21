@@ -1,7 +1,6 @@
 bungcip.better-toml
 christian-kohler.path-intellisense
 DavidAnson.vscode-markdownlint
-donjayamanne.githistory
 eg2.vscode-npm-script
 evgeniypeshkov.syntax-highlighter
 ExodiusStudios.comment-anchors
@@ -10,6 +9,7 @@ formulahendry.auto-rename-tag
 golang.go
 kamikillerto.vscode-colorize
 KevinRose.vsc-python-indent
+mhutchie.git-graph
 michelemelluso.code-beautifier
 ms-python.python
 ms-python.vscode-pylance
