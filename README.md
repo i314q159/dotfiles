@@ -1,7 +1,5 @@
 # i314q159’s dotfiles
 
-## zplug
+## vim
 
-```shell
-sudo apt install zplug
-```
+## bash
