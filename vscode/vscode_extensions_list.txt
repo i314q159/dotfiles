@@ -24,7 +24,9 @@ redhat.java
 redhat.vscode-xml
 redhat.vscode-yaml
 techer.open-in-browser
+VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
+vscjava.vscode-gradle
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
