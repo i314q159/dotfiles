@@ -7,7 +7,7 @@ set background=dark
 
 " sets
 set number
-set autochdir
+" set autochdir
 set encoding=utf-8
 set cindent
 set autoindent
@@ -68,8 +68,6 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf', { 'do': {-> fzf#install()} }
-Plug 'junegunn/fzf.vim'
 Plug 'itchyny/vim-gitbranch'
 Plug 'othree/html5.vim'
 Plug 'itchyny/lightline.vim'
@@ -135,10 +133,6 @@ let g:header_field_author = 'i314q159'
 let g:header_field_modified_by = 0
 let g:header_field_modified_timestamp = 0
 let g:header_field_timestamp_format = '%Y.%m.%d'
-
-" junegunn/fzf.vim
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :GFiles<CR>
 
 " Yggdroot/indentLine
 let g:indentLine_enabled = 1
