@@ -6,6 +6,7 @@ evgeniypeshkov.syntax-highlighter
 ExodiusStudios.comment-anchors
 fisheva.eva-theme
 formulahendry.auto-rename-tag
+GabrielBB.vscode-lombok
 golang.go
 kamikillerto.vscode-colorize
 KevinRose.vsc-python-indent
@@ -20,6 +21,8 @@ PKief.material-icon-theme
 redhat.java
 redhat.vscode-xml
 redhat.vscode-yaml
+ritwickdey.LiveServer
+serayuzgur.crates
 techer.open-in-browser
 VisualStudioExptTeam.intellicode-api-usage-examples
 VisualStudioExptTeam.vscodeintellicode
@@ -31,5 +34,4 @@ vscjava.vscode-java-test
 vscjava.vscode-maven
 vscjava.vscode-spring-initializr
 wix.vscode-import-cost
-zhuangtongfa.material-theme
 zsh.go-snippets
