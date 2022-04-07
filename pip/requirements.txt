@@ -1,1 +1,3 @@
 mycli
+trash-cli
+sqlmap
