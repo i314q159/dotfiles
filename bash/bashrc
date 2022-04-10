@@ -13,3 +13,6 @@ export GOPROXY=https://proxy.golang.com.cn,direct
 
 # ibus
 ibus-daemon -xrd
+
+# pip install trash-cli
+alias tm="trash-put"
