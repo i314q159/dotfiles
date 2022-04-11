@@ -17,6 +17,8 @@ set title
 set ruler
 set wildmenu
 set laststatus=2
+set termguicolors
+set cursorline
 
 " show 8 lines
 set scrolloff=8
@@ -81,7 +83,11 @@ Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'sbdchd/neoformat'
 Plug 'vim-scripts/matchit.zip'
+Plug 'dracula/vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+colorscheme dracula
 
 " Bootstrapping vim-plug automatically
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -140,3 +146,23 @@ let g:indentLine_color_term = 110
 
 " sbdchd/neoformat
 nmap ff :Neoformat<CR>
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" neoclide/coc.nvim'
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_global_extensions = [
+	\'coc-json',
+	\'coc-vimlsp',
+    \'coc-git',
+    \'coc-explorer']
+
+nmap <leader>f <Cmd>CocCommand explorer<CR>
