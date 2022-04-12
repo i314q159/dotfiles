@@ -86,6 +86,7 @@ Plug 'sbdchd/neoformat'
 Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 colorscheme dracula
@@ -164,8 +165,10 @@ let g:coc_global_extensions = [
 	\'coc-json',
 	\'coc-vimlsp',
     \'coc-git',
-    \'coc-explorer',
     \'coc-sh',
+    \'coc-java',
     \'coc-tsserver']
 
-nmap <leader>f <Cmd>CocCommand explorer<CR>
+" scrooloose/nerdtree
+nmap <leader>f :NERDTreeToggle<CR>
+
