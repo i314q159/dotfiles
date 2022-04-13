@@ -2,7 +2,6 @@ bungcip.better-toml
 christian-kohler.path-intellisense
 DavidAnson.vscode-markdownlint
 eg2.vscode-npm-script
-evgeniypeshkov.syntax-highlighter
 ExodiusStudios.comment-anchors
 fisheva.eva-theme
 formulahendry.auto-rename-tag

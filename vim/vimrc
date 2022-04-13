@@ -22,7 +22,7 @@ set cursorline
 set mouse=a
 
 " show 8 lines
-set scrolloff=8
+set scrolloff=21
 
 " ^no
 set noruler
