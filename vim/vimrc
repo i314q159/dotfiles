@@ -7,7 +7,7 @@ set background=dark
 
 " sets
 set number
-set autochdir
+" set autochdir
 set encoding=utf-8
 set cindent
 set autoindent
@@ -19,7 +19,6 @@ set wildmenu
 set laststatus=2
 set termguicolors
 set cursorline
-set mouse=a
 
 " show 8 lines
 set scrolloff=21
@@ -87,6 +86,7 @@ Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
+Plug 'vim-test/vim-test'
 call plug#end()
 
 colorscheme dracula
@@ -149,24 +149,12 @@ let g:indentLine_color_term = 110
 " sbdchd/neoformat
 nmap ff :Neoformat<CR>
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 " neoclide/coc.nvim'
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1] =~# '\s'
-endfunction
 
 let g:coc_global_extensions = [
 	\'coc-json',
 	\'coc-vimlsp',
-    \'coc-git',
     \'coc-sh',
-    \'coc-java',
     \'coc-tsserver']
 
 " scrooloose/nerdtree
