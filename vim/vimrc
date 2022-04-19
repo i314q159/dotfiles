@@ -19,9 +19,7 @@ set wildmenu
 set laststatus=2
 set termguicolors
 set cursorline
-
-" show 8 lines
-set scrolloff=21
+set autochdir
 
 " ^no
 set noruler
@@ -29,8 +27,9 @@ set noeb
 set noexpandtab
 set noerrorbells
 set nowrap
-set noswapfile 
+set noswapfile
 set nocompatible
+set ignorecase smartcase
 
 " tab
 set tabstop=4
@@ -42,15 +41,10 @@ set smarttab
 " maps
 let mapleader=";"
 nnoremap S :source $MYVIMRC<CR>
-map <leader>t :tab term ++close<CR>
-
-" vim tabbuffer
-nnoremap <leader>e :tabedit<SPACE>
-nnoremap <leader>c :tabclose<CR>
-nnoremap <leader>n :tabNext<CR>
+map tt :tab term ++close<CR>
 
 " Allow gf to open non-existent file
-nnoremap gf :tabedit <cfile><cr>
+nnoremap gf :tabedit <cfile><CR>
 
 " match
 " :inoremap ' ''<ESC>i
@@ -61,7 +55,7 @@ nnoremap gf :tabedit <cfile><cr>
 inoremap < <><ESC>i
 set showmatch
 
-"netrw tree view 
+"netrw tree view
 let g:netrw_liststyle=3
 
 filetype plugin indent on
@@ -81,12 +75,15 @@ Plug 'rust-lang/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
-Plug 'sbdchd/neoformat'
 Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-test/vim-test'
+Plug 'majutsushi/tagbar'
+Plug 'ervandew/supertab'
+Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 colorscheme dracula
@@ -97,6 +94,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
+
+" ervandew/supertab
+let g:SuperTabDefaultCompletionType = 'context'
+
+" majutsushi/tagbar
+let g:tagbar_ctags_bin = '/usr/bin/ctags'
+let g:tagbar_autofocus = 1
+nmap <silent> <leader>f :TagbarToggle<CR>
 
 " tpope/vim-commentary
 nmap <C-\> gcc
@@ -146,17 +151,17 @@ let g:header_field_timestamp_format = '%Y.%m.%d'
 let g:indentLine_enabled = 1
 let g:indentLine_color_term = 110
 
-" sbdchd/neoformat
-nmap ff :Neoformat<CR>
+" Chiel92/vim-autoformat
+nmap ff :Autoformat<CR>
 
 " neoclide/coc.nvim'
 
 let g:coc_global_extensions = [
-	\'coc-json',
-	\'coc-vimlsp',
-    \'coc-sh',
-    \'coc-tsserver']
+            \'coc-json',
+            \'coc-vimlsp',
+            \'coc-sh']
 
 " scrooloose/nerdtree
-nmap <leader>f :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeToggle<CR>
+let NERDTreeShowHidden = 1
 
