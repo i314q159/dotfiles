@@ -7,7 +7,7 @@ set background=dark
 
 " sets
 set number
-" set autochdir
+set showmatch
 set encoding=utf-8
 set cindent
 set autoindent
@@ -41,19 +41,10 @@ set smarttab
 " maps
 let mapleader=";"
 nnoremap S :source $MYVIMRC<CR>
-map tt :tab term ++close<CR>
+map tt :bel term ++close<CR>
 
 " Allow gf to open non-existent file
 nnoremap gf :tabedit <cfile><CR>
-
-" match
-" :inoremap ' ''<ESC>i
-" :inoremap " ""<ESC>i
-" :inoremap ( ()<ESC>i
-" :inoremap [ []<ESC>i
-" :inoremap { {}<ESC>i
-inoremap < <><ESC>i
-set showmatch
 
 "netrw tree view
 let g:netrw_liststyle=3
@@ -159,6 +150,8 @@ nmap ff :Autoformat<CR>
 let g:coc_global_extensions = [
             \'coc-json',
             \'coc-vimlsp',
+            \'coc-git',
+            \'coc-marketplace',
             \'coc-sh']
 
 " scrooloose/nerdtree
