@@ -68,7 +68,6 @@ Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-test/vim-test'
@@ -144,15 +143,6 @@ let g:indentLine_color_term = 110
 
 " Chiel92/vim-autoformat
 nmap ff :Autoformat<CR>
-
-" neoclide/coc.nvim'
-
-let g:coc_global_extensions = [
-            \'coc-json',
-            \'coc-vimlsp',
-            \'coc-git',
-            \'coc-marketplace',
-            \'coc-sh']
 
 " scrooloose/nerdtree
 nmap <leader>t :NERDTreeToggle<CR>
