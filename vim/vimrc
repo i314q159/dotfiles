@@ -94,7 +94,7 @@ nmap <C-\> gcc
 
 " mattn/emmet-vim'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,jsp EmmetInstall
+autocmd FileType html,css EmmetInstall
 
 " itchyny/lightline.vim
 let g:lightline = {
