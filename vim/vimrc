@@ -11,7 +11,6 @@ set showmatch
 set encoding=utf-8
 set cindent
 set autoindent
-set showmode
 set showcmd
 set title
 set ruler
@@ -30,6 +29,7 @@ set nowrap
 set noswapfile
 set nocompatible
 set ignorecase smartcase
+set noshowmode
 
 " tab
 set tabstop=4
