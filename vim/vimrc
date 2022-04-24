@@ -19,7 +19,7 @@ set wildmenu
 set laststatus=2
 set termguicolors
 set cursorline
-set autochdir
+" set autochdir
 
 " ^no
 set noruler
@@ -46,9 +46,6 @@ map tt :bel term ++close<CR>
 " Allow gf to open non-existent file
 nnoremap gf :tabedit <cfile><CR>
 
-"netrw tree view
-let g:netrw_liststyle=3
-
 filetype plugin indent on
 
 " vim-plug
@@ -61,7 +58,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'mattn/emmet-vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'luochen1990/rainbow'
-Plug 'mhinz/vim-startify'
 Plug 'rust-lang/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'fatih/vim-go'
@@ -118,9 +114,6 @@ let g:rainbow_active = 1
 " rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
 
-" mhinz/vim-startify
-let g:startify_custom_header = 0
-
 " fatih/vim-go
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -147,4 +140,5 @@ nmap ff :Autoformat<CR>
 " scrooloose/nerdtree
 nmap <leader>t :NERDTreeToggle<CR>
 let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
 
