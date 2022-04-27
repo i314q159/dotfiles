@@ -1,6 +1,5 @@
 bungcip.better-toml
 christian-kohler.path-intellisense
-DavidAnson.vscode-markdownlint
 eg2.vscode-npm-script
 ExodiusStudios.comment-anchors
 fisheva.eva-theme
