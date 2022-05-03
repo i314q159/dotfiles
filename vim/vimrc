@@ -64,13 +64,10 @@ Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-test/vim-test'
 Plug 'majutsushi/tagbar'
 Plug 'ervandew/supertab'
 Plug 'Chiel92/vim-autoformat'
-Plug 'godlygeek/tabular'
 call plug#end()
 
 colorscheme dracula
@@ -84,11 +81,6 @@ endif
 
 " ervandew/supertab
 let g:SuperTabDefaultCompletionType = 'context'
-
-" majutsushi/tagbar
-let g:tagbar_ctags_bin = '/usr/bin/ctags'
-let g:tagbar_autofocus = 1
-nmap <silent> <leader>f :TagbarToggle<CR>
 
 " tpope/vim-commentary
 nmap <C-\> gcc
@@ -137,9 +129,4 @@ let g:indentLine_color_term = 110
 
 " Chiel92/vim-autoformat
 nmap ff :Autoformat<CR>
-
-" scrooloose/nerdtree
-nmap <leader>t :NERDTreeToggle<CR>
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
 
