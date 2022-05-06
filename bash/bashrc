@@ -17,4 +17,3 @@ ibus-daemon -xrd
 
 # pip install trash-cli
 alias tm="trash-put"
-
