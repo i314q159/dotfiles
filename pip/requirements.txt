@@ -1,3 +1,8 @@
+# for Windows
 mycli
-trash-cli
 sqlmap
+wget
+hashcat
+
+# for Linux
+# trash-cli
