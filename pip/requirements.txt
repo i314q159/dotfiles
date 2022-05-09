@@ -3,6 +3,8 @@ mycli
 sqlmap
 wget
 hashcat
+yt-dlp
+youtube-dl
 
 # for Linux
 # trash-cli
