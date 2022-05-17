@@ -1,5 +1,3 @@
-test -s ~/.alias && . ~/.alias || true
-
 # zypper in bash-git-prompt
 source /usr/share/bash-git-prompt/gitprompt.sh
 GIT_PROMPT_THEME=Single_line
