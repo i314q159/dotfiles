@@ -59,7 +59,6 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'luochen1990/rainbow'
 Plug 'rust-lang/rust.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'fatih/vim-go'
 Plug 'alpertuna/vim-header'
 Plug 'vim-scripts/matchit.zip'
 Plug 'dracula/vim'
@@ -98,15 +97,6 @@ let g:rainbow_active = 1
 
 " rust-lang/rust.vim'
 let g:rustfmt_autosave = 1
-
-" fatih/vim-go
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_operators = 1
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
 
 " alpertuna/vim-header
 nnoremap <leader>d :AddHeader<CR>
