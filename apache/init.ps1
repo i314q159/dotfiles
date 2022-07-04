@@ -1,2 +1,2 @@
-# scoop install sudo apache
+# scoop install sudo apache;
 sudo httpd -k install -n Apache;
