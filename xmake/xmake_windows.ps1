@@ -1,1 +1,1 @@
-xmake f --toolchain=gcc -c
+xmake f --toolchain=gcc -c;
