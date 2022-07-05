@@ -4,6 +4,7 @@ function scoop_format($SCOOP_EXPORT) {
 }
 
 $FILE_PATH = "scoop.txt"
+Clear-Content import.ps1;
 foreach ($line in Get-Content $FILE_PATH) {
         scoop_format($line);
 }
