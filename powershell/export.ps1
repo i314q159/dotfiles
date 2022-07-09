@@ -1,1 +1,1 @@
-Copy-Item $profile .
+Copy-Item $profile .;
