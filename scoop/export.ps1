@@ -1,1 +1,1 @@
-scoop export > scoop.txt;
+scoop export > scoop.json;
