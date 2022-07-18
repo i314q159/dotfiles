@@ -3,4 +3,4 @@ oh-my-posh --init --shell pwsh --config ~/scoop/apps/oh-my-posh/current/themes/h
 
 # Alias
 Set-Alias l ls
-Set-Alias e explorer
+Set-Alias open explorer
