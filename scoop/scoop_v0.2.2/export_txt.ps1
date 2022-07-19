@@ -1,1 +1,0 @@
-scoop export > scoop.txt;
