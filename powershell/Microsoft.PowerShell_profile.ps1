@@ -4,6 +4,6 @@ oh-my-posh --init --shell pwsh --config ~/scoop/apps/oh-my-posh/current/themes/h
 # scoop-complituon
 Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
-# Alias
+# alias
 Set-Alias l ls
 Set-Alias open explorer
