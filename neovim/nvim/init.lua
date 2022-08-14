@@ -3,3 +3,9 @@
 require('init-packer')
 require('base')
 require('maps')
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'dracula',
+    },
+}
