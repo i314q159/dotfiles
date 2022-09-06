@@ -33,6 +33,3 @@ font:
   bold_{i}talic:
     family: "hack"
     style: Bold Italic
-
-scrolling:
-  history: 0
