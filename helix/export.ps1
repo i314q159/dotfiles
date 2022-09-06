@@ -1,1 +1,1 @@
-cp ~/AppData/Roaming/helix/config.toml .
+cp ~/AppData/Roaming/helix/config.toml .;
