@@ -1,17 +1,5 @@
-# zypper in bash-git-prompt
-source /usr/share/bash-git-prompt/gitprompt.sh
-GIT_PROMPT_THEME=Single_line
-
-# zypper in autojump
+# autojump
 source /usr/share/autojump/autojump.bash
 
-# golang
-export GO111MODE=on
-export GOPROXY=https://proxy.golang.com.cn,direct
-# export GOPATH=~/1T/go
-
-# ibus
-ibus-daemon -xrd
-
-# pip install trash-cli
-alias tm="trash-put"
+# PS1
+PS1='[\u@\h \w]\$'
