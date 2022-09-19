@@ -2,4 +2,4 @@
 source /usr/share/autojump/autojump.bash
 
 # PS1
-PS1='[\u@\h \w]\$'
+PS1='[\u@\h in \w]\$'
