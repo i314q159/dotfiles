@@ -1,1 +1,0 @@
-sudo net stop apache;

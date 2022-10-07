@@ -1,1 +1,0 @@
-get-content vscode_extensions_list.txt | % { code --install-extension $_ };
