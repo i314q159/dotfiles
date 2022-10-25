@@ -1,11 +1,9 @@
 -- number of rows
 vim.wo.number = true
-vim.wo.relativenumber = true
 
 -- theme
 vim.o.background = "dark"
 vim.o.termguicolors = true
-vim.opt.termguicolors = true
 
 -- utf8
 vim.g.encoding = "utf-8"
