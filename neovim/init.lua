@@ -2,6 +2,7 @@
 vim.wo.number = true
 
 -- theme
+vim.cmd[[colorscheme gruvbox]]
 vim.o.background = "dark"
 vim.o.termguicolors = true
 
@@ -32,4 +33,6 @@ require('packer').startup(function()
     -- itchyny/lightline.vim
     use 'itchyny/lightline.vim'
 
+    -- 'morhetz/gruvbox'
+    use 'morhetz/gruvbox'
 end)
