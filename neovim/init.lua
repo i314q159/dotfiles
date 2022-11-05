@@ -27,12 +27,13 @@ vim.o.swapfile = false
 vim.o.mouse = false
 
 require('packer').startup(function()
-    -- wbthomason/packer.nvim
     use 'wbthomason/packer.nvim'
-
-    -- itchyny/lightline.vim
     use 'itchyny/lightline.vim'
-
-    -- 'morhetz/gruvbox'
     use 'morhetz/gruvbox'
+    use 'terrortylor/nvim-comment'
+    use 'windwp/nvim-autopairs'
 end)
+
+require('nvim_comment').setup()
+require("nvim-autopairs").setup()
+
