@@ -50,11 +50,11 @@ vim.o.incsearch = false
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'itchyny/lightline.vim'
-    use 'morhetz/gruvbox'
+    use "ellisonleao/gruvbox.nvim"
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
+    use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
 end)
 
 require('nvim_comment').setup()
 require('nvim-autopairs').setup()
-
