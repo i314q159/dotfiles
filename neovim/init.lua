@@ -56,5 +56,5 @@ require('packer').startup(function()
 end)
 
 require('nvim_comment').setup()
-require("nvim-autopairs").setup()
+require('nvim-autopairs').setup()
 
