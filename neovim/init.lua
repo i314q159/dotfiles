@@ -47,14 +47,17 @@ vim.o.smartcase = true
 vim.o.hlsearch = false
 vim.o.incsearch = false
 
+-- complete
+vim.o.completeopt = "menuone,noinsert,noselect"
+
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'itchyny/lightline.vim'
-    use "ellisonleao/gruvbox.nvim"
+    use 'ellisonleao/gruvbox.nvim'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
 end)
 
-require('nvim_comment').setup()
+require('nvim_comment').setup({ line_mapping = '<C-c>' })
 require('nvim-autopairs').setup()
