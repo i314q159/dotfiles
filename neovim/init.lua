@@ -2,7 +2,7 @@
 vim.wo.number = true
 
 -- theme
-vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme slate]]
 vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.wo.cursorline = true
@@ -53,10 +53,9 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'itchyny/lightline.vim'
-    use 'ellisonleao/gruvbox.nvim'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
-    use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
+    use 'neovim/nvim-lspconfig'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-c>' })
