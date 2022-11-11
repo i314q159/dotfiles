@@ -1,1 +1,1 @@
-scoop export > scoop.json;
+scoop export > scoop.json

@@ -1,1 +1,1 @@
-cp $PROFILE .;
+cp $PROFILE .
