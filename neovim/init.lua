@@ -52,11 +52,12 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
-    use 'itchyny/lightline.vim'
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
-    use 'neovim/nvim-lspconfig'
+    use 'feline-nvim/feline.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-c>' })
 require('nvim-autopairs').setup()
+require('feline').setup()
