@@ -55,7 +55,6 @@ require('packer').startup(function()
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use 'feline-nvim/feline.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-c>' })
