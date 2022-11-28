@@ -2,7 +2,8 @@
 vim.wo.number = true
 
 -- theme
-vim.cmd[[colorscheme slate]]
+-- vim.cmd[[colorscheme slate]]
+vim.cmd[[colorscheme neon]]
 vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.wo.cursorline = true
@@ -55,6 +56,8 @@ require('packer').startup(function()
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use 'feline-nvim/feline.nvim'
+    use 'jghauser/mkdir.nvim' 
+    use 'rafamadriz/neon'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-c>' })
