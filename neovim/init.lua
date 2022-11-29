@@ -51,6 +51,10 @@ vim.o.incsearch = false
 -- complete
 vim.o.completeopt = "menuone,noinsert,noselect"
 
+-- porvider
+vim.o.loaded_python3_provider = 0
+vim.o.loaded_node_provider = 0
+
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     use 'terrortylor/nvim-comment'
