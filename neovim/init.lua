@@ -64,6 +64,6 @@ require('packer').startup(function()
     use 'rafamadriz/neon'
 end)
 
-require('nvim_comment').setup({ line_mapping = '<C-c>' })
+require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('nvim-autopairs').setup()
 require('feline').setup()
