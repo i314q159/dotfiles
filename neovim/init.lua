@@ -2,8 +2,6 @@
 vim.wo.number = true
 
 -- theme
--- vim.cmd[[colorscheme slate]]
-vim.cmd[[colorscheme neon]]
 vim.o.background = "dark"
 vim.o.termguicolors = true
 vim.wo.cursorline = true
@@ -61,9 +59,10 @@ require('packer').startup(function()
     use 'windwp/nvim-autopairs'
     use 'feline-nvim/feline.nvim'
     use 'jghauser/mkdir.nvim' 
-    use 'rafamadriz/neon'
+    use 'tanvirtin/monokai.nvim'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('nvim-autopairs').setup()
 require('feline').setup()
+require('monokai').setup { palette = require('monokai').pro }
