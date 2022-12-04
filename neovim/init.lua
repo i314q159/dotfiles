@@ -60,9 +60,11 @@ require('packer').startup(function()
     use 'feline-nvim/feline.nvim'
     use 'jghauser/mkdir.nvim' 
     use 'tanvirtin/monokai.nvim'
+    use 'Pocco81/auto-save.nvim'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('nvim-autopairs').setup()
 require('feline').setup()
-require('monokai').setup { palette = require('monokai').pro }
+require('monokai').setup({ palette = require('monokai').pro })
+require('auto-save').setup()
