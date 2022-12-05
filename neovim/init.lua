@@ -2,13 +2,13 @@
 vim.wo.number = true
 
 -- theme
-vim.o.background = "dark"
+vim.o.background = 'dark'
 vim.o.termguicolors = true
 vim.wo.cursorline = true
 vim.o.wildmenu = true
 
 -- utf8
-vim.g.encoding = "utf-8"
+vim.g.encoding = 'utf-8'
 vim.o.fileencoding = 'utf-8'
 
 -- file autoread
@@ -47,7 +47,7 @@ vim.o.hlsearch = false
 vim.o.incsearch = false
 
 -- complete
-vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.completeopt = 'menuone,noinsert,noselect'
 
 -- porvider
 vim.o.loaded_python3_provider = 0
@@ -58,8 +58,8 @@ vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
-map("n", "<C-u>", "9k", opt)
-map("n", "<C-d>", "9j", opt)
+map('n', '<C-u>', '9k', opt)
+map('n', '<C-d>', '9j', opt)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
