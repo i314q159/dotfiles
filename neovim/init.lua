@@ -60,6 +60,7 @@ local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
 map('n', '<C-u>', '9k', opt)
 map('n', '<C-d>', '9j', opt)
+map('n', '<C-f>', 'gg=G', opt)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
@@ -70,8 +71,6 @@ require('packer').startup(function()
     use 'tanvirtin/monokai.nvim'
     use 'Pocco81/auto-save.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
 end)
 
 require('nvim_comment').setup({ line_mapping = '<C-]>' })
@@ -80,4 +79,3 @@ require('feline').setup()
 require('monokai').setup({ palette = require('monokai').pro })
 require('auto-save').setup()
 require('indent_blankline').setup()
-require('telescope').setup()
