@@ -61,6 +61,7 @@ local opt = { noremap = true, silent = true }
 map('n', '<C-u>', '9k', opt)
 map('n', '<C-d>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
+map('n', '<C-s>', '<cmd>TSJToggle<cr>', opt)
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
@@ -74,6 +75,7 @@ require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'axieax/urlview.nvim'
     use 'mcauley-penney/tidy.nvim'
+    use 'Wansmer/treesj'
 end)
 
 require('nvim-autopairs').setup()
@@ -82,20 +84,7 @@ require('indent_blankline').setup()
 require('feline').setup()
 require('urlview').setup()
 require('tidy').setup()
-
-require('monokai').setup({
-    palette = require('monokai').pro
-})
-
-require('nvim_comment').setup({
-    line_mapping = '<C-]>'
-})
-
-require('nvim-treesitter.configs').setup({
-    highlight = {
-        enable = true
-    },
-    indent = {
-        enable = true
-    }
-})
+require('treesj').setup()
+require('monokai').setup({ palette = require('monokai').pro })
+require('nvim_comment').setup({ line_mapping = '<C-]>' })
+require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
