@@ -28,7 +28,7 @@ vim.o.swapfile = false
 vim.o.mouse = false
 
 -- tab
-vim.o.tabstop = 4 
+vim.o.tabstop = 4
 vim.bo.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftround = true
@@ -67,15 +67,35 @@ require('packer').startup(function()
     use 'terrortylor/nvim-comment'
     use 'windwp/nvim-autopairs'
     use 'feline-nvim/feline.nvim'
-    use 'jghauser/mkdir.nvim' 
+    use 'jghauser/mkdir.nvim'
     use 'tanvirtin/monokai.nvim'
     use 'Pocco81/auto-save.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'axieax/urlview.nvim'
+    use 'mcauley-penney/tidy.nvim'
 end)
 
-require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('nvim-autopairs').setup()
-require('feline').setup()
-require('monokai').setup({ palette = require('monokai').pro })
 require('auto-save').setup()
 require('indent_blankline').setup()
+require('feline').setup()
+require('urlview').setup()
+require('tidy').setup()
+
+require('monokai').setup({
+    palette = require('monokai').pro
+})
+
+require('nvim_comment').setup({
+    line_mapping = '<C-]>'
+})
+
+require('nvim-treesitter.configs').setup({
+    highlight = {
+        enable = true
+    },
+    indent = {
+        enable = true
+    }
+})
