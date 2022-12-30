@@ -61,30 +61,31 @@ local opt = { noremap = true, silent = true }
 map('n', '<C-u>', '9k', opt)
 map('n', '<C-d>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
-map('n', '<C-s>', '<cmd>TSJToggle<cr>', opt)
+map('n', '<C-l>', '<cmd>TSJToggle<cr>', opt)
 
 require('packer').startup(function()
-    use 'wbthomason/packer.nvim'
-    use 'terrortylor/nvim-comment'
-    use 'windwp/nvim-autopairs'
+    use 'Pocco81/auto-save.nvim'
+    use 'Wansmer/treesj'
+    use 'axieax/urlview.nvim'
     use 'feline-nvim/feline.nvim'
     use 'jghauser/mkdir.nvim'
-    use 'tanvirtin/monokai.nvim'
-    use 'Pocco81/auto-save.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'axieax/urlview.nvim'
     use 'mcauley-penney/tidy.nvim'
-    use 'Wansmer/treesj'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'sbdchd/neoformat'
+    use 'tanvirtin/monokai.nvim'
+    use 'terrortylor/nvim-comment'
+    use 'wbthomason/packer.nvim'
+    use 'windwp/nvim-autopairs'
 end)
 
-require('nvim-autopairs').setup()
 require('auto-save').setup()
-require('indent_blankline').setup()
 require('feline').setup()
-require('urlview').setup()
+require('indent_blankline').setup()
+require('monokai').setup()
+require('nvim-autopairs').setup()
+require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
+require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('tidy').setup()
 require('treesj').setup()
-require('monokai').setup({ palette = require('monokai').pro })
-require('nvim_comment').setup({ line_mapping = '<C-]>' })
-require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
+require('urlview').setup()

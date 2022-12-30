@@ -1,2 +1,2 @@
 #!/usr/bin/bash
-cp ~/.bashrc bashrc
+cp ~/.bashrc bash.rc
