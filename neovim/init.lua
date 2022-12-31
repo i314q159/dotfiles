@@ -1,10 +1,11 @@
 -- number
-vim.wo.number = true
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- theme
 vim.o.background = 'dark'
+vim.o.cursorline = true
 vim.o.termguicolors = true
-vim.wo.cursorline = true
 vim.o.wildmenu = true
 
 -- utf8
@@ -13,38 +14,32 @@ vim.o.fileencoding = 'utf-8'
 
 -- file autoread
 vim.o.autoread = true
-vim.bo.autoread = true
 
--- warp
-vim.o.wrap = false
-vim.wo.wrap = false
+-- wrap
+vim.o.wrap = true
 
 -- backup
 vim.o.backup = false
-vim.o.writebackup = false
 vim.o.swapfile = false
+vim.o.writebackup = false
 
 -- mouse
 vim.o.mouse = false
 
 -- tab
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
+vim.o.autoindent = true
+vim.o.expandtab = true
 vim.o.shiftround = true
 vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
-vim.o.expandtab = true
-vim.bo.expandtab = true
-vim.o.autoindent = true
-vim.bo.autoindent = true
 vim.o.smartindent = true
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
 
 -- search
-vim.o.ignorecase = true
-vim.o.smartcase = true
 vim.o.hlsearch = false
+vim.o.ignorecase = true
 vim.o.incsearch = false
+vim.o.smartcase = true
 
 -- complete
 vim.o.completeopt = 'menuone,noinsert,noselect'
@@ -58,8 +53,8 @@ vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
-map('n', '<C-u>', '9k', opt)
-map('n', '<C-d>', '9j', opt)
+map('n', '<C-k>', '9k', opt)
+map('n', '<C-j>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
 map('n', '<C-l>', '<cmd>TSJToggle<cr>', opt)
 
@@ -71,21 +66,24 @@ require('packer').startup(function()
     use 'jghauser/mkdir.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
     use 'mcauley-penney/tidy.nvim'
+    use 'nguyenvukhang/nvim-toggler'
+    use 'numToStr/Comment.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'sbdchd/neoformat'
     use 'tanvirtin/monokai.nvim'
-    use 'terrortylor/nvim-comment'
     use 'wbthomason/packer.nvim'
     use 'windwp/nvim-autopairs'
 end)
 
+require('Comment').setup({ toggler = { line = '<C-]>' } })
 require('auto-save').setup()
 require('feline').setup()
+require('feline').winbar.setup()
 require('indent_blankline').setup()
 require('monokai').setup()
 require('nvim-autopairs').setup()
+require('nvim-toggler').setup()
 require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
-require('nvim_comment').setup({ line_mapping = '<C-]>' })
 require('tidy').setup()
 require('treesj').setup()
 require('urlview').setup()
