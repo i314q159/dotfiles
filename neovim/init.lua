@@ -80,7 +80,7 @@ require('auto-save').setup()
 require('feline').setup()
 require('feline').winbar.setup()
 require('indent_blankline').setup()
-require('monokai').setup()
+require('monokai').setup { palette = require('monokai').pro }
 require('nvim-autopairs').setup()
 require('nvim-toggler').setup()
 require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
