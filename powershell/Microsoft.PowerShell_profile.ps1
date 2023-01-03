@@ -7,4 +7,5 @@ oh-my-posh init powershell --config='~/scoop/apps/oh-my-posh/current/themes/half
 # alias
 Set-Alias open explorer
 Set-Alias l ls
-
+Set-Alias edge MicrosoftEdge
+Set-Alias tm trash
