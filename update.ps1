@@ -1,2 +1,2 @@
 git add .
-git commit -m "updated"
+git commit -m "update"
