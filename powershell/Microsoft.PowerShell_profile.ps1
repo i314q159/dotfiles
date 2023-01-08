@@ -2,7 +2,7 @@
 Import-Module scoop-completion
 
 # oh-my-posh
-oh-my-posh init powershell --config='~/scoop/apps/oh-my-posh/current/themes/half-life.omp.json' | Invoke-Expression
+oh-my-posh init powershell --config='~/scoop/apps/oh-my-posh/current/themes/onehalf.minimal.omp.json' | Invoke-Expression
 
 # alias
 Set-Alias open explorer
