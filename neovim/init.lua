@@ -63,9 +63,9 @@ require('packer').startup(function()
     use 'Wansmer/treesj'
     use 'axieax/urlview.nvim'
     use 'feline-nvim/feline.nvim'
+    use 'gpanders/editorconfig.nvim'
     use 'jghauser/mkdir.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
-    use 'mcauley-penney/tidy.nvim'
     use 'nguyenvukhang/nvim-toggler'
     use 'numToStr/Comment.nvim'
     use 'nvim-treesitter/nvim-treesitter'
@@ -84,6 +84,6 @@ require('monokai').setup { palette = require('monokai').pro }
 require('nvim-autopairs').setup()
 require('nvim-toggler').setup()
 require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
-require('tidy').setup()
 require('treesj').setup()
 require('urlview').setup()
+
