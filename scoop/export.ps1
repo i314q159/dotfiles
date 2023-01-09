@@ -1,2 +1,2 @@
-scoop cleanup *;
-scoop export > scoop.json;
+scoop cleanup *
+scoop export > scoop.json
