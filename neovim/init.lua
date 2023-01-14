@@ -86,4 +86,3 @@ require('nvim-toggler').setup()
 require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
 require('treesj').setup()
 require('urlview').setup()
-
