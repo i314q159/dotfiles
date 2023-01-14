@@ -1,2 +1,2 @@
-git push gitlab master
-git push github master
+git push gitlab main
+git push github main
