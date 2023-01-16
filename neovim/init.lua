@@ -51,12 +51,13 @@ vim.o.loaded_node_provider = 0
 -- keymap
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
+
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
+
 map('n', '<C-k>', '9k', opt)
 map('n', '<C-j>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
-map('n', '<C-l>', '<cmd>TSJToggle<cr>', opt)
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -73,7 +74,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
     'Pocco81/auto-save.nvim',
-    'Wansmer/treesj',
     'axieax/urlview.nvim',
     'feline-nvim/feline.nvim',
     'gpanders/editorconfig.nvim',
@@ -81,14 +81,10 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     'nguyenvukhang/nvim-toggler',
     'numToStr/Comment.nvim',
-    'nvim-treesitter/nvim-treesitter',
     'sbdchd/neoformat',
     'tanvirtin/monokai.nvim',
-    'wbthomason/packer.nvim',
     'windwp/nvim-autopairs',
-    { 'neoclide/coc.nvim', branch = 'release' },
 })
-
 
 require('Comment').setup({ toggler = { line = '<C-]>' } })
 require('auto-save').setup()
@@ -98,6 +94,4 @@ require('indent_blankline').setup()
 require('monokai').setup { palette = require('monokai').pro }
 require('nvim-autopairs').setup()
 require('nvim-toggler').setup()
-require('nvim-treesitter.configs').setup({ highlight = { enable = true }, indent = { enable = true } })
-require('treesj').setup()
 require('urlview').setup()
