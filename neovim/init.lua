@@ -58,22 +58,37 @@ map('n', '<C-j>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
 map('n', '<C-l>', '<cmd>TSJToggle<cr>', opt)
 
-require('packer').startup(function()
-    use 'Pocco81/auto-save.nvim'
-    use 'Wansmer/treesj'
-    use 'axieax/urlview.nvim'
-    use 'feline-nvim/feline.nvim'
-    use 'gpanders/editorconfig.nvim'
-    use 'jghauser/mkdir.nvim'
-    use 'lukas-reineke/indent-blankline.nvim'
-    use 'nguyenvukhang/nvim-toggler'
-    use 'numToStr/Comment.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
-    use 'sbdchd/neoformat'
-    use 'tanvirtin/monokai.nvim'
-    use 'wbthomason/packer.nvim'
-    use 'windwp/nvim-autopairs'
-end)
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable', -- latest stable release
+        lazypath,
+    })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require('lazy').setup({
+    'Pocco81/auto-save.nvim',
+    'Wansmer/treesj',
+    'axieax/urlview.nvim',
+    'feline-nvim/feline.nvim',
+    'gpanders/editorconfig.nvim',
+    'jghauser/mkdir.nvim',
+    'lukas-reineke/indent-blankline.nvim',
+    'nguyenvukhang/nvim-toggler',
+    'numToStr/Comment.nvim',
+    'nvim-treesitter/nvim-treesitter',
+    'sbdchd/neoformat',
+    'tanvirtin/monokai.nvim',
+    'wbthomason/packer.nvim',
+    'windwp/nvim-autopairs',
+    { 'neoclide/coc.nvim', branch = 'release' },
+})
+
 
 require('Comment').setup({ toggler = { line = '<C-]>' } })
 require('auto-save').setup()
