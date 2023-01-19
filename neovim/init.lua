@@ -58,7 +58,6 @@ vim.g.maplocalleader = ';'
 
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
-
 map('n', '<C-k>', '9k', opt)
 map('n', '<C-j>', '9j', opt)
 map('n', '<C-f>', 'gg=G', opt)
@@ -77,24 +76,77 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    'Pocco81/auto-save.nvim',
-    'axieax/urlview.nvim',
-    'gpanders/editorconfig.nvim',
-    'jghauser/mkdir.nvim',
-    'lukas-reineke/indent-blankline.nvim',
-    'nguyenvukhang/nvim-toggler',
-    'numToStr/Comment.nvim',
-    'ojroques/nvim-hardline',
+    {
+        'Pocco81/auto-save.nvim',
+        config = function()
+            require('auto-save').setup()
+        end,
+    },
+    {
+        'axieax/urlview.nvim',
+        config = function()
+            require('urlview').setup()
+        end,
+    },
+    {
+        'gpanders/editorconfig.nvim',
+    },
+    {
+        'jghauser/mkdir.nvim',
+    },
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require('indent_blankline').setup({
+                show_end_of_line = true
+            })
+        end,
+    },
+    {
+        'mcauley-penney/tidy.nvim',
+        config = function()
+            require('tidy').setup()
+        end,
+    },
+    {
+        'nguyenvukhang/nvim-toggler',
+        config = function()
+            require('nvim-toggler').setup()
+        end,
+    },
+    {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup({
+                toggler = { line = '<C-]>' }
+            })
+        end,
+    },
+    {
+        'ojroques/nvim-hardline',
+        config = function()
+            require('hardline').setup()
+        end,
+    },
     'sbdchd/neoformat',
-    'tanvirtin/monokai.nvim',
-    'windwp/nvim-autopairs',
+    {
+        'tanvirtin/monokai.nvim',
+        config = function()
+            require('monokai').setup({
+                palette = require('monokai').pro
+            })
+        end,
+    },
+    {
+        'windwp/nvim-autopairs',
+        config = function()
+            require('nvim-autopairs').setup()
+        end,
+    },
+    {
+        'SidOfc/carbon.nvim',
+        config = function()
+            require('carbon').setup()
+        end,
+    },
 })
-
-require('Comment').setup({ toggler = { line = '<C-]>' } })
-require('auto-save').setup()
-require('hardline').setup({  bufferline = true })
-require('indent_blankline').setup({ show_end_of_line = true })
-require('monokai').setup { palette = require('monokai').pro }
-require('nvim-autopairs').setup()
-require('nvim-toggler').setup()
-require('urlview').setup()
