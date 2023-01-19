@@ -48,6 +48,10 @@ vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.loaded_python3_provider = 0
 vim.o.loaded_node_provider = 0
 
+-- list
+vim.opt.list = true
+vim.opt.listchars:append "eol:↴"
+
 -- keymap
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
@@ -75,12 +79,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     'Pocco81/auto-save.nvim',
     'axieax/urlview.nvim',
-    'feline-nvim/feline.nvim',
     'gpanders/editorconfig.nvim',
     'jghauser/mkdir.nvim',
     'lukas-reineke/indent-blankline.nvim',
     'nguyenvukhang/nvim-toggler',
     'numToStr/Comment.nvim',
+    'ojroques/nvim-hardline',
     'sbdchd/neoformat',
     'tanvirtin/monokai.nvim',
     'windwp/nvim-autopairs',
@@ -88,9 +92,8 @@ require('lazy').setup({
 
 require('Comment').setup({ toggler = { line = '<C-]>' } })
 require('auto-save').setup()
-require('feline').setup()
-require('feline').winbar.setup()
-require('indent_blankline').setup()
+require('hardline').setup({  bufferline = true })
+require('indent_blankline').setup({ show_end_of_line = true })
 require('monokai').setup { palette = require('monokai').pro }
 require('nvim-autopairs').setup()
 require('nvim-toggler').setup()
