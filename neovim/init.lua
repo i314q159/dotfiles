@@ -143,10 +143,4 @@ require('lazy').setup({
             require('nvim-autopairs').setup()
         end,
     },
-    {
-        'SidOfc/carbon.nvim',
-        config = function()
-            require('carbon').setup()
-        end,
-    },
 })
