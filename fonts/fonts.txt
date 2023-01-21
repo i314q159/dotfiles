@@ -1,1 +1,2 @@
-cascadia code
+Cascadia Code
+FiraCode Nerd Font
