@@ -1,2 +1,2 @@
 # https://prettier.io
-yarn global add prettier
+pnpm -g add prettier

@@ -1,1 +1,1 @@
-yarn global add typescript ts-node
+pnpm -g add typescript
