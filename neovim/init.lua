@@ -1,5 +1,4 @@
--- number
-vim.o.number = true
+-- number vim.o.number = true
 vim.o.relativenumber = true
 
 -- theme
@@ -61,9 +60,16 @@ vim.g.maplocalleader = ";"
 
 local map = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
+
+map("n", "<A-h>", "<C-w>h", opt)
+map("n", "<A-j>", "<C-w>j", opt)
+map("n", "<A-k>", "<C-w>k", opt)
+map("n", "<A-l>", "<C-w>l", opt)
+
 map("n", "<C-k>", "9k", opt)
 map("n", "<C-j>", "9j", opt)
-map("n", "<C-f>", "gg=G", opt)
+
+map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -139,8 +145,33 @@ require("lazy").setup({
 		config = function()
 			require("github-theme").setup({
 				theme_style = "dark",
-				function_style = "bold",
+				function_style = "italic",
 			})
+		end,
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		tag = "nightly",
+		config = function()
+			require("nvim-tree").setup({
+				filters = {
+					dotfiles = true,
+				},
+				git = {
+					enable = true,
+					ignore = true,
+				},
+				view = {
+					adaptive_size = true,
+					number = true,
+				},
+			})
+		end,
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup()
 		end,
 	},
 })
