@@ -65,11 +65,9 @@ map("n", "<A-h>", "<C-w>h", opt)
 map("n", "<A-j>", "<C-w>j", opt)
 map("n", "<A-k>", "<C-w>k", opt)
 map("n", "<A-l>", "<C-w>l", opt)
-
 map("n", "<C-k>", "9k", opt)
 map("n", "<C-j>", "9j", opt)
-
-map("n", "<A-m>", ":NvimTreeToggle<CR>", opt)
+map("n", "<C-f>", "gg=G", opt)
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -78,16 +76,17 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "sbdchd/neoformat" },
-	{ "gpanders/editorconfig.nvim" },
-	{ "jghauser/mkdir.nvim" },
+	{
+		"sbdchd/neoformat",
+		"jghauser/mkdir.nvim",
+	},
 	{
 		"Pocco81/auto-save.nvim",
 		config = function()
@@ -141,37 +140,11 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"projekt0n/github-nvim-theme",
+		"tanvirtin/monokai.nvim",
 		config = function()
-			require("github-theme").setup({
-				theme_style = "dark",
-				function_style = "italic",
+			require("monokai").setup({
+				palette = require("monokai").pro,
 			})
-		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-		tag = "nightly",
-		config = function()
-			require("nvim-tree").setup({
-				filters = {
-					dotfiles = true,
-				},
-				git = {
-					enable = true,
-					ignore = true,
-				},
-				view = {
-					adaptive_size = true,
-					number = true,
-				},
-			})
-		end,
-	},
-	{
-		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("nvim-web-devicons").setup()
 		end,
 	},
 })
