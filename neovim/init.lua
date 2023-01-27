@@ -1,5 +1,5 @@
--- number vim.o.number = true
-vim.o.relativenumber = true
+-- number
+vim.o.number = true
 
 -- theme
 vim.o.background = "dark"
