@@ -1,0 +1,7 @@
+# ~/.cargo/config.toml
+
+[source.crates-io]
+replace-with = 'nju'
+
+[source.nju]
+registry = "https://mirror.nju.edu.cn/git/crates.io-index.git"
