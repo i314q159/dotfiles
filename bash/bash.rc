@@ -4,7 +4,7 @@
 source /usr/share/autojump/autojump.bash
 
 # PS1
-PS1='[\u@\h in \w]\$'
+PS1='[\u@\h \w]\$'
 
 # alias
 alias l='ls -al --color=auto'
