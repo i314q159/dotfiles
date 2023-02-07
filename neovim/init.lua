@@ -1,56 +1,35 @@
--- window
-vim.o.background = "dark"
-vim.o.cursorline = true
-vim.o.showcmd = true
-vim.o.showmatch = true
-vim.o.termguicolors = true
-vim.o.wildmenu = true
-vim.o.showmode = false
-
--- file
-vim.o.number = true
 vim.g.encoding = "utf-8"
-vim.o.fileencoding = "utf-8"
-vim.o.autoread = true
-vim.o.wrap = true
-vim.o.backup = false
-vim.o.swapfile = false
-vim.o.writebackup = false
-
--- mouse
-vim.o.mouse = false
-
--- tab
 vim.o.autoindent = true
+vim.o.autoread = true
+vim.o.background = "dark"
+vim.o.backup = false
+vim.o.completeopt = "menuone,preview"
+vim.o.cursorline = true
 vim.o.expandtab = true
-vim.o.shiftround = true
-vim.o.shiftwidth = 4
-vim.o.smartindent = true
-vim.o.softtabstop = 4
-vim.o.tabstop = 4
-
--- search
+vim.o.fileencoding = "utf-8"
 vim.o.hlsearch = false
 vim.o.ignorecase = true
+vim.o.inccomand = "nosplit"
 vim.o.incsearch = false
-vim.o.smartcase = true
-
--- complete
-vim.o.completeopt = "menuone,preview"
-
--- porvider
-vim.o.loaded_python3_provider = 1
 vim.o.loaded_node_provider = 0
-
--- list
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-
--- split
+vim.o.loaded_python3_provider = 0
+vim.o.mouse = false
+vim.o.number = true
+vim.o.shiftround = true
+vim.o.shiftwidth = 4
+vim.o.showcmd = true
+vim.o.showmatch = true
+vim.o.showmode = false
+vim.o.smartcase = true
+vim.o.smartindent = true
+vim.o.softtabstop = 4
 vim.o.splitbelow = true
-
--- terminal
-vim.o.autochdir = true
+vim.o.swapfile = false
+vim.o.tabstop = 4
+vim.o.termguicolors = true
+vim.o.wildmenu = true
+vim.o.wrap = true
+vim.o.writebackup = false
 
 -- keymap
 vim.g.mapleader = ";"
@@ -102,7 +81,6 @@ require("lazy").setup({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("indent_blankline").setup({
-				show_end_of_line = true,
 				show_trailing_blankline_indent = false,
 			})
 		end,
