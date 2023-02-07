@@ -1,23 +1,18 @@
--- number
-vim.o.number = true
-
--- theme
+-- window
 vim.o.background = "dark"
 vim.o.cursorline = true
+vim.o.showcmd = true
+vim.o.showmatch = true
 vim.o.termguicolors = true
 vim.o.wildmenu = true
+vim.o.showmode = false
 
--- utf8
+-- file
+vim.o.number = true
 vim.g.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
-
--- file autoread
 vim.o.autoread = true
-
--- wrap
 vim.o.wrap = true
-
--- backup
 vim.o.backup = false
 vim.o.swapfile = false
 vim.o.writebackup = false
@@ -41,10 +36,10 @@ vim.o.incsearch = false
 vim.o.smartcase = true
 
 -- complete
-vim.o.completeopt = "menuone,noinsert,noselect"
+vim.o.completeopt = "menuone,preview"
 
 -- porvider
-vim.o.loaded_python3_provider = 0
+vim.o.loaded_python3_provider = 1
 vim.o.loaded_node_provider = 0
 
 -- list
@@ -53,6 +48,9 @@ vim.opt.listchars:append("eol:↴")
 
 -- split
 vim.o.splitbelow = true
+
+-- terminal
+vim.o.autochdir = true
 
 -- keymap
 vim.g.mapleader = ";"
@@ -86,6 +84,7 @@ require("lazy").setup({
 	{
 		"sbdchd/neoformat",
 		"jghauser/mkdir.nvim",
+		"f-person/git-blame.nvim",
 	},
 	{
 		"Pocco81/auto-save.nvim",
@@ -104,6 +103,7 @@ require("lazy").setup({
 		config = function()
 			require("indent_blankline").setup({
 				show_end_of_line = true,
+				show_trailing_blankline_indent = false,
 			})
 		end,
 	},
@@ -130,7 +130,13 @@ require("lazy").setup({
 	{
 		"ojroques/nvim-hardline",
 		config = function()
-			require("hardline").setup()
+			require("hardline").setup({
+				theme = "one",
+				bufferline = true,
+				bufferline_settings = {
+					show_index = true,
+				},
+			})
 		end,
 	},
 	{
@@ -144,6 +150,17 @@ require("lazy").setup({
 		config = function()
 			require("monokai").setup({
 				palette = require("monokai").pro,
+			})
+		end,
+	},
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("toggleterm").setup({
+				open_mapping = "<C-t>",
+				direction = "float",
+				shade_terminals = true,
+				shell = "powershell -nologo",
 			})
 		end,
 	},
