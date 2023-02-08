@@ -52,8 +52,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"git",
 		"clone",
 		"--filter=blob:none",
-		-- "https://github.com/folke/lazy.nvim.git",
-		"https://hub.fastgit.xyz/folke/lazy.nvim.git",
+		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -62,7 +61,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	git = {
-		url_format = "https://hub.fastgit.xyz/%s.git",
+		url_format = "https://github.com/%s.git",
 	},
 	{
 		"sbdchd/neoformat",
