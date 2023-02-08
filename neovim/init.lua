@@ -31,21 +31,21 @@ vim.o.wildmenu = true
 vim.o.wrap = true
 vim.o.writebackup = false
 
--- keymap
+-- leader
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
-local map = vim.api.nvim_set_keymap
-local opt = { noremap = true, silent = true }
+-- keymap
+vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-f>", "gg=G", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "9j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "9k", { noremap = true, silent = true })
 
-map("n", "<A-h>", "<C-w>h", opt)
-map("n", "<A-j>", "<C-w>j", opt)
-map("n", "<A-k>", "<C-w>k", opt)
-map("n", "<A-l>", "<C-w>l", opt)
-map("n", "<C-k>", "9k", opt)
-map("n", "<C-j>", "9j", opt)
-map("n", "<C-f>", "gg=G", opt)
-
+-- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -139,6 +139,21 @@ require("lazy").setup({
 				direction = "float",
 				shade_terminals = true,
 				shell = "powershell -nologo",
+			})
+		end,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup({
+				signs = {
+					add = { text = "+" },
+					change = { text = "*" },
+					untracked = { text = "┆" },
+					delete = { text = "_" },
+					topdelete = { text = "‾" },
+					changedelete = { text = "~" },
+				},
 			})
 		end,
 	},
