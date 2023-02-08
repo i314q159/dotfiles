@@ -148,7 +148,7 @@ require("lazy").setup({
 			require("gitsigns").setup({
 				signs = {
 					add = { text = "+" },
-					change = { text = "*" },
+					change = { text = "+" },
 					untracked = { text = "┆" },
 					delete = { text = "_" },
 					topdelete = { text = "‾" },
