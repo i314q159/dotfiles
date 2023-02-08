@@ -52,7 +52,8 @@ if not vim.loop.fs_stat(lazypath) then
 		"git",
 		"clone",
 		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
+		-- "https://github.com/folke/lazy.nvim.git",
+		"https://hub.fastgit.xyz/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -60,6 +61,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	git = {
+		url_format = "https://hub.fastgit.xyz/%s.git",
+	},
 	{
 		"sbdchd/neoformat",
 		"jghauser/mkdir.nvim",
@@ -81,14 +85,9 @@ require("lazy").setup({
 		"lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("indent_blankline").setup({
+				char = "┆",
 				show_trailing_blankline_indent = false,
 			})
-		end,
-	},
-	{
-		"mcauley-penney/tidy.nvim",
-		config = function()
-			require("tidy").setup()
 		end,
 	},
 	{
@@ -139,21 +138,6 @@ require("lazy").setup({
 				direction = "float",
 				shade_terminals = true,
 				shell = "powershell -nologo",
-			})
-		end,
-	},
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup({
-				signs = {
-					add = { text = "+" },
-					change = { text = "+" },
-					untracked = { text = "┆" },
-					delete = { text = "_" },
-					topdelete = { text = "‾" },
-					changedelete = { text = "~" },
-				},
 			})
 		end,
 	},
