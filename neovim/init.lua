@@ -60,28 +60,29 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	git = {
-		url_format = "https://ghproxy.com/https://github.com/%s.git",
+	{
+		url = "https://ghproxy.com/https://github.com/sbdchd/neoformat",
 	},
 	{
-		"sbdchd/neoformat",
-		"jghauser/mkdir.nvim",
-		"f-person/git-blame.nvim",
+		url = "https://ghproxy.com/https://github.com/jghauser/mkdir.nvim",
 	},
 	{
-		"Pocco81/auto-save.nvim",
+		url = "https://ghproxy.com/https://github.com/f-person/git-blame.nvim",
+	},
+	{
+		url = "https://ghproxy.com/https://github.com/Pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup()
 		end,
 	},
 	{
-		"axieax/urlview.nvim",
+		url = "https://ghproxy.com/https://github.com/axieax/urlview.nvim",
 		config = function()
 			require("urlview").setup()
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
+		url = "https://ghproxy.com/https://github.com/lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("indent_blankline").setup({
 				char = "┆",
@@ -90,13 +91,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"nguyenvukhang/nvim-toggler",
+		url = "https://ghproxy.com/https://github.com/nguyenvukhang/nvim-toggler",
 		config = function()
 			require("nvim-toggler").setup()
 		end,
 	},
 	{
-		"numToStr/Comment.nvim",
+		url = "https://ghproxy.com/https://github.com/numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
 				toggler = { line = "<C-]>" },
@@ -104,7 +105,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"ojroques/nvim-hardline",
+		url = "https://ghproxy.com/https://github.com/ojroques/nvim-hardline",
 		config = function()
 			require("hardline").setup({
 				theme = "one",
@@ -116,13 +117,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"windwp/nvim-autopairs",
+		url = "https://ghproxy.com/https://github.com/windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
 	},
 	{
-		"tanvirtin/monokai.nvim",
+		url = "https://ghproxy.com/https://github.com/tanvirtin/monokai.nvim",
 		config = function()
 			require("monokai").setup({
 				palette = require("monokai").pro,
@@ -130,7 +131,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"akinsho/toggleterm.nvim",
+		url = "https://ghproxy.com/https://github.com/akinsho/toggleterm.nvim",
 		config = function()
 			require("toggleterm").setup({
 				open_mapping = "<C-t>",
