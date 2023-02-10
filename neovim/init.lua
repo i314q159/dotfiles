@@ -41,7 +41,6 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-f>", "gg=G", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-j>", "9j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-k>", "9k", { noremap = true, silent = true })
 
