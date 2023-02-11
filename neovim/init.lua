@@ -46,12 +46,13 @@ vim.api.nvim_set_keymap("n", "<C-k>", "9k", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local mirror = "https://ghproxy.com/https://github.com/"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
+		mirror .. "folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -60,24 +61,28 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"sbdchd/neoformat",
-		"jghauser/mkdir.nvim",
-		"f-person/git-blame.nvim",
+		url = mirror .. "sbdchd/neoformat.git",
 	},
 	{
-		"Pocco81/auto-save.nvim",
+		url = mirror .. "jghauser/mkdir.nvim",
+	},
+	{
+		url = mirror .. "f-person/git-blame.nvim",
+	},
+	{
+		url = mirror .. "Pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup()
 		end,
 	},
 	{
-		"axieax/urlview.nvim",
+		url = mirror .. "axieax/urlview.nvim",
 		config = function()
 			require("urlview").setup()
 		end,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
+		url = mirror .. "lukas-reineke/indent-blankline.nvim",
 		config = function()
 			require("indent_blankline").setup({
 				char = "┆",
@@ -86,13 +91,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"nguyenvukhang/nvim-toggler",
+		url = mirror .. "nguyenvukhang/nvim-toggler",
 		config = function()
 			require("nvim-toggler").setup()
 		end,
 	},
 	{
-		"numToStr/Comment.nvim",
+		url = mirror .. "numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
 				toggler = { line = "<C-]>" },
@@ -100,7 +105,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"ojroques/nvim-hardline",
+		url = mirror .. "ojroques/nvim-hardline",
 		config = function()
 			require("hardline").setup({
 				theme = "one",
@@ -112,13 +117,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"windwp/nvim-autopairs",
+		url = mirror .. "windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
 	},
 	{
-		"tanvirtin/monokai.nvim",
+		url = mirror .. "tanvirtin/monokai.nvim",
 		config = function()
 			require("monokai").setup({
 				palette = require("monokai").pro,
@@ -126,7 +131,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		"akinsho/toggleterm.nvim",
+		url = mirror .. "akinsho/toggleterm.nvim",
 		config = function()
 			require("toggleterm").setup({
 				open_mapping = "<C-t>",
