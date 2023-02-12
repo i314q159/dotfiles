@@ -64,10 +64,11 @@ require("lazy").setup({
 		url = mirror .. "sbdchd/neoformat.git",
 	},
 	{
-		url = mirror .. "jghauser/mkdir.nvim",
+		url = mirror .. "f-person/git-blame.nvim",
 	},
 	{
-		url = mirror .. "f-person/git-blame.nvim",
+		url = mirror .. "jghauser/mkdir.nvim",
+
 	},
 	{
 		url = mirror .. "Pocco81/auto-save.nvim",
@@ -139,6 +140,12 @@ require("lazy").setup({
 				shade_terminals = true,
 				shell = "powershell -nologo",
 			})
+		end,
+	},
+	{
+		url = mirror .. "toppair/reach.nvim",
+		config = function()
+			require("reach").setup()
 		end,
 	},
 })
