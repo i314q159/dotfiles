@@ -68,7 +68,6 @@ require("lazy").setup({
 	},
 	{
 		url = mirror .. "jghauser/mkdir.nvim",
-
 	},
 	{
 		url = mirror .. "Pocco81/auto-save.nvim",
@@ -146,6 +145,12 @@ require("lazy").setup({
 		url = mirror .. "toppair/reach.nvim",
 		config = function()
 			require("reach").setup()
+		end,
+	},
+	{
+		url = mirror .. "ethanholz/nvim-lastplace",
+		config = function()
+			require("nvim-lastplace").setup()
 		end,
 	},
 })
