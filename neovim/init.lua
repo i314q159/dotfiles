@@ -52,7 +52,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"git",
 		"clone",
 		"--filter=blob:none",
-		mirror .. "folke/lazy.nvim.git",
+		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -61,7 +61,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		url = mirror .. "sbdchd/neoformat.git",
+		url = mirror .. "sbdchd/neoformat",
 	},
 	{
 		url = mirror .. "f-person/git-blame.nvim",
