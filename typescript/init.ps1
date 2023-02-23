@@ -1,1 +1,0 @@
-pnpm -g add typescript
