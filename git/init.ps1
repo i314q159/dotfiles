@@ -1,4 +1,3 @@
-git config --global credential.helper store
 git config --global core.editor nvim
 git config --global user.name i314q159
 git config --global user.email i314q159@outlook.com
