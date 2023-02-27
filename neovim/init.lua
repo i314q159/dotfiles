@@ -153,4 +153,10 @@ require("lazy").setup({
 			require("nvim-lastplace").setup()
 		end,
 	},
+	{
+		url = mirror .. "stevearc/dressing.nvim",
+		config = function()
+			require("dressing").setup()
+		end,
+	},
 })
