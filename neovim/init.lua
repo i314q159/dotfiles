@@ -105,13 +105,17 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "ojroques/nvim-hardline",
+		url = mirror .. "nvim-lualine/lualine.nvim",
 		config = function()
-			require("hardline").setup({
-				theme = "one",
-				bufferline = true,
-				bufferline_settings = {
-					show_index = true,
+			require("lualine").setup({
+				theme = "auto'",
+				options = {
+					icons_enabled = true,
+					section_separators = "",
+					component_separators = "",
+				},
+				sections = {
+					lualine_x = { "encoding", "filetype" },
 				},
 			})
 		end,
