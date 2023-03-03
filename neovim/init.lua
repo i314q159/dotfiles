@@ -108,14 +108,10 @@ require("lazy").setup({
 		url = mirror .. "nvim-lualine/lualine.nvim",
 		config = function()
 			require("lualine").setup({
-				theme = "auto'",
 				options = {
-					icons_enabled = true,
+					theme = "horizon",
 					section_separators = "",
 					component_separators = "",
-				},
-				sections = {
-					lualine_x = { "encoding", "filetype" },
 				},
 			})
 		end,
