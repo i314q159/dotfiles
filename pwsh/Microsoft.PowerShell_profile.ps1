@@ -11,8 +11,3 @@ oh-my-posh init powershell --config='~/scoop/apps/oh-my-posh/current/themes/oneh
 Set-Alias open explorer
 Set-Alias edge MicrosoftEdge
 Set-Alias tm recycle-bin
-
-# functions
-function l {
-    lsd -al
-}
