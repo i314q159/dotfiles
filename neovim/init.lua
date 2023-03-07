@@ -110,6 +110,7 @@ require("lazy").setup({
 			require("lualine").setup({
 				options = {
 					theme = "horizon",
+					icons_enabled = false,
 					section_separators = "",
 					component_separators = "",
 				},
