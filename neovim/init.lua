@@ -109,7 +109,6 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "horizon",
 					icons_enabled = false,
 					section_separators = "",
 					component_separators = "",
@@ -158,6 +157,12 @@ require("lazy").setup({
 		url = mirror .. "stevearc/dressing.nvim",
 		config = function()
 			require("dressing").setup()
+		end,
+	},
+	{
+		url = mirror .. "folke/which-key.nvim",
+		config = function()
+			require("which-key").setup()
 		end,
 	},
 })
