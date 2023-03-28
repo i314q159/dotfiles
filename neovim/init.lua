@@ -3,7 +3,7 @@ vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
 vim.o.backup = false
-vim.o.completeopt = "menuone,preview"
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
@@ -36,13 +36,22 @@ vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
 -- keymap
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", "9j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-k>", "9k", { noremap = true, silent = true })
+local opts = {
+	noremap = true, -- non-recursive
+	silent = true, -- do not show message
+}
+
+vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", opts)
+vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", opts)
+vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", opts)
+vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", opts)
+
+vim.api.nvim_set_keymap("n", "<C-k>", ":resize -2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-j>", ":resize +2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
+
+vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", opts)
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -157,12 +166,6 @@ require("lazy").setup({
 		url = mirror .. "stevearc/dressing.nvim",
 		config = function()
 			require("dressing").setup()
-		end,
-	},
-	{
-		url = mirror .. "folke/which-key.nvim",
-		config = function()
-			require("which-key").setup()
 		end,
 	},
 })
