@@ -140,17 +140,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "akinsho/toggleterm.nvim",
-		config = function()
-			require("toggleterm").setup({
-				open_mapping = "<C-t>",
-				direction = "float",
-				shade_terminals = true,
-				shell = "powershell -nologo",
-			})
-		end,
-	},
-	{
 		url = mirror .. "toppair/reach.nvim",
 		config = function()
 			require("reach").setup()
