@@ -3,7 +3,6 @@ vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
 vim.o.backup = false
-vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
@@ -30,28 +29,28 @@ vim.o.termguicolors = true
 vim.o.wildmenu = true
 vim.o.wrap = true
 vim.o.writebackup = false
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
+-- colorscheme
+vim.cmd("colorscheme lunaperche")
 
 -- leader
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
 -- keymap
-local opts = {
-	noremap = true, -- non-recursive
-	silent = true, -- do not show message
-}
 
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", opts)
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", opts)
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", opts)
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", opts)
+vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-k>", ":resize -2<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-j>", ":resize +2<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-h>", ":vertical resize -2<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-l>", ":vertical resize +2<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-k>", ":resize -2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -77,6 +76,9 @@ require("lazy").setup({
 	},
 	{
 		url = mirror .. "jghauser/mkdir.nvim",
+	},
+	{
+		url = mirror .. "sitiom/nvim-numbertoggle",
 	},
 	{
 		url = mirror .. "Pocco81/auto-save.nvim",
@@ -132,14 +134,6 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "tanvirtin/monokai.nvim",
-		config = function()
-			require("monokai").setup({
-				palette = require("monokai").pro,
-			})
-		end,
-	},
-	{
 		url = mirror .. "toppair/reach.nvim",
 		config = function()
 			require("reach").setup()
@@ -155,6 +149,20 @@ require("lazy").setup({
 		url = mirror .. "stevearc/dressing.nvim",
 		config = function()
 			require("dressing").setup()
+		end,
+	},
+	{
+		url = mirror .. "akinsho/bufferline.nvim",
+		version = "*",
+		config = function()
+			require("bufferline").setup()
+		end,
+	},
+	{
+		url = mirror .. "xiyaowong/transparent.nvim",
+		config = function()
+			require("transparent").setup()
+			vim.cmd("TransparentEnable")
 		end,
 	},
 })
