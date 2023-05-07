@@ -4,17 +4,23 @@
 -- aarch64-apple-darwin - macOS (Apple Silicon)
 
 local wezterm = require("wezterm")
+local mux = wezterm.mux
 
-local M = {
+local config = {
 	window_background_opacity = 0.5,
 	font_size = 12.0,
 }
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	M.font = wezterm.font("Cascadia Code")
-	M.default_prog = { "powershell", "-nologo" }
+	config.font = wezterm.font("Cascadia Code")
+	config.default_prog = { "powershell", "-nologo" }
 elseif wezterm.target_triple == "x86_64-unknown-linux" then
-	M.default_prog = { "bash" }
+	config.default_prog = { "bash" }
 end
 
-return M
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
+
+return config
