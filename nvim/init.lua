@@ -31,9 +31,6 @@ vim.o.wrap = true
 vim.o.writebackup = false
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
--- colorscheme
-vim.cmd("colorscheme lunaperche")
-
 -- leader
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
@@ -90,15 +87,6 @@ require("lazy").setup({
 		url = mirror .. "axieax/urlview.nvim",
 		config = function()
 			require("urlview").setup()
-		end,
-	},
-	{
-		url = mirror .. "lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("indent_blankline").setup({
-				char = "┆",
-				show_trailing_blankline_indent = false,
-			})
 		end,
 	},
 	{
@@ -159,10 +147,13 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "xiyaowong/transparent.nvim",
+		url = mirror .. "Mofiqul/dracula.nvim",
 		config = function()
-			require("transparent").setup()
-			vim.cmd("TransparentEnable")
+			require("dracula").setup({
+				transparent_bg = true,
+				italic_comment = true,
+			})
+			vim.cmd("colorscheme dracula")
 		end,
 	},
 })
