@@ -36,7 +36,6 @@ vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
 -- keymap
-
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
@@ -47,7 +46,7 @@ vim.api.nvim_set_keymap("n", "<C-j>", ":resize +2<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<C-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-c>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-b>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -154,6 +153,18 @@ require("lazy").setup({
 				italic_comment = true,
 			})
 			vim.cmd("colorscheme dracula")
+		end,
+	},
+	{
+		url = mirror .. "NvChad/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
+	{
+		url = mirror .. "chentoast/marks.nvim",
+		config = function()
+			require("marks").setup()
 		end,
 	},
 })
