@@ -1,3 +1,4 @@
+-- vim.o
 vim.g.encoding = "utf-8"
 vim.o.autoindent = true
 vim.o.autoread = true
@@ -10,8 +11,6 @@ vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.inccomand = "nosplit"
 vim.o.incsearch = false
-vim.o.loaded_node_provider = 0
-vim.o.loaded_python3_provider = 0
 vim.o.mouse = false
 vim.o.number = true
 vim.o.shiftround = true
@@ -29,11 +28,16 @@ vim.o.termguicolors = true
 vim.o.wildmenu = true
 vim.o.wrap = true
 vim.o.writebackup = false
+
+-- vim,opt
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- leader
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
 
 -- keymap
 vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
@@ -41,12 +45,7 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<C-k>", ":resize -2<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-j>", ":resize +2<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap("n", "<C-b>", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -165,6 +164,24 @@ require("lazy").setup({
 		url = mirror .. "chentoast/marks.nvim",
 		config = function()
 			require("marks").setup()
+		end,
+	},
+	{
+		url = mirror .. "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup()
+		end,
+	},
+	{
+		url = mirror .. "lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>p",
+				"<Cmd>Gitsigns preview_hunk<CR>",
+				{ noremap = true, silent = true }
+			)
 		end,
 	},
 })
