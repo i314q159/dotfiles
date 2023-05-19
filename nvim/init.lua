@@ -184,4 +184,21 @@ require("lazy").setup({
 			)
 		end,
 	},
+	{
+		url = mirror .. "CRAG666/code_runner.nvim",
+		config = true,
+		config = function()
+			require("code_runner").setup({
+				filetype = {
+					python = "python3 -u",
+					typescript = "deno run",
+					lua = "lua",
+					rust = "cargo run",
+					go = "go run .",
+					ps1 = "powershell",
+				},
+			})
+			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
+		end,
+	},
 })
