@@ -1,1 +1,1 @@
-sudo mysqld --install
+mysqld --install
