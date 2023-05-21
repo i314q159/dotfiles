@@ -178,7 +178,7 @@ require("lazy").setup({
 			require("gitsigns").setup()
 			vim.api.nvim_set_keymap(
 				"n",
-				"<leader>p",
+				"<leader>h",
 				"<Cmd>Gitsigns preview_hunk<CR>",
 				{ noremap = true, silent = true }
 			)
@@ -186,7 +186,6 @@ require("lazy").setup({
 	},
 	{
 		url = mirror .. "CRAG666/code_runner.nvim",
-		config = true,
 		config = function()
 			require("code_runner").setup({
 				filetype = {
@@ -199,6 +198,22 @@ require("lazy").setup({
 				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
+		end,
+	},
+	{
+		url = mirror .. "nvim-tree/nvim-tree.lua",
+		config = function()
+			require("nvim-tree").setup()
+			vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+		end,
+	},
+	{
+		url = mirror .. "folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup()
+			vim.api.nvim_set_keymap("n", "<leader>k", "<Cmd>WhichKey<CR>", { noremap = true, silent = true })
 		end,
 	},
 })
