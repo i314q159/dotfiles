@@ -148,7 +148,7 @@ require("lazy").setup({
 		url = mirror .. "Mofiqul/dracula.nvim",
 		config = function()
 			require("dracula").setup({
-				transparent_bg = true,
+				transparent_bg = false,
 				italic_comment = true,
 			})
 			vim.cmd("colorscheme dracula")
@@ -193,7 +193,6 @@ require("lazy").setup({
 					typescript = "deno run",
 					lua = "lua",
 					rust = "cargo run",
-					go = "go run .",
 					ps1 = "powershell",
 				},
 			})
@@ -210,8 +209,6 @@ require("lazy").setup({
 	{
 		url = mirror .. "folke/which-key.nvim",
 		config = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
 			require("which-key").setup()
 			vim.api.nvim_set_keymap("n", "<leader>k", "<Cmd>WhichKey<CR>", { noremap = true, silent = true })
 		end,

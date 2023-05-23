@@ -1,3 +1,4 @@
 sudo zypper in -y opi
-# opi vscode
-# opi edge
+
+opi vscode
+opi edge
