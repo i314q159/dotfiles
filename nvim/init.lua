@@ -28,6 +28,7 @@ vim.o.termguicolors = true
 vim.o.wildmenu = true
 vim.o.wrap = true
 vim.o.writebackup = false
+vim.o.autochdir = true
 
 -- vim,opt
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -46,6 +47,7 @@ vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -78,7 +80,10 @@ require("lazy").setup({
 	{
 		url = mirror .. "Pocco81/auto-save.nvim",
 		config = function()
-			require("auto-save").setup()
+			require("auto-save").setup({
+				enabled = true,
+				events = { "InsertLeave", "TextChanged" },
+			})
 		end,
 	},
 	{
@@ -106,7 +111,7 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					icons_enabled = false,
+					icons_enabled = true,
 					section_separators = "",
 					component_separators = "",
 				},
@@ -148,7 +153,7 @@ require("lazy").setup({
 		url = mirror .. "Mofiqul/dracula.nvim",
 		config = function()
 			require("dracula").setup({
-				transparent_bg = false,
+				transparent_bg = true,
 				italic_comment = true,
 			})
 			vim.cmd("colorscheme dracula")
@@ -189,11 +194,14 @@ require("lazy").setup({
 		config = function()
 			require("code_runner").setup({
 				filetype = {
-					python = "python3 -u",
-					typescript = "deno run",
+					go = "go run",
+					javascript = "node",
 					lua = "lua",
-					rust = "cargo run",
 					ps1 = "powershell",
+					python = "python3 -u",
+					rust = "cargo run",
+					sh = "bash",
+					typescript = "deno run",
 				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
@@ -209,8 +217,13 @@ require("lazy").setup({
 	{
 		url = mirror .. "folke/which-key.nvim",
 		config = function()
-			require("which-key").setup()
+			require("which-key").setup({
+				auto_show = false,
+			})
 			vim.api.nvim_set_keymap("n", "<leader>k", "<Cmd>WhichKey<CR>", { noremap = true, silent = true })
 		end,
+	},
+	{
+		url = mirror .. "ms-jpq/coq_nvim",
 	},
 })

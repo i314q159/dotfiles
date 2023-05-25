@@ -7,7 +7,7 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 
 local config = {
-	window_background_opacity = 0.5,
+	window_background_opacity = 0.7,
 	font_size = 12.0,
 }
 
