@@ -1,5 +1,4 @@
 -- vim.o
-vim.g.encoding = "utf-8"
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
@@ -24,16 +23,17 @@ vim.o.softtabstop = 4
 vim.o.splitbelow = true
 vim.o.swapfile = false
 vim.o.tabstop = 4
-vim.o.termguicolors = true
 vim.o.wildmenu = true
-vim.o.wrap = true
+vim.o.wrap = false
 vim.o.writebackup = false
 vim.o.autochdir = true
 
 -- vim,opt
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.termguicolors = true
 
--- leader
+-- vim.g
+vim.g.encoding = "utf-8"
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 vim.g.loaded_node_provider = 0
@@ -224,6 +224,9 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "ms-jpq/coq_nvim",
+		url = mirror .. "dmmulroy/tsc.nvim",
+		config = function()
+			require("tsc").setup()
+		end,
 	},
 })
