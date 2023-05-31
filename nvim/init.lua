@@ -229,4 +229,37 @@ require("lazy").setup({
 			require("tsc").setup()
 		end,
 	},
+	{
+		url = mirror .. "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.install").prefer_git = true
+
+			for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+				config.install_info.url = config.install_info.url:gsub("https://github.com/", mirror)
+			end
+
+			require("nvim-treesitter.configs").setup({
+				require("nvim-treesitter.configs").setup({
+					highlight = {
+						enable = true,
+					},
+					indent = {
+						enable = true,
+					},
+					ensure_installed = {
+						"go",
+						"rust",
+						"lua",
+						"python",
+						"vimdoc",
+						"gowork",
+						"toml",
+						"css",
+						"javascript",
+						"typescript",
+					},
+				}),
+			})
+		end,
+	},
 })
