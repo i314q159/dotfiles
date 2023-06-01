@@ -191,12 +191,7 @@ require("lazy").setup({
 				"<Cmd>Gitsigns preview_hunk<CR>",
 				{ noremap = true, silent = true }
 			)
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>n",
-				"<Cmd>Gitsigns next_hunk<CR>",
-				{ noremap = true, silent = true }
-			)
+			vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 		end,
 	},
 	{
@@ -299,6 +294,13 @@ require("lazy").setup({
 					end,
 				},
 			})
+
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
+				},
+			})
 		end,
 	},
 	{
@@ -308,9 +310,32 @@ require("lazy").setup({
 		url = mirror .. "hrsh7th/cmp-buffer",
 	},
 	{
+		url = mirror .. "hrsh7th/cmp-cmdline",
+	},
+	{
 		url = mirror .. "saecki/crates.nvim",
 		config = function()
 			require("crates").setup()
+		end,
+	},
+	{
+		url = mirror .. "shellRaining/hlchunk.nvim",
+		event = { "UIEnter" },
+		config = function()
+			require("hlchunk").setup({
+				chunk = {
+					enable = true,
+					use_treesitter = true,
+					chars = {
+						horizontal_line = "─",
+						vertical_line = "│",
+						left_top = "┌",
+						left_bottom = "└",
+						right_arrow = ">",
+					},
+					style = "#00ffff",
+				},
+			})
 		end,
 	},
 })
