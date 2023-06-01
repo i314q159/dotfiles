@@ -52,6 +52,7 @@ vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>edit $MYVIMRC<CR>", { noremap = 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local mirror = "https://ghproxy.com/https://github.com/"
+
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -76,6 +77,9 @@ require("lazy").setup({
 	},
 	{
 		url = mirror .. "sitiom/nvim-numbertoggle",
+	},
+	{
+		url = mirror .. "nvim-lua/plenary.nvim",
 	},
 	{
 		url = mirror .. "Pocco81/auto-save.nvim",
@@ -187,6 +191,12 @@ require("lazy").setup({
 				"<Cmd>Gitsigns preview_hunk<CR>",
 				{ noremap = true, silent = true }
 			)
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>n",
+				"<Cmd>Gitsigns next_hunk<CR>",
+				{ noremap = true, silent = true }
+			)
 		end,
 	},
 	{
@@ -214,9 +224,9 @@ require("lazy").setup({
 				filters = {
 					dotfiles = false,
 				},
-                git = {
-                    ignore = false
-                }
+				git = {
+					ignore = false,
+				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 		end,
@@ -264,6 +274,43 @@ require("lazy").setup({
 					},
 				}),
 			})
+		end,
+	},
+	{
+		url = mirror .. "hrsh7th/nvim-cmp",
+		config = function()
+			local cmp = require("cmp")
+
+			cmp.setup({
+				sources = cmp.config.sources({
+					{ name = "path" },
+					{ name = "buffer" },
+					{ name = "crates" },
+				}),
+				mapping = {
+					["<Tab>"] = cmp.mapping.select_next_item(),
+					["<S-Tab>"] = cmp.mapping.select_prev_item(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				},
+				snippet = {
+					expand = function(args)
+						vim.fn["vsnip#anonymous"](args.body)
+						require("luasnip").lsp_expand(args.body)
+					end,
+				},
+			})
+		end,
+	},
+	{
+		url = mirror .. "hrsh7th/cmp-path",
+	},
+	{
+		url = mirror .. "hrsh7th/cmp-buffer",
+	},
+	{
+		url = mirror .. "saecki/crates.nvim",
+		config = function()
+			require("crates").setup()
 		end,
 	},
 })
