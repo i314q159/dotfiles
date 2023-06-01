@@ -210,8 +210,15 @@ require("lazy").setup({
 	{
 		url = mirror .. "nvim-tree/nvim-tree.lua",
 		config = function()
-			require("nvim-tree").setup()
-			vim.api.nvim_set_keymap("n", "<leader>t", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
+			require("nvim-tree").setup({
+				filters = {
+					dotfiles = false,
+				},
+                git = {
+                    ignore = false
+                }
+			})
+			vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 		end,
 	},
 	{
@@ -254,9 +261,6 @@ require("lazy").setup({
 						"vimdoc",
 						"gowork",
 						"toml",
-						"css",
-						"javascript",
-						"typescript",
 					},
 				}),
 			})
