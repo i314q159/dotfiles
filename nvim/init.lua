@@ -47,18 +47,17 @@ vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local mirror = "https://ghproxy.com/https://github.com/"
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
-		mirror .. "folke/lazy.nvim.git",
+		"https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -67,22 +66,22 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		url = mirror .. "sbdchd/neoformat",
+		"sbdchd/neoformat",
 	},
 	{
-		url = mirror .. "f-person/git-blame.nvim",
+		"f-person/git-blame.nvim",
 	},
 	{
-		url = mirror .. "jghauser/mkdir.nvim",
+		"jghauser/mkdir.nvim",
 	},
 	{
-		url = mirror .. "sitiom/nvim-numbertoggle",
+		"sitiom/nvim-numbertoggle",
 	},
 	{
-		url = mirror .. "nvim-lua/plenary.nvim",
+		"nvim-lua/plenary.nvim",
 	},
 	{
-		url = mirror .. "Pocco81/auto-save.nvim",
+		"Pocco81/auto-save.nvim",
 		config = function()
 			require("auto-save").setup({
 				enabled = true,
@@ -91,19 +90,19 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "axieax/urlview.nvim",
+		"axieax/urlview.nvim",
 		config = function()
 			require("urlview").setup()
 		end,
 	},
 	{
-		url = mirror .. "nguyenvukhang/nvim-toggler",
+		"nguyenvukhang/nvim-toggler",
 		config = function()
 			require("nvim-toggler").setup()
 		end,
 	},
 	{
-		url = mirror .. "numToStr/Comment.nvim",
+		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
 				toggler = { line = "<C-]>" },
@@ -111,7 +110,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "nvim-lualine/lualine.nvim",
+		"nvim-lualine/lualine.nvim",
 		config = function()
 			require("lualine").setup({
 				options = {
@@ -123,38 +122,39 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "windwp/nvim-autopairs",
+		"windwp/nvim-autopairs",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
 	},
 	{
-		url = mirror .. "toppair/reach.nvim",
+		"toppair/reach.nvim",
 		config = function()
 			require("reach").setup()
 		end,
 	},
 	{
-		url = mirror .. "ethanholz/nvim-lastplace",
+		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup()
 		end,
 	},
 	{
-		url = mirror .. "stevearc/dressing.nvim",
+		"stevearc/dressing.nvim",
 		config = function()
 			require("dressing").setup()
 		end,
 	},
 	{
-		url = mirror .. "akinsho/bufferline.nvim",
+		"akinsho/bufferline.nvim",
 		version = "*",
 		config = function()
 			require("bufferline").setup()
 		end,
 	},
 	{
-		url = mirror .. "Mofiqul/dracula.nvim",
+		"Mofiqul/dracula.nvim",
+		lazy = false,
 		config = function()
 			require("dracula").setup({
 				transparent_bg = true,
@@ -164,25 +164,25 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "NvChad/nvim-colorizer.lua",
+		"NvChad/nvim-colorizer.lua",
 		config = function()
 			require("colorizer").setup()
 		end,
 	},
 	{
-		url = mirror .. "chentoast/marks.nvim",
+		"chentoast/marks.nvim",
 		config = function()
 			require("marks").setup()
 		end,
 	},
 	{
-		url = mirror .. "nvim-tree/nvim-web-devicons",
+		"nvim-tree/nvim-web-devicons",
 		config = function()
 			require("nvim-web-devicons").setup()
 		end,
 	},
 	{
-		url = mirror .. "lewis6991/gitsigns.nvim",
+		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
 			vim.api.nvim_set_keymap(
@@ -195,7 +195,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "CRAG666/code_runner.nvim",
+		"CRAG666/code_runner.nvim",
 		config = function()
 			require("code_runner").setup({
 				filetype = {
@@ -213,7 +213,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "nvim-tree/nvim-tree.lua",
+		"nvim-tree/nvim-tree.lua",
 		config = function()
 			require("nvim-tree").setup({
 				filters = {
@@ -227,7 +227,7 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "folke/which-key.nvim",
+		"folke/which-key.nvim",
 		config = function()
 			require("which-key").setup({
 				auto_show = false,
@@ -236,43 +236,18 @@ require("lazy").setup({
 		end,
 	},
 	{
-		url = mirror .. "dmmulroy/tsc.nvim",
+		"dmmulroy/tsc.nvim",
 		config = function()
 			require("tsc").setup()
 		end,
 	},
 	{
-		url = mirror .. "nvim-treesitter/nvim-treesitter",
-		config = function()
-			require("nvim-treesitter.install").prefer_git = true
-
-			for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-				config.install_info.url = config.install_info.url:gsub("https://github.com/", mirror)
-			end
-
-			require("nvim-treesitter.configs").setup({
-				require("nvim-treesitter.configs").setup({
-					highlight = {
-						enable = true,
-					},
-					indent = {
-						enable = true,
-					},
-					ensure_installed = {
-						"go",
-						"rust",
-						"lua",
-						"python",
-						"vimdoc",
-						"gowork",
-						"toml",
-					},
-				}),
-			})
-		end,
-	},
-	{
-		url = mirror .. "hrsh7th/nvim-cmp",
+		"hrsh7th/nvim-cmp",
+		dependencies = {
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-calc",
+		},
 		config = function()
 			local cmp = require("cmp")
 
@@ -280,6 +255,7 @@ require("lazy").setup({
 				sources = cmp.config.sources({
 					{ name = "path" },
 					{ name = "buffer" },
+					{ name = "calc" },
 					{ name = "crates" },
 				}),
 				mapping = {
@@ -294,38 +270,22 @@ require("lazy").setup({
 					end,
 				},
 			})
-
-			cmp.setup.cmdline({ "/", "?" }, {
-				mapping = cmp.mapping.preset.cmdline(),
-				sources = {
-					{ name = "buffer" },
-				},
-			})
 		end,
 	},
 	{
-		url = mirror .. "hrsh7th/cmp-path",
-	},
-	{
-		url = mirror .. "hrsh7th/cmp-buffer",
-	},
-	{
-		url = mirror .. "hrsh7th/cmp-cmdline",
-	},
-	{
-		url = mirror .. "saecki/crates.nvim",
+		"saecki/crates.nvim",
 		config = function()
 			require("crates").setup()
 		end,
 	},
 	{
-		url = mirror .. "shellRaining/hlchunk.nvim",
+		"shellRaining/hlchunk.nvim",
 		event = { "UIEnter" },
 		config = function()
 			require("hlchunk").setup({
 				chunk = {
 					enable = true,
-					use_treesitter = true,
+					use_treesitter = false,
 					chars = {
 						horizontal_line = "─",
 						vertical_line = "│",
