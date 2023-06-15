@@ -222,6 +222,9 @@ require("lazy").setup({
 				git = {
 					ignore = false,
 				},
+				view = {
+					side = "right",
+				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
 		end,
@@ -293,7 +296,7 @@ require("lazy").setup({
 						left_bottom = "└",
 						right_arrow = ">",
 					},
-					style = "#00ffff",
+					style = "#bd93f9",
 				},
 			})
 		end,
