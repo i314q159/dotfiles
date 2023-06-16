@@ -119,6 +119,15 @@ require("lazy").setup({
 					section_separators = "",
 					component_separators = "",
 				},
+				sections = {
+					lualine_x = {
+						{
+							require("lazy.status").updates,
+							cond = require("lazy.status").has_updates,
+							color = { fg = "#ff9e64" },
+						},
+					},
+				},
 			})
 		end,
 	},
@@ -302,8 +311,40 @@ require("lazy").setup({
 			})
 		end,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.install").prefer_git = true
+			for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+				config.install_info.url =
+					config.install_info.url:gsub("https://github.com/", mirror .. "https://github.com/")
+			end
+
+			require("nvim-treesitter.configs").setup({
+				highlight = {
+					enable = true,
+				},
+				auto_install = false,
+				ensure_installed = {
+					"lua",
+					"vim",
+					"vimdoc",
+					"go",
+					"rust",
+					"toml",
+				},
+				indent = {
+					enable = true,
+				},
+			})
+		end,
+	},
 }, {
 	git = {
 		url_format = mirror .. "https://github.com/%s.git",
+	},
+	checker = {
+		enabled = true,
+		notify = false,
 	},
 })
