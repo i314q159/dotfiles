@@ -51,13 +51,14 @@ vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = 
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local mirror = "https://ghproxy.com/"
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
+		mirror .. "https://github.com/folke/lazy.nvim.git",
 		"--branch=stable",
 		lazypath,
 	})
@@ -300,5 +301,9 @@ require("lazy").setup({
 				},
 			})
 		end,
+	},
+}, {
+	git = {
+		url_format = mirror .. "https://github.com/%s.git",
 	},
 })
