@@ -65,7 +65,17 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local opts = {
+	git = {
+		url_format = mirror .. "https://github.com/%s.git",
+	},
+	checker = {
+		enabled = true,
+		notify = false,
+	},
+}
+
+local plugins = {
 	{
 		"sbdchd/neoformat",
 	},
@@ -332,6 +342,7 @@ require("lazy").setup({
 					"go",
 					"rust",
 					"toml",
+					"json",
 				},
 				indent = {
 					enable = true,
@@ -339,12 +350,6 @@ require("lazy").setup({
 			})
 		end,
 	},
-}, {
-	git = {
-		url_format = mirror .. "https://github.com/%s.git",
-	},
-	checker = {
-		enabled = true,
-		notify = false,
-	},
-})
+}
+
+require("lazy").setup(plugins, opts)
