@@ -6,7 +6,7 @@ vim.o.backup = false
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.inccomand = "nosplit"
 vim.o.incsearch = false
@@ -134,7 +134,13 @@ local plugins = {
 						{
 							require("lazy.status").updates,
 							cond = require("lazy.status").has_updates,
-							color = { fg = "#ff9e64" },
+							color = {
+								fg = "#bd93f9",
+							},
+						},
+						{
+							"datetime",
+							style = "iso",
 						},
 					},
 				},
@@ -143,6 +149,7 @@ local plugins = {
 	},
 	{
 		"windwp/nvim-autopairs",
+		event = "InsertEnter",
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
@@ -161,6 +168,7 @@ local plugins = {
 	},
 	{
 		"stevearc/dressing.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("dressing").setup()
 		end,
@@ -227,6 +235,7 @@ local plugins = {
 					rust = "cargo run",
 					sh = "bash",
 					typescript = "deno run",
+					zig = "zig run",
 				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
@@ -266,6 +275,7 @@ local plugins = {
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
@@ -323,6 +333,7 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.install").prefer_git = true
 			for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
@@ -351,11 +362,23 @@ local plugins = {
 		end,
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-context",
+		"goolord/alpha-nvim",
+		event = "VimEnter",
 		config = function()
-			require("treesitter-context").setup({
-				enable = true,
-			})
+			local startify = require("alpha.themes.startify")
+
+			require("alpha").setup(startify.config)
+
+			startify.section.header.val = {
+				"i314q159",
+			}
+		end,
+	},
+	{
+		"nvimdev/hlsearch.nvim",
+		event = "BufRead",
+		config = function()
+			require("hlsearch").setup()
 		end,
 	},
 }
