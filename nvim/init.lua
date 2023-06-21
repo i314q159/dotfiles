@@ -350,6 +350,14 @@ local plugins = {
 			})
 		end,
 	},
+	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+			})
+		end,
+	},
 }
 
 require("lazy").setup(plugins, opts)
