@@ -143,6 +143,12 @@ local plugins = {
 							style = "iso",
 						},
 					},
+					lualine_c = {
+						{
+							"filename",
+							path = 2,
+						},
+					},
 				},
 			})
 		end,
@@ -206,7 +212,12 @@ local plugins = {
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
-			vim.api.nvim_set_keymap("n", "<leader>h", "<Cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>h",
+				"<Cmd>Gitsigns preview_hunk<CR>",
+				{ noremap = true, silent = true }
+			)
 			vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 		end,
 	},
@@ -380,15 +391,24 @@ local plugins = {
 	{
 		"Wansmer/treesj",
 		ependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
+			"nvim-treesitter/nvim-treesitter",
+		},
 		keys = {
-			{ "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+			{ "<leader>j", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
 		},
 		opts = {
-            use_default_keymaps = false,
-            max_join_length = 150,
-        },
+			use_default_keymaps = false,
+			max_join_length = 150,
+		},
+	},
+	{
+		"dstein64/vim-startuptime",
+		-- lazy-load on a command
+		cmd = "StartupTime",
+		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
+		init = function()
+			vim.g.startuptime_tries = 10
+		end,
 	},
 }
 
