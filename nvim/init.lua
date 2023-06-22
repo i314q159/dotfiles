@@ -174,13 +174,6 @@ local plugins = {
 		end,
 	},
 	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		config = function()
-			require("bufferline").setup()
-		end,
-	},
-	{
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 		config = function()
@@ -213,12 +206,7 @@ local plugins = {
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
-			vim.api.nvim_set_keymap(
-				"n",
-				"<leader>h",
-				"<Cmd>Gitsigns preview_hunk<CR>",
-				{ noremap = true, silent = true }
-			)
+			vim.api.nvim_set_keymap("n", "<leader>h", "<Cmd>Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
 			vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 		end,
 	},
@@ -380,6 +368,27 @@ local plugins = {
 		config = function()
 			require("hlsearch").setup()
 		end,
+	},
+	{
+		"fgheng/winbar.nvim",
+		config = function()
+			require("winbar").setup({
+				enabled = true,
+			})
+		end,
+	},
+	{
+		"Wansmer/treesj",
+		ependencies = {
+            "nvim-treesitter/nvim-treesitter",
+        },
+		keys = {
+			{ "J", "<cmd>TSJToggle<cr>", desc = "Join Toggle" },
+		},
+		opts = {
+            use_default_keymaps = false,
+            max_join_length = 150,
+        },
 	},
 }
 
