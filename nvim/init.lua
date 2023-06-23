@@ -132,6 +132,19 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
+			local function get_active_lsp_clients()
+				local clients = vim.lsp.buf_get_clients()
+				local client_names = {}
+				for _, client in ipairs(clients) do
+					table.insert(client_names, client.name)
+				end
+				if #client_names > 0 then
+					return table.concat(client_names, ", ")
+				else
+					return "No active LSP clients"
+				end
+			end
+
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -148,6 +161,10 @@ local plugins = {
 							},
 						},
 						{
+							get_active_lsp_clients,
+							icon = "",
+						},
+						{
 							"datetime",
 							style = "iso",
 						},
@@ -160,6 +177,7 @@ local plugins = {
 						{
 							"filetype",
 						},
+
 					},
 					lualine_c = {
 						{
@@ -214,7 +232,12 @@ local plugins = {
 			require("marks").setup()
 		end,
 	},
-	-- { "nvim-tree/nvim-web-devicons", config = function() require("nvim-web-devicons").setup() end },
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup()
+		end,
+	},
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -279,24 +302,46 @@ local plugins = {
 		end,
 	},
 	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-			-- require("lspconfig")["lua_ls"].setup({ capabilities = capabilities })
-			require("lspconfig")["rust_analyzer"].setup({ capabilities = capabilities })
-		end,
-	},
-	{
 		"williamboman/mason.nvim",
-		cmd = "Mason",
+		build = ":MasonUpdate",
 		event = "BufReadPre",
-		-- dependencies = { "williamboman/mason-lspconfig.nvim" },
+		dependencies = { "williamboman/mason-lspconfig.nvim" },
 		config = function()
 			require("mason").setup({
 				github = { download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s" },
+				ui = {
+					icons = {
+						package_installed = "+",
+						package_pending = "->",
+						package_uninstalled = "-",
+					},
+				},
 			})
-			-- require("mason-lspconfig").setup()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					-- "rust_analyzer",
+					-- "gopls",
+				},
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			local servers = {
+				"denols",
+				"gopls",
+				"lua_ls",
+				"pyright",
+				"rust_analyzer",
+			}
+
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup({ capabilities = capabilities })
+			end
 		end,
 	},
 	{
@@ -324,8 +369,8 @@ local plugins = {
 			cmp.setup({
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-					{ name = "path" },
 					{ name = "luasnip" },
+					{ name = "path" },
 					{ name = "buffer" },
 					{ name = "calc" },
 					{ name = "crates" },
@@ -429,7 +474,7 @@ local plugins = {
 		},
 		opts = {
 			use_default_keymaps = false,
-			max_join_length = 150 * 10,
+			max_join_length = 150 * 2,
 		},
 	},
 	{
