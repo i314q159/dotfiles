@@ -1,4 +1,5 @@
 -- vim.o
+vim.o.autochdir = true
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
@@ -17,6 +18,7 @@ vim.o.shiftwidth = 4
 vim.o.showcmd = true
 vim.o.showmatch = true
 vim.o.showmode = false
+vim.o.showtabline = 2
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.softtabstop = 4
@@ -26,7 +28,6 @@ vim.o.tabstop = 4
 vim.o.wildmenu = true
 vim.o.wrap = false
 vim.o.writebackup = false
-vim.o.autochdir = true
 
 -- vim,opt
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -46,10 +47,13 @@ vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<A-Down>", ":m+<CR>", { silent = true })
+
+vim.api.nvim_set_keymap("n", "<leader>d", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
 
--- lazy
+-- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 local mirror = "https://ghproxy.com/"
 
@@ -77,26 +81,25 @@ local opts = {
 
 local plugins = {
 	{
-		"sbdchd/neoformat",
-	},
-	{
-		"f-person/git-blame.nvim",
-	},
-	{
 		"jghauser/mkdir.nvim",
-	},
-	{
 		"sitiom/nvim-numbertoggle",
-	},
-	{
 		"nvim-lua/plenary.nvim",
 	},
 	{
+		"sbdchd/neoformat",
+		config = function()
+			vim.g.neoformat_enabled_lua = { "stylua" }
+		end,
+	},
+	{
 		"Pocco81/auto-save.nvim",
+		event = {
+			"InsertLeave",
+			"TextChanged",
+		},
 		config = function()
 			require("auto-save").setup({
 				enabled = true,
-				events = { "InsertLeave", "TextChanged" },
 			})
 		end,
 	},
@@ -116,12 +119,18 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		config = function()
 			require("Comment").setup({
-				toggler = { line = "<C-]>" },
+				toggler = {
+					line = "<C-]>",
+				},
 			})
 		end,
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		event = { "VimEnter" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		config = function()
 			require("lualine").setup({
 				options = {
@@ -141,6 +150,15 @@ local plugins = {
 						{
 							"datetime",
 							style = "iso",
+						},
+						{
+							"%#lualine_fg#Tab:%{&tabstop}%#lualine_inactive#",
+						},
+						{
+							"%#lualine_fg#%{&fileencoding}%#lualine_inactive#",
+						},
+						{
+							"filetype",
 						},
 					},
 					lualine_c = {
@@ -164,19 +182,13 @@ local plugins = {
 		"toppair/reach.nvim",
 		config = function()
 			require("reach").setup()
+			vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>ReachOpen buffers<CR>", { noremap = true, silent = true })
 		end,
 	},
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup()
-		end,
-	},
-	{
-		"stevearc/dressing.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("dressing").setup()
 		end,
 	},
 	{
@@ -202,12 +214,7 @@ local plugins = {
 			require("marks").setup()
 		end,
 	},
-	{
-		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("nvim-web-devicons").setup()
-		end,
-	},
+	-- { "nvim-tree/nvim-web-devicons", config = function() require("nvim-web-devicons").setup() end },
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function()
@@ -234,7 +241,6 @@ local plugins = {
 					rust = "cargo run",
 					sh = "bash",
 					typescript = "deno run",
-					zig = "zig run",
 				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
@@ -273,19 +279,53 @@ local plugins = {
 		end,
 	},
 	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+			-- require("lspconfig")["lua_ls"].setup({ capabilities = capabilities })
+			require("lspconfig")["rust_analyzer"].setup({ capabilities = capabilities })
+		end,
+	},
+	{
+		"williamboman/mason.nvim",
+		cmd = "Mason",
+		event = "BufReadPre",
+		-- dependencies = { "williamboman/mason-lspconfig.nvim" },
+		config = function()
+			require("mason").setup({
+				github = { download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s" },
+			})
+			-- require("mason-lspconfig").setup()
+		end,
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
+		config = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
+		end,
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-calc",
+			"hrsh7th/cmp-nvim-lsp",
+			"saadparwaiz1/cmp_luasnip",
 		},
 		config = function()
 			local cmp = require("cmp")
 
 			cmp.setup({
 				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
 					{ name = "path" },
+					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "calc" },
 					{ name = "crates" },
@@ -297,7 +337,6 @@ local plugins = {
 				},
 				snippet = {
 					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body)
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
@@ -381,14 +420,6 @@ local plugins = {
 		end,
 	},
 	{
-		"fgheng/winbar.nvim",
-		config = function()
-			require("winbar").setup({
-				enabled = true,
-			})
-		end,
-	},
-	{
 		"Wansmer/treesj",
 		ependencies = {
 			"nvim-treesitter/nvim-treesitter",
@@ -398,16 +429,24 @@ local plugins = {
 		},
 		opts = {
 			use_default_keymaps = false,
-			max_join_length = 150,
+			max_join_length = 150 * 10,
 		},
 	},
 	{
-		"dstein64/vim-startuptime",
-		-- lazy-load on a command
-		cmd = "StartupTime",
-		-- init is called during startup. Configuration for vim plugins typically should be set in an init function
-		init = function()
-			vim.g.startuptime_tries = 10
+		"nacro90/numb.nvim",
+		config = function()
+			require("numb").setup()
+		end,
+	},
+	{
+		"noib3/cokeline.nvim",
+		config = true,
+	},
+	{
+		"folke/todo-comments.nvim",
+		lazy = false,
+		config = function()
+			require("todo-comments").setup()
 		end,
 	},
 }
