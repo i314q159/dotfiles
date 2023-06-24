@@ -11,7 +11,7 @@ vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.inccomand = "nosplit"
 vim.o.incsearch = false
-vim.o.mouse = false
+vim.o.mouse = "a"
 vim.o.number = true
 vim.o.shiftround = true
 vim.o.shiftwidth = 4
@@ -50,8 +50,9 @@ vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-Down>", ":m+<CR>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>d", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>d", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>q", "<Cmd>quitall<CR>", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -86,8 +87,21 @@ local plugins = {
 		"nvim-lua/plenary.nvim",
 	},
 	{
+		"Mofiqul/adwaita.nvim",
+		lazy = false,
+		priority = 1000,
+
+		config = function()
+			vim.g.adwaita_darker = true
+			vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+			vim.g.adwaita_transparent = true
+			vim.cmd("colorscheme adwaita")
+		end,
+	},
+	{
 		"sbdchd/neoformat",
 		config = function()
+			vim.api.nvim_set_keymap("n", "<leader>f", "<Cmd>Neoformat<CR>", { noremap = true, silent = true })
 			vim.g.neoformat_enabled_lua = { "stylua" }
 		end,
 	},
@@ -139,7 +153,7 @@ local plugins = {
 					table.insert(client_names, client.name)
 				end
 				if #client_names > 0 then
-					return table.concat(client_names, ", ")
+					return table.concat(client_names, ",")
 				else
 					return "No active LSP clients"
 				end
@@ -177,7 +191,6 @@ local plugins = {
 						{
 							"filetype",
 						},
-
 					},
 					lualine_c = {
 						{
@@ -201,23 +214,18 @@ local plugins = {
 		config = function()
 			require("reach").setup()
 			vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>ReachOpen buffers<CR>", { noremap = true, silent = true })
+			vim.api.nvim_set_keymap(
+				"n",
+				"<leader>t",
+				"<Cmd>ReachOpen colorschemes<CR>",
+				{ noremap = true, silent = true }
+			)
 		end,
 	},
 	{
 		"ethanholz/nvim-lastplace",
 		config = function()
 			require("nvim-lastplace").setup()
-		end,
-	},
-	{
-		"Mofiqul/dracula.nvim",
-		lazy = false,
-		config = function()
-			require("dracula").setup({
-				transparent_bg = true,
-				italic_comment = true,
-			})
-			vim.cmd("colorscheme dracula")
 		end,
 	},
 	{
@@ -263,7 +271,7 @@ local plugins = {
 					python = "python3 -u",
 					rust = "cargo run",
 					sh = "bash",
-					typescript = "deno run",
+					typescript = "ts-node",
 				},
 			})
 			vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
@@ -378,7 +386,10 @@ local plugins = {
 				mapping = {
 					["<Tab>"] = cmp.mapping.select_next_item(),
 					["<S-Tab>"] = cmp.mapping.select_prev_item(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({
+						select = true,
+						behavior = cmp.ConfirmBehavior.Replace,
+					}),
 				},
 				snippet = {
 					expand = function(args)
@@ -430,13 +441,13 @@ local plugins = {
 				},
 				auto_install = false,
 				ensure_installed = {
-					"lua",
-					"vim",
-					"vimdoc",
 					"go",
+					"json",
+					"lua",
 					"rust",
 					"toml",
-					"json",
+					"vim",
+					"vimdoc",
 				},
 				indent = {
 					enable = true,
