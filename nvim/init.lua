@@ -51,7 +51,7 @@ vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<A-Down>", ":m+<CR>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>d", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<Cmd>wqa<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>l", "<Cmd>Lazy<CR>", { noremap = true, silent = true })
 
@@ -130,7 +130,6 @@ local plugins = {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		event = { "VimEnter" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -193,7 +192,6 @@ local plugins = {
 	},
 	{
 		"windwp/nvim-autopairs",
-		event = { "InsertEnter" },
 		config = function()
 			require("nvim-autopairs").setup()
 		end,
@@ -305,7 +303,6 @@ local plugins = {
 			{
 				"williamboman/mason.nvim",
 				build = ":MasonUpdate",
-				-- event = { "BufReadPre", },
 			},
 			"williamboman/mason-lspconfig.nvim",
 		},
@@ -354,7 +351,6 @@ local plugins = {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		-- event = "InsertEnter",
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-calc",
@@ -406,9 +402,6 @@ local plugins = {
 	},
 	{
 		"shellRaining/hlchunk.nvim",
-		event = {
-			"UIEnter",
-		},
 		config = function()
 			require("hlchunk").setup({
 				chunk = {
@@ -459,7 +452,6 @@ local plugins = {
 	},
 	{
 		"goolord/alpha-nvim",
-		event = { "VimEnter" },
 		config = function()
 			local startify = require("alpha.themes.startify")
 
@@ -472,7 +464,6 @@ local plugins = {
 	},
 	{
 		"nvimdev/hlsearch.nvim",
-		event = { "BufRead" },
 		config = function()
 			require("hlsearch").setup()
 		end,
@@ -515,7 +506,6 @@ local plugins = {
 	},
 	{
 		"jinzhongjia/LspUI.nvim",
-		event = "VeryLazy",
 		config = function()
 			require("LspUI").setup()
 			vim.api.nvim_set_keymap("n", "<F2>", "<Cmd>LspUI rename<CR>", { noremap = true, silent = true })
