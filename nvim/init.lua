@@ -180,6 +180,7 @@ local plugins = {
 							"filetype",
 						},
 					},
+
 					lualine_c = {
 						{
 							"filename",
@@ -433,7 +434,7 @@ local plugins = {
 				highlight = {
 					enable = true,
 				},
-				auto_install = false,
+				auto_install = true,
 				ensure_installed = {
 					"go",
 					"json",
@@ -516,6 +517,10 @@ local plugins = {
 		config = function()
 			require("lspkind").init()
 		end,
+	},
+	{
+		"stevearc/dressing.nvim",
+		opts = {},
 	},
 }
 

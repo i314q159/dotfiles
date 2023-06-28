@@ -1,0 +1,6 @@
+allprojects {
+   gradle repositories {
+      mavenLocal()
+      mavenCentral()
+    }
+}
