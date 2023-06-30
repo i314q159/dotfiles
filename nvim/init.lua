@@ -320,7 +320,9 @@ local plugins = {
 			})
 
 			require("mason").setup({
-				github = { download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s" },
+				github = {
+                    download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s",
+                },
 				ui = {
 					icons = {
 						package_installed = "++",
