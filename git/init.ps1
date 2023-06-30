@@ -4,3 +4,5 @@ git config --global user.email i314q159@outlook.com
 
 git config --global user.name
 git config --global user.email
+
+git config --global core.autocrlf true
