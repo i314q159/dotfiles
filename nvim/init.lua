@@ -94,7 +94,7 @@ local plugins = {
 
 		config = function()
 			vim.g.adwaita_darker = true
-			vim.g.adwaita_disable_cursorline = true -- to disable cursorline
+			vim.g.adwaita_disable_cursorline = true
 			vim.g.adwaita_transparent = true
 			vim.cmd("colorscheme adwaita")
 		end,
@@ -108,9 +108,7 @@ local plugins = {
 	},
 	{
 		"axieax/urlview.nvim",
-		config = function()
-			require("urlview").setup()
-		end,
+		opts = {},
 	},
 	{
 		"nguyenvukhang/nvim-toggler",
@@ -143,7 +141,7 @@ local plugins = {
 				if #client_names > 0 then
 					return table.concat(client_names, ",")
 				else
-					return "No active LSP clients"
+					return "null"
 				end
 			end
 
@@ -301,10 +299,7 @@ local plugins = {
 		"junnplus/lsp-setup.nvim",
 		dependencies = {
 			"neovim/nvim-lspconfig",
-			{
-				"williamboman/mason.nvim",
-				build = ":MasonUpdate",
-			},
+			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 		},
 		config = function()
@@ -313,9 +308,22 @@ local plugins = {
 					pylsp = {},
 					denols = {},
 					gopls = {},
-					lua_ls = {},
 					pyright = {},
 					rust_analyzer = {},
+
+					lua_ls = {
+						settings = {
+							Lua = {
+								diagnostics = {
+									globals = { "vim" },
+								},
+								workspace = {
+									library = vim.api.nvim_get_runtime_file("", true),
+									checkThirdParty = false,
+								},
+							},
+						},
+					},
 				},
 			})
 
