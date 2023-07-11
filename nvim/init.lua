@@ -11,7 +11,7 @@ vim.o.hlsearch = true
 vim.o.ignorecase = true
 vim.o.inccomand = "nosplit"
 vim.o.incsearch = false
-vim.o.mouse = "a"
+vim.o.mouse = false
 vim.o.number = true
 vim.o.shiftround = true
 vim.o.shiftwidth = 4
@@ -84,7 +84,6 @@ local opts = {
 local plugins = {
 	{
 		"jghauser/mkdir.nvim",
-		"sitiom/nvim-numbertoggle",
 		"nvim-lua/plenary.nvim",
 	},
 	{
@@ -132,19 +131,6 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-			local function get_active_lsp_clients()
-				local clients = vim.lsp.get_active_clients()
-				local client_names = {}
-				for _, client in ipairs(clients) do
-					table.insert(client_names, client.name)
-				end
-				if #client_names > 0 then
-					return table.concat(client_names, ",")
-				else
-					return "null"
-				end
-			end
-
 			require("lualine").setup({
 				options = {
 					icons_enabled = true,
@@ -156,13 +142,15 @@ local plugins = {
 						{
 							require("lazy.status").updates,
 							cond = require("lazy.status").has_updates,
-							color = {
-								fg = "#218787",
-							},
 						},
 						{
-							get_active_lsp_clients,
+							require("ac").get_active_lsp_clients,
 							icon = "",
+						},
+						{
+							function()
+								return require("battery").get_status_line()
+							end,
 						},
 						{
 							"datetime",
@@ -412,25 +400,6 @@ local plugins = {
 		end,
 	},
 	{
-		"shellRaining/hlchunk.nvim",
-		config = function()
-			require("hlchunk").setup({
-				chunk = {
-					enable = true,
-					use_treesitter = false,
-					chars = {
-						horizontal_line = "─",
-						vertical_line = "│",
-						left_top = "┌",
-						left_bottom = "└",
-						right_arrow = ">",
-					},
-					style = "#218787",
-				},
-			})
-		end,
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		config = function()
@@ -532,6 +501,35 @@ local plugins = {
 		"stevearc/dressing.nvim",
 		opts = {},
 	},
+	{
+		"justinhj/battery.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"nvim-lua/plenary.nvim",
+		},
+		config = function()
+			require("battery").setup({
+				{
+					update_rate_seconds = 10,
+				},
+			})
+		end,
+	},
+	{
+		"elentok/togglr.nvim",
+		opts = {
+			key = "<leader>i",
+		},
+	},
+	{
+		"elentok/scriptify.nvim",
+		opts = {},
+		cmd = { "Scriptify" },
+	},
+	{
+		"i314q159/ac.nvim",
+		opts = {},
+	}
 }
 
 require("lazy").setup(plugins, opts)
