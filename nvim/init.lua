@@ -54,6 +54,7 @@ vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = 
 vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<Cmd>wqa<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>l", "<Cmd>Lazy<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", "w !sudo tee %", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -146,11 +147,6 @@ local plugins = {
 						{
 							require("ac").get_active_lsp_clients,
 							icon = "",
-						},
-						{
-							function()
-								return require("battery").get_status_line()
-							end,
 						},
 						{
 							"datetime",
@@ -502,20 +498,6 @@ local plugins = {
 		opts = {},
 	},
 	{
-		"justinhj/battery.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"nvim-lua/plenary.nvim",
-		},
-		config = function()
-			require("battery").setup({
-				{
-					update_rate_seconds = 10,
-				},
-			})
-		end,
-	},
-	{
 		"elentok/togglr.nvim",
 		opts = {
 			key = "<leader>i",
@@ -529,7 +511,7 @@ local plugins = {
 	{
 		"i314q159/ac.nvim",
 		opts = {},
-	}
+	},
 }
 
 require("lazy").setup(plugins, opts)
