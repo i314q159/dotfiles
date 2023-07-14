@@ -112,9 +112,7 @@ local plugins = {
 	},
 	{
 		"nguyenvukhang/nvim-toggler",
-		config = function()
-			require("nvim-toggler").setup()
-		end,
+		opts = {},
 	},
 	{
 		"numToStr/Comment.nvim",
@@ -175,9 +173,7 @@ local plugins = {
 	},
 	{
 		"windwp/nvim-autopairs",
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
+		opts = {},
 	},
 	{
 		"toppair/reach.nvim",
@@ -194,9 +190,7 @@ local plugins = {
 	},
 	{
 		"ethanholz/nvim-lastplace",
-		config = function()
-			require("nvim-lastplace").setup()
-		end,
+		opts = {},
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
@@ -206,15 +200,11 @@ local plugins = {
 	},
 	{
 		"chentoast/marks.nvim",
-		config = function()
-			require("marks").setup()
-		end,
+		opts = {},
 	},
 	{
 		"nvim-tree/nvim-web-devicons",
-		config = function()
-			require("nvim-web-devicons").setup()
-		end,
+		opts = {},
 	},
 	{
 		"lewis6991/gitsigns.nvim",
@@ -275,9 +265,7 @@ local plugins = {
 	},
 	{
 		"dmmulroy/tsc.nvim",
-		config = function()
-			require("tsc").setup()
-		end,
+		opts = {},
 	},
 	{
 		"junnplus/lsp-setup.nvim",
@@ -331,9 +319,6 @@ local plugins = {
 	{
 		"folke/neodev.nvim",
 		opts = {},
-		config = function()
-			require("neodev").setup()
-		end,
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -391,9 +376,7 @@ local plugins = {
 	},
 	{
 		"saecki/crates.nvim",
-		config = function()
-			require("crates").setup()
-		end,
+		opts = {},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -440,9 +423,7 @@ local plugins = {
 	},
 	{
 		"nvimdev/hlsearch.nvim",
-		config = function()
-			require("hlsearch").setup()
-		end,
+		opts = {},
 	},
 	{
 		"Wansmer/treesj",
@@ -459,9 +440,7 @@ local plugins = {
 	},
 	{
 		"nacro90/numb.nvim",
-		config = function()
-			require("numb").setup()
-		end,
+		opts = {},
 	},
 	{
 		"noib3/cokeline.nvim",
@@ -470,15 +449,11 @@ local plugins = {
 	{
 		"folke/todo-comments.nvim",
 		lazy = false,
-		config = function()
-			require("todo-comments").setup()
-		end,
+		opts = {},
 	},
 	{
 		"VidocqH/lsp-lens.nvim",
-		config = function()
-			require("lsp-lens").setup()
-		end,
+		opts = {},
 	},
 	{
 		"jinzhongjia/LspUI.nvim",
