@@ -96,7 +96,6 @@ local plugins = {
 			vim.g.adwaita_darker = true
 			vim.g.adwaita_disable_cursorline = true
 			vim.g.adwaita_transparent = true
-			vim.cmd("colorscheme adwaita")
 		end,
 	},
 	{
@@ -194,9 +193,7 @@ local plugins = {
 	},
 	{
 		"NvChad/nvim-colorizer.lua",
-		config = function()
-			require("colorizer").setup()
-		end,
+		opt = {},
 	},
 	{
 		"chentoast/marks.nvim",
@@ -487,6 +484,16 @@ local plugins = {
 		"i314q159/ac.nvim",
 		opts = {},
 	},
+	{
+		"Mofiqul/dracula.nvim",
+		opts = {
+			transparent_bg = true,
+			italic_comment = true,
+		},
+	},
+	{
+	},
 }
 
 require("lazy").setup(plugins, opts)
+vim.cmd("colorscheme dracula")
