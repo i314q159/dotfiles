@@ -424,7 +424,7 @@ local plugins = {
     },
     {
         "Wansmer/treesj",
-        ependencies = {
+        dependencies = {
             "nvim-treesitter/nvim-treesitter",
         },
         keys = {
