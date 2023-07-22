@@ -4,6 +4,7 @@ vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
 vim.o.backup = false
+vim.o.clipboard = "unnamedplus"
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
@@ -102,7 +103,6 @@ local plugins = {
         "sbdchd/neoformat",
         config = function()
             vim.api.nvim_set_keymap("n", "<leader>f", "<Cmd>Neoformat<CR>", { noremap = true, silent = true })
-            vim.g.neoformat_enabled_lua = { "stylua" }
         end,
     },
     {
@@ -115,13 +115,11 @@ local plugins = {
     },
     {
         "numToStr/Comment.nvim",
-        config = function()
-            require("Comment").setup({
-                toggler = {
-                    line = "<C-]>",
-                },
-            })
-        end,
+        opts = {
+            toggler = {
+                line = "<C-]>",
+            },
+        },
     },
     {
         "nvim-lualine/lualine.nvim",
@@ -193,7 +191,7 @@ local plugins = {
     },
     {
         "NvChad/nvim-colorizer.lua",
-        opt = {},
+        opts = {},
     },
     {
         "chentoast/marks.nvim",
@@ -290,6 +288,9 @@ local plugins = {
                                     library = vim.api.nvim_get_runtime_file("", true),
                                     checkThirdParty = false,
                                 },
+                                format = {
+                                    enable = true,
+                                }
                             },
                         },
                     },
