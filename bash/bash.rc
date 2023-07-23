@@ -1,10 +1,7 @@
-# .bashrc
-
-# autojump
-source /usr/share/autojump/autojump.bash
-
-# PS1
-PS1='[\u@\h \w]\$'
+test -s ~/.alias && . ~/.alias || true
 
 # alias
 alias l='ls -al --color=auto'
+
+# starship
+eval "$(starship init bash)"
