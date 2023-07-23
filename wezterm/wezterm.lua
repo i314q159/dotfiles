@@ -13,8 +13,8 @@ local mux = wezterm.mux
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     M.font = wezterm.font("Cascadia Code")
-    M.default_prog = { "powershell", "-nologo" }
     M.font_size = 12.0
+    M.default_prog = { "powershell", "-nologo" }
 elseif wezterm.target_triple == "x86_64-unknown-linux" then
     M.default_prog = { "bash" }
     M.font_size = 11.0
