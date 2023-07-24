@@ -147,7 +147,7 @@ local plugins = {
                             style = "iso",
                         },
                         {
-                            "%#lualine_fg#Tab:%{&tabstop}%#lualine_inactive#",
+                            "%#lualine_fg#tab:%{&tabstop}%#lualine_inactive#",
                         },
                         {
                             "%#lualine_fg#%{&fileencoding}%#lualine_inactive#",
@@ -490,6 +490,7 @@ local plugins = {
             transparent_bg = true,
             italic_comment = true,
         },
+        priority = 1000
     },
 }
 
