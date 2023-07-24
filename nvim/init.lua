@@ -43,13 +43,14 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 
 -- keymap
-vim.api.nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<A-Up>", ":m-2<CR>", { silent = true })
-vim.api.nvim_set_keymap("n", "<A-Down>", ":m+<CR>", { silent = true })
+
+vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<CR>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
