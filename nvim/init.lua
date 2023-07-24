@@ -55,7 +55,6 @@ vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = 
 vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<Cmd>wqa<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>l", "<Cmd>Lazy<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>w", "w !sudo tee %", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
