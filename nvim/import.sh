@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-cp ./init.lua ~/config/nvim/init.lua
+cp ./init.lua ~/.config/nvim/init.lua
