@@ -149,7 +149,7 @@ local plugins = {
                             style = "iso",
                         },
                         {
-                            "%#lualine_fg#Tab:%{&tabstop}%#lualine_inactive#",
+                            "%#lualine_fg#tab:%{&tabstop}%#lualine_inactive#",
                         },
                         {
                             "%#lualine_fg#%{&fileencoding}%#lualine_inactive#",
