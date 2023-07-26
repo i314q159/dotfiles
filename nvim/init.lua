@@ -1,5 +1,5 @@
 -- vim.o
-vim.o.autochdir = false
+vim.o.autochdir = true
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
@@ -278,6 +278,7 @@ local plugins = {
                     gopls = {},
                     pyright = {},
                     rust_analyzer = {},
+                    bashls = {},
 
                     lua_ls = {
                         settings = {
