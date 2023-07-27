@@ -48,7 +48,6 @@ vim.api.nvim_set_keymap("n", "<S-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<S-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true })
 
-
 vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<CR>", { silent = true })
 
@@ -246,6 +245,11 @@ local plugins = {
                 view = {
                     side = "left",
                 },
+                actions = {
+                    open_file = {
+                        quit_on_open = true,
+                    },
+                },
             })
             vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
         end,
@@ -279,6 +283,7 @@ local plugins = {
                     pyright = {},
                     rust_analyzer = {},
                     bashls = {},
+                    html = {},
 
                     lua_ls = {
                         settings = {
@@ -290,9 +295,12 @@ local plugins = {
                                     library = vim.api.nvim_get_runtime_file("", true),
                                     checkThirdParty = false,
                                 },
+                                telemetry = {
+                                    enable = false,
+                                },
                                 format = {
                                     enable = true,
-                                }
+                                },
                             },
                         },
                     },
