@@ -1,12 +1,12 @@
 # repo
 
 ```shell
-curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo -o repo
+curl https://mirrors.cernet.edu.cn/git-repo -o repo
 chmod +x repo
 ```
 
 ```shell
-export REPO_URL='https://mirrors.tuna.tsinghua.edu.cn/git/git-repo'
+export REPO_URL='https://mirrors.cernet.edu.cn/git-repo'
 ```
 
 ## aosp

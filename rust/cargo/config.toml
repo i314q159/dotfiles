@@ -2,4 +2,5 @@
 replace-with = 'tuna'
 
 [source.tuna]
-registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+registry = "sparse+https://mirrors.cernet.edu.cn/crates.io-index/"
+# registry = "https://mirrors.cernet.edu.cn/crates.io-index.git"
