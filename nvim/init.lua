@@ -502,6 +502,11 @@ local plugins = {
             italic_comment = true,
         },
     },
+    {
+        "dgagn/diagflow.nvim",
+        event = "LspAttach",
+        opts = {},
+    },
 }
 
 require("lazy").setup(plugins, opts)
