@@ -1,5 +1,5 @@
 -- vim.o
-vim.o.autochdir = true
+vim.o.autochdir = false
 vim.o.autoindent = true
 vim.o.autoread = true
 vim.o.background = "dark"
@@ -90,9 +90,10 @@ local plugins = {
     },
     {
         "sbdchd/neoformat",
-        config = function()
-            vim.api.nvim_set_keymap("n", "<leader>f", "<Cmd>Neoformat<CR>", { noremap = true, silent = true })
-        end,
+        opts = {},
+        keys = {
+            { "<leader>f", "<cmd>Neoformat<cr>", desc = "Neoformat" },
+        },
     },
     {
         "axieax/urlview.nvim",
@@ -112,13 +113,10 @@ local plugins = {
     },
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
         config = function()
             require("lualine").setup({
                 options = {
-                    icons_enabled = true,
+                    icons_enabled = false,
                     section_separators = "",
                     component_separators = "",
                 },
@@ -163,16 +161,11 @@ local plugins = {
     },
     {
         "toppair/reach.nvim",
-        config = function()
-            require("reach").setup()
-            vim.api.nvim_set_keymap("n", "<leader>b", "<Cmd>ReachOpen buffers<CR>", { noremap = true, silent = true })
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>t",
-                "<Cmd>ReachOpen colorschemes<CR>",
-                { noremap = true, silent = true }
-            )
-        end,
+        opts = {},
+        keys = {
+            { "<leader>b", "<cmd>ReachOpen buffers<cr>",      desc = "ReachOpen buffers" },
+            { "<leader>t", "<cmd>ReachOpen colorschemes<cr>", desc = "ReachOpen colorschemes" },
+        },
     },
     {
         "ethanholz/nvim-lastplace",
@@ -187,70 +180,40 @@ local plugins = {
         opts = {},
     },
     {
-        "nvim-tree/nvim-web-devicons",
-        opts = {},
-    },
-    {
         "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-            vim.api.nvim_set_keymap(
-                "n",
-                "<leader>h",
-                "<Cmd>Gitsigns preview_hunk<CR>",
-                { noremap = true, silent = true }
-            )
-            vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>Gitsigns next_hunk<CR>", { noremap = true, silent = true })
-        end,
+        opts = {},
+        keys = {
+            { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview_hunk" },
+            { "<leader>n", "<Cmd>Gitsigns next_hunk<CR>",    desc = "Gitsigns next_hunkk" },
+        },
     },
     {
         "CRAG666/code_runner.nvim",
-        config = function()
-            require("code_runner").setup({
-                filetype = {
-                    go = "go run",
-                    javascript = "node",
-                    lua = "lua",
-                    ps1 = "powershell",
-                    python = "python3 -u",
-                    rust = "cargo run",
-                    sh = "bash",
-                    typescript = "ts-node",
-                },
-            })
-            vim.api.nvim_set_keymap("n", "<leader>r", "<Cmd>RunFile tab<CR>", { noremap = true, silent = true })
-        end,
-    },
-    {
-        "nvim-tree/nvim-tree.lua",
-        config = function()
-            require("nvim-tree").setup({
-                filters = {
-                    dotfiles = false,
-                },
-                git = {
-                    ignore = false,
-                },
-                view = {
-                    side = "left",
-                },
-                actions = {
-                    open_file = {
-                        quit_on_open = true,
-                    },
-                },
-            })
-            vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>NvimTreeToggle<CR>", { noremap = true, silent = true })
-        end,
+        opts = {
+            filetype = {
+                go = "go run",
+                javascript = "node",
+                lua = "lua",
+                ps1 = "powershell",
+                python = "python3 -u",
+                rust = "cargo run",
+                sh = "bash",
+                typescript = "ts-node",
+            },
+        },
+        keys = {
+            { "<leader>r", "<cmd>RunFile tabe<cr>", desc = "RunFile tab" },
+        },
     },
     {
         "folke/which-key.nvim",
-        config = function()
-            require("which-key").setup({
-                auto_show = false,
-            })
-            vim.api.nvim_set_keymap("n", "<leader>k", "<Cmd>WhichKey<CR>", { noremap = true, silent = true })
-        end,
+        opts = {
+            auto_show = false,
+        },
+        keys = {
+            { "<leader>k", "<cmd>WhichKey<cr>", desc = "WhichKey" },
+        },
+        lazy = false,
     },
     {
         "dmmulroy/tsc.nvim",
@@ -263,6 +226,7 @@ local plugins = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
         },
+        keys = { { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" } },
         config = function()
             require("lsp-setup").setup({
                 servers = {
@@ -308,7 +272,6 @@ local plugins = {
                     },
                 },
             })
-            vim.api.nvim_set_keymap("n", "<leader>m", "<Cmd>Mason<CR>", { noremap = true, silent = true })
 
             require("mason-lspconfig").setup()
         end,
@@ -337,7 +300,6 @@ local plugins = {
         },
         config = function()
             local cmp = require("cmp")
-            local lspkind = require("lspkind")
 
             cmp.setup({
                 sources = cmp.config.sources({
@@ -360,13 +322,6 @@ local plugins = {
                     expand = function(args)
                         require("luasnip").lsp_expand(args.body)
                     end,
-                },
-                formatting = {
-                    format = lspkind.cmp_format({
-                        mode = "symbol",
-                        maxwidth = 50,
-                        ellipsis_char = "...",
-                    }),
                 },
             })
         end,
@@ -407,18 +362,6 @@ local plugins = {
         end,
     },
     {
-        "goolord/alpha-nvim",
-        config = function()
-            local startify = require("alpha.themes.startify")
-
-            require("alpha").setup(startify.config)
-
-            startify.section.header.val = {
-                "i314q159",
-            }
-        end,
-    },
-    {
         "nvimdev/hlsearch.nvim",
         opts = {},
     },
@@ -440,10 +383,6 @@ local plugins = {
         opts = {},
     },
     {
-        "noib3/cokeline.nvim",
-        config = true,
-    },
-    {
         "folke/todo-comments.nvim",
         lazy = false,
         opts = {},
@@ -454,16 +393,10 @@ local plugins = {
     },
     {
         "jinzhongjia/LspUI.nvim",
-        config = function()
-            require("LspUI").setup()
-            vim.api.nvim_set_keymap("n", "<F2>", "<Cmd>LspUI rename<CR>", { noremap = true, silent = true })
-        end,
-    },
-    {
-        "onsails/lspkind.nvim",
-        config = function()
-            require("lspkind").init()
-        end,
+        opts = {},
+        keys = {
+            { "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename<" },
+        },
     },
     {
         "stevearc/dressing.nvim",
@@ -490,8 +423,6 @@ local plugins = {
             transparent_bg = true,
             italic_comment = true,
         },
-        lazy = false,
-        priority = 1000,
     },
     {
         "dgagn/diagflow.nvim",
