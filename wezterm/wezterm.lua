@@ -1,3 +1,6 @@
+local wezterm = require("wezterm")
+local mux = wezterm.mux
+
 local M = {
     window_background_opacity = 0.7,
     color_scheme = "Dracula+",
@@ -5,8 +8,10 @@ local M = {
     warn_about_missing_glyphs = false,
 }
 
-local wezterm = require("wezterm")
-local mux = wezterm.mux
+M.font = wezterm.font_with_fallback({
+    "Cascadia Code",
+    "Hack",
+})
 
 -- x86_64-pc-windows-msvc - Windows
 -- x86_64-unknown-linux-gnu - Linux
@@ -15,11 +20,9 @@ local mux = wezterm.mux
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     M.default_prog = { "powershell", "-nologo" }
-    M.font = wezterm.font("Cascadia Code")
-    M.font_size = 13.0
+    M.font_size = 12.0
 elseif wezterm.target_triple == "x86_64-unknown-linux" then
     M.default_prog = { "bash" }
-    M.font = wezterm.font("Hack")
     M.font_size = 9.0
 end
 
