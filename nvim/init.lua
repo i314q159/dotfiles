@@ -89,17 +89,6 @@ local plugins = {
         "nvim-lua/plenary.nvim",
     },
     {
-        "Mofiqul/adwaita.nvim",
-        lazy = false,
-        priority = 1000,
-
-        config = function()
-            vim.g.adwaita_darker = true
-            vim.g.adwaita_disable_cursorline = true
-            vim.g.adwaita_transparent = true
-        end,
-    },
-    {
         "sbdchd/neoformat",
         config = function()
             vim.api.nvim_set_keymap("n", "<leader>f", "<Cmd>Neoformat<CR>", { noremap = true, silent = true })
@@ -501,6 +490,8 @@ local plugins = {
             transparent_bg = true,
             italic_comment = true,
         },
+        lazy = false,
+        priority = 1000,
     },
     {
         "dgagn/diagflow.nvim",
