@@ -226,7 +226,6 @@ local plugins = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
         },
-        keys = { { "<leader>m", "<cmd>Mason<cr>", desc = "Mason" } },
         config = function()
             require("lsp-setup").setup({
                 servers = {
@@ -423,11 +422,6 @@ local plugins = {
             transparent_bg = true,
             italic_comment = true,
         },
-    },
-    {
-        "dgagn/diagflow.nvim",
-        event = "LspAttach",
-        opts = {},
     },
 }
 
