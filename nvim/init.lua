@@ -394,7 +394,7 @@ local plugins = {
         "jinzhongjia/LspUI.nvim",
         opts = {},
         keys = {
-            { "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename<" },
+            { "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename" },
         },
     },
     {
