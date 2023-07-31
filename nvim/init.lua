@@ -48,12 +48,14 @@ vim.api.nvim_set_keymap("n", "<S-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<S-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<cr>", { silent = true })
-vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<CR>", { silent = true })
+vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<CR>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>v", "<Cmd>edit $MYVIMRC<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>c", "<Cmd>bdelete<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>q", "<Cmd>wqa<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>l", "<Cmd>Lazy<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>w", "w !sudo tee %", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -182,7 +184,7 @@ local plugins = {
         opts = {},
         keys = {
             { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview_hunk" },
-            { "<leader>n", "<Cmd>Gitsigns next_hunk<cr>",    desc = "Gitsigns next_hunkk" },
+            { "<leader>n", "<Cmd>Gitsigns next_hunk<CR>",    desc = "Gitsigns next_hunkk" },
         },
     },
     {
@@ -392,7 +394,7 @@ local plugins = {
         "jinzhongjia/LspUI.nvim",
         opts = {},
         keys = {
-            { "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename" },
+            { "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename<" },
         },
     },
     {
@@ -425,5 +427,3 @@ local plugins = {
 
 require("lazy").setup(plugins, opts)
 vim.cmd("colorscheme dracula")
-vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Lazy<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>Mason<cr>", { noremap = true, silent = true })
