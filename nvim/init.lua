@@ -236,6 +236,7 @@ local plugins = {
                     rust_analyzer = {},
                     bashls = {},
                     html = {},
+                    clangd = {},
 
                     lua_ls = {
                         settings = {
