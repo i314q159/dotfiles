@@ -313,7 +313,7 @@ local plugins = {
                     ["<Tab>"] = cmp.mapping.select_next_item(),
                     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
                     ["<CR>"] = cmp.mapping.confirm({
-                        select = true,
+                        select = false,
                         behavior = cmp.ConfirmBehavior.Replace,
                     }),
                 },
