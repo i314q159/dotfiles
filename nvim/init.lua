@@ -182,7 +182,7 @@ local plugins = {
         opts = {},
         keys = {
             { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview_hunk" },
-            { "<leader>n", "<Cmd>Gitsigns next_hunk<cr>",    desc = "Gitsigns next_hunkk" },
+            { "<leader>n", "<cmd>Gitsigns next_hunk<cr>",    desc = "Gitsigns next_hunkk" },
         },
     },
     {
@@ -421,7 +421,18 @@ local plugins = {
             transparent_bg = true,
             italic_comment = true,
         },
+        lazy = false,
+        priority = 1000,
     },
+    {
+        "nvimdev/indentmini.nvim",
+        opts = {
+            char = "┊",
+            exclude = {
+                "markdown",
+            },
+        },
+    }
 }
 
 require("lazy").setup(plugins, opts)
