@@ -432,7 +432,7 @@ local plugins = {
                 "markdown",
             },
         },
-    }
+    },
 }
 
 require("lazy").setup(plugins, opts)
