@@ -5,3 +5,6 @@ alias l='ls -al --color=auto'
 
 # starship
 eval "$(starship init bash)"
+
+# autojump
+source "/usr/share/autojump/autojump.bash"
