@@ -186,24 +186,6 @@ local plugins = {
         },
     },
     {
-        "CRAG666/code_runner.nvim",
-        opts = {
-            filetype = {
-                go = "go run",
-                javascript = "node",
-                lua = "lua",
-                ps1 = "powershell",
-                python = "python3 -u",
-                rust = "cargo run",
-                sh = "bash",
-                typescript = "ts-node",
-            },
-        },
-        keys = {
-            { "<leader>r", "<cmd>RunFile tabe<cr>", desc = "RunFile tab" },
-        },
-    },
-    {
         "folke/which-key.nvim",
         opts = {
             auto_show = false,
