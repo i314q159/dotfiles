@@ -184,6 +184,7 @@ local plugins = {
             { "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview_hunk" },
             { "<leader>n", "<cmd>Gitsigns next_hunk<cr>",    desc = "Gitsigns next_hunkk" },
         },
+        lazy = false,
     },
     {
         "folke/which-key.nvim",
