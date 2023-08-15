@@ -30,7 +30,7 @@ vim.o.wildmenu = true
 vim.o.wrap = false
 vim.o.writebackup = false
 
--- vim,opt
+-- vim.opt
 vim.opt.completeopt = { "menu", "menuone", "noselect" }
 vim.opt.termguicolors = true
 
@@ -85,13 +85,6 @@ local plugins = {
     {
         "jghauser/mkdir.nvim",
         "nvim-lua/plenary.nvim",
-    },
-    {
-        "sbdchd/neoformat",
-        opts = {},
-        keys = {
-            { "<leader>f", "<cmd>Neoformat<cr>", desc = "Neoformat" },
-        },
     },
     {
         "axieax/urlview.nvim",
@@ -218,6 +211,7 @@ local plugins = {
                     bashls = {},
                     html = {},
                     clangd = {},
+                    tsserver = {},
 
                     lua_ls = {
                         settings = {
@@ -414,6 +408,12 @@ local plugins = {
             exclude = {
                 "markdown",
             },
+        },
+    },
+    {
+        "roobert/f-string-toggle.nvim",
+        opts = {
+            key_binding = "<leader>f"
         },
     },
 }
