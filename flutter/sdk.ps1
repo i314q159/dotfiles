@@ -1,0 +1,1 @@
+git clone -b master https://mirrors.cernet.edu.cn/flutter-sdk.git
