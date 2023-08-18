@@ -416,6 +416,11 @@ local plugins = {
             key_binding = "<leader>f"
         },
     },
+    {
+        "nvim-zh/colorful-winsep.nvim",
+        config = true,
+        event = { "WinNew" },
+    },
 }
 
 require("lazy").setup(plugins, opts)
