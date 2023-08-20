@@ -2,7 +2,6 @@ local wezterm = require("wezterm")
 local mux = wezterm.mux
 
 local M = {
-    window_background_opacity = 0.7,
     color_scheme = "Dracula+",
     hide_mouse_cursor_when_typing = false,
     warn_about_missing_glyphs = false,
