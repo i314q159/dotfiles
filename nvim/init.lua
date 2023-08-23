@@ -203,14 +203,14 @@ local plugins = {
         config = function()
             require("lsp-setup").setup({
                 servers = {
-                    pylsp = {},
+                    bashls = {},
+                    clangd = {},
                     denols = {},
                     gopls = {},
+                    html = {},
+                    pylsp = {},
                     pyright = {},
                     rust_analyzer = {},
-                    bashls = {},
-                    html = {},
-                    clangd = {},
                     tsserver = {},
 
                     lua_ls = {
