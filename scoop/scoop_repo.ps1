@@ -1,0 +1,1 @@
+scoop config SCOOP_REPO https://github.com/ScoopInstaller/Scoop.git
