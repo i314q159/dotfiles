@@ -1,1 +1,1 @@
-podman run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=i314q159 docker.io/library/mysql:latest
+podman run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=i314q159 -v /home/user/mysql/data:/var/lib/mysql docker.io/library/mysql:latest
