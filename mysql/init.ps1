@@ -1,1 +1,1 @@
-mysqld --install
+podman run -itd --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=i314q159 docker.io/library/mysql:latest
