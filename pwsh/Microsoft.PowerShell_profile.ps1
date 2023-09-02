@@ -8,3 +8,5 @@ Import-Module scoop-completion
 # replace built-in scoop search
 Invoke-Expression (&scoop-search --hook)
 
+# posh-git
+Import-Module posh-git
