@@ -395,7 +395,7 @@ local plugins = {
     {
         "Mofiqul/dracula.nvim",
         opts = {
-            transparent_bg = true,
+            transparent_bg = false,
             italic_comment = true,
         },
         lazy = false,
@@ -415,11 +415,6 @@ local plugins = {
         opts = {
             key_binding = "<leader>f"
         },
-    },
-    {
-        "nvim-zh/colorful-winsep.nvim",
-        config = true,
-        event = { "WinNew" },
     },
 }
 
