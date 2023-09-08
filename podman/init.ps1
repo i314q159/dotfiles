@@ -1,2 +1,3 @@
 podman machine init
-podman run --name hello quay.io/podman/hello
+podman machine start
+podman run --rm --name hello quay.io/podman/hello
