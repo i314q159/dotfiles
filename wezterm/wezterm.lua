@@ -9,7 +9,6 @@ local M = {
 
 M.font = wezterm.font_with_fallback({
     "Cascadia Code",
-    "Hack",
 })
 
 -- x86_64-pc-windows-msvc - Windows
