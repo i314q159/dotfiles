@@ -1,6 +1,0 @@
-[source.crates-io]
-replace-with = 'cernet'
-
-[source.tuna]
-registry = "sparse+https://mirrors.cernet.edu.cn/crates.io-index/"
-# registry = "https://mirrors.cernet.edu.cn/crates.io-index.git"

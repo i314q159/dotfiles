@@ -210,7 +210,6 @@ local plugins = {
                     html = {},
                     pylsp = {},
                     pyright = {},
-                    rust_analyzer = {},
                     tsserver = {},
 
                     lua_ls = {
@@ -324,7 +323,6 @@ local plugins = {
                     "go",
                     "json",
                     "lua",
-                    "rust",
                     "toml",
                     "vim",
                     "vimdoc",
