@@ -1,1 +1,1 @@
-podman run --name clash -itd -p 7890:7890 -v ~/.config/clash:/root/.config/clash docker.io/dreamacro/clash
+podman run -itd -p 7890:7890 -v ~/.config/clash:/root/.config/clash --name clash docker.io/dreamacro/clash
