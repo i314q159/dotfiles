@@ -165,7 +165,11 @@ local plugins = {
     },
     {
         "NvChad/nvim-colorizer.lua",
-        opts = {},
+        opts = {
+            user_default_options = {
+                mode = "virtualtext",
+            },
+        },
     },
     {
         "chentoast/marks.nvim",
@@ -191,10 +195,6 @@ local plugins = {
         lazy = false,
     },
     {
-        "dmmulroy/tsc.nvim",
-        opts = {},
-    },
-    {
         "junnplus/lsp-setup.nvim",
         dependencies = {
             "neovim/nvim-lspconfig",
@@ -211,7 +211,6 @@ local plugins = {
                     html = {},
                     pylsp = {},
                     pyright = {},
-                    tsserver = {},
 
                     lua_ls = {
                         settings = {
