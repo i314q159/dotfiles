@@ -1,2 +1,1 @@
-aria2c --allow-overwrite=true "https://ghproxy.com/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash" -o ripaojiedian_freenode.yaml
-aria2c --allow-overwrite=true "https://ghproxy.com/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml" -o peasoft_NoMoreWalls.yml
+podman run -itd -p 7890:7890 -v /mnt/d/podman/clash:/root/.config/clash --name clash docker.io/dreamacro/clash
