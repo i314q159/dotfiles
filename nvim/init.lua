@@ -205,7 +205,6 @@ local plugins = {
             require("lsp-setup").setup({
                 servers = {
                     bashls = {},
-                    clangd = {},
                     denols = {},
                     gopls = {},
                     html = {},
