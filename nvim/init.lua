@@ -281,7 +281,6 @@ local plugins = {
 					{ name = "path" },
 					{ name = "buffer" },
 					{ name = "calc" },
-					{ name = "crates" },
 				}),
 				mapping = {
 					["<Tab>"] = cmp.mapping.select_next_item(),
@@ -298,10 +297,6 @@ local plugins = {
 				},
 			})
 		end,
-	},
-	{
-		"saecki/crates.nvim",
-		opts = {},
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
