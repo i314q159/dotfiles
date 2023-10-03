@@ -8,5 +8,7 @@ Import-Module posh-git
 # scoop-completion
 Import-Module scoop-completion
 
-# replace built-in scoop search
-Invoke-Expression (&scoop-search --hook)
+# repo
+function repo {
+    python d:/repo/repo.py $args
+}
