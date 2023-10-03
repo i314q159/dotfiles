@@ -12,3 +12,8 @@ Import-Module scoop-completion
 function repo {
     python d:/repo/repo.py $args
 }
+
+# ghproxy
+function ghproxy {
+    git clone https://ghproxy.com/$args
+}
