@@ -206,6 +206,7 @@ local plugins = {
 				servers = {
 					bashls = {},
 					denols = {},
+					dockerls = {},
 					gopls = {},
 					html = {},
 					pylsp = {},
@@ -313,15 +314,6 @@ local plugins = {
 					enable = true,
 				},
 				auto_install = true,
-				ensure_installed = {
-					"go",
-					"json",
-					"lua",
-					"toml",
-					"vim",
-					"vimdoc",
-					"python",
-				},
 				sync_install = true,
 				indent = {
 					enable = true,
