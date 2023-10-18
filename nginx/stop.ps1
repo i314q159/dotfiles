@@ -1,0 +1,1 @@
+nginx -p "$env:NGINX_HOME" -s stop
