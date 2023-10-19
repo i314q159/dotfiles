@@ -105,47 +105,39 @@ local plugins = {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("lualine").setup({
-				options = {
-					icons_enabled = false,
-					section_separators = "",
-					component_separators = "",
-				},
-				sections = {
-					lualine_x = {
-						{
-							require("lazy.status").updates,
-							cond = require("lazy.status").has_updates,
-						},
-						{
-							require("ac").get_active_lsp_clients,
-							icon = "",
-						},
-						{
-							"datetime",
-							style = "iso",
-						},
-						{
-							"%#lualine_fg#tab:%{&tabstop}%#lualine_inactive#",
-						},
-						{
-							"%#lualine_fg#%{&fileencoding}%#lualine_inactive#",
-						},
-						{
-							"filetype",
-						},
-					},
-
-					lualine_c = {
-						{
-							"filename",
-							path = 2,
-						},
+		opts = {
+			options = {
+				icons_enabled = false,
+				section_separators = "",
+				component_separators = "",
+			},
+			sections = {
+				lualine_c = {
+					{
+						"filename",
+						path = 2,
 					},
 				},
-			})
-		end,
+				lualine_x = {
+					{
+						require("lazy.status").updates,
+						cond = require("lazy.status").has_updates,
+					},
+					{
+						"datetime",
+						style = "iso",
+					},
+					{
+						function()
+							return require("lazy").stats().loaded .. "/" .. require("lazy").stats().count
+						end,
+					},
+					{
+						"filetype",
+					},
+				},
+			},
+		},
 	},
 	{
 		"windwp/nvim-autopairs",
@@ -195,60 +187,60 @@ local plugins = {
 		lazy = false,
 	},
 	{
-		"junnplus/lsp-setup.nvim",
+		"williamboman/mason.nvim",
+		opts = {
+			github = {
+				download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s",
+			},
+			ui = {
+				icons = {
+					package_installed = "++",
+					package_pending = "->",
+					package_uninstalled = "--",
+				},
+			},
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
 			"neovim/nvim-lspconfig",
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
 		},
-		config = function()
-			require("lsp-setup").setup({
-				servers = {
-					bashls = {},
-					denols = {},
-					dockerls = {},
-					gopls = {},
-					html = {},
-					pylsp = {},
-					pyright = {},
+		opts = {},
+	},
+	{
+		"junnplus/lsp-setup.nvim",
+		opts = {
+			servers = {
+				bashls = {},
+				denols = {},
+				dockerls = {},
+				gopls = {},
+				html = {},
+				pylsp = {},
+				pyright = {},
 
-					lua_ls = {
-						settings = {
-							Lua = {
-								diagnostics = {
-									globals = { "vim" },
-								},
-								workspace = {
-									library = vim.api.nvim_get_runtime_file("", true),
-									checkThirdParty = false,
-								},
-								telemetry = {
-									enable = false,
-								},
-								format = {
-									enable = false,
-								},
+				lua_ls = {
+					settings = {
+						Lua = {
+							diagnostics = {
+								globals = { "vim" },
+							},
+							workspace = {
+								library = vim.api.nvim_get_runtime_file("", true),
+								checkThirdParty = false,
+							},
+							telemetry = {
+								enable = false,
+							},
+							format = {
+								enable = false,
 							},
 						},
 					},
 				},
-			})
-
-			require("mason").setup({
-				github = {
-					download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s",
-				},
-				ui = {
-					icons = {
-						package_installed = "++",
-						package_pending = "->",
-						package_uninstalled = "--",
-					},
-				},
-			})
-
-			require("mason-lspconfig").setup()
-		end,
+			},
+		},
 	},
 	{
 		"folke/neodev.nvim",
@@ -372,10 +364,6 @@ local plugins = {
 		"elentok/scriptify.nvim",
 		opts = {},
 		cmd = { "Scriptify" },
-	},
-	{
-		"i314q159/ac.nvim",
-		opts = {},
 	},
 	{
 		"Mofiqul/dracula.nvim",
