@@ -102,9 +102,7 @@ local plugins = {
 	{
 		"numToStr/Comment.nvim",
 		opts = {
-			toggler = {
-				line = "<C-]>",
-			},
+			toggler = { line = "<C-]>" },
 		},
 	},
 	{
@@ -116,31 +114,31 @@ local plugins = {
 				component_separators = "",
 			},
 			sections = {
+				lualine_b = {
+					"branch",
+					"diff",
+					"diagnostics",
+				},
 				lualine_c = {
-					{
-						"filename",
-						path = 2,
-					},
+					{ "filename", path = 2 },
 				},
 				lualine_x = {
 					{
 						require("lazy.status").updates,
 						cond = require("lazy.status").has_updates,
 					},
-					{
-						"datetime",
-						style = "iso",
-					},
+					{ "datetime", style = "iso" },
 					{
 						function()
 							return require("lazy").stats().loaded .. "/" .. require("lazy").stats().count
 						end,
 					},
-					{
-						"filetype",
-					},
+					{ "encoding" },
+					{ "fileformat" },
+					{ "filetype" },
 				},
 			},
+			extensions = { "lazy" },
 		},
 	},
 	{
