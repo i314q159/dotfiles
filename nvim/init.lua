@@ -5,6 +5,7 @@ vim.o.autoread = true
 vim.o.background = "dark"
 vim.o.backup = false
 vim.o.clipboard = "unnamedplus"
+vim.o.cmdheight = 0
 vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.fileencoding = "utf-8"
@@ -93,6 +94,9 @@ local plugins = {
 	},
 	{
 		"nguyenvukhang/nvim-toggler",
+		keys = {
+			{ "<leader>i", "require('nvim-toggler').toggle", desc = "Toggle word" },
+		},
 		opts = {},
 	},
 	{
@@ -213,9 +217,7 @@ local plugins = {
 		opts = {
 			servers = {
 				bashls = {},
-				denols = {},
 				dockerls = {},
-				gopls = {},
 				html = {},
 				pylsp = {},
 				pyright = {},
