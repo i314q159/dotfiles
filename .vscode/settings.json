@@ -1,5 +1,7 @@
 {
     "Lua.diagnostics.globals": [
         "vim"
-    ]
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic"
 }

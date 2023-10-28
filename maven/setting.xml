@@ -1,5 +1,11 @@
 <mirrors>
     <mirror>
+        <id>aliyunmaven</id>
+        <mirrorOf>*</mirrorOf>
+        <name>ali maven</name>
+        <url>https://maven.aliyun.com/repository/public</url>
+    </mirror>
+    <mirror>
         <id>sjtug</id>
         <name>sjtug maven</name>
         <url>https://mirrors.sjtug.sjtu.edu.cn/maven-central/</url>
