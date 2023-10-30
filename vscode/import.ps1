@@ -1,1 +1,0 @@
-foreach ($line in get-content ./vscode_extensions.txt) {code --install-extension $line}
