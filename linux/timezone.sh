@@ -1,1 +1,1 @@
-timedatectl set-timezone Asia/Shangshai
+timedatectl set-timezone UTC
