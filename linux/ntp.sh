@@ -1,0 +1,1 @@
+ntpdate ntp.aliyun.com
