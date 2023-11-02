@@ -229,7 +229,6 @@ local plugins = {
 				html = {},
 				pylsp = {},
 				pyright = {},
-				powershell_es = {},
 
 				lua_ls = {
 					settings = {
