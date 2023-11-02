@@ -59,7 +59,7 @@ vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, sile
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local mirror = "https://ghproxy.com/"
+local mirror = "https://ghproxy.net/"
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -211,6 +211,16 @@ local plugins = {
 		opts = {},
 	},
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"black",
+				"isort",
+				"stylua",
+			},
+		},
+	},
+	{
 		"junnplus/lsp-setup.nvim",
 		opts = {
 			servers = {
@@ -219,6 +229,7 @@ local plugins = {
 				html = {},
 				pylsp = {},
 				pyright = {},
+				powershell_es = {},
 
 				lua_ls = {
 					settings = {
@@ -382,17 +393,16 @@ local plugins = {
 	},
 	{
 		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		opts = {
 			format_on_save = {
-				timeout_ms = 100,
-				lsp_fallback = false,
+				timeout_ms = 500,
+				lsp_fallback = true,
+				async = false,
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = {
-					"isort",
-					"black",
-				},
+				python = { "isort", "black" },
 			},
 		},
 	},
