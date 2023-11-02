@@ -229,6 +229,7 @@ local plugins = {
 				html = {},
 				pylsp = {},
 				pyright = {},
+				tsserver = {},
 
 				lua_ls = {
 					settings = {
