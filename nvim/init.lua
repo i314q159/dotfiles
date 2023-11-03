@@ -56,6 +56,7 @@ vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-f>", "*", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -329,6 +330,9 @@ local plugins = {
 				indent = {
 					enable = true,
 				},
+				modules = {},
+				ensure_installed = {},
+				ignore_install = {},
 			})
 		end,
 	},
@@ -363,13 +367,6 @@ local plugins = {
 		opts = {},
 	},
 	{
-		"jinzhongjia/LspUI.nvim",
-		opts = {},
-		keys = {
-			{ "<F2>", "<cmd>LspUI rename<cr>", desc = "LspUI rename" },
-		},
-	},
-	{
 		"stevearc/dressing.nvim",
 		opts = {},
 	},
@@ -381,6 +378,9 @@ local plugins = {
 	},
 	{
 		"elentok/scriptify.nvim",
+		keys = {
+			{ "<leader>s", "<cmd>Scriptify<cr>", desc = "Scriptify" },
+		},
 		opts = {},
 		cmd = { "Scriptify" },
 	},
