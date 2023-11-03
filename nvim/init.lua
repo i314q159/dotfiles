@@ -271,6 +271,7 @@ local plugins = {
 		dependencies = {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-calc",
+			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
@@ -298,6 +299,14 @@ local plugins = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
 					end,
+				},
+			})
+
+			-- `/` cmdline setup.
+			cmp.setup.cmdline("/", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = {
+					{ name = "buffer" },
 				},
 			})
 		end,
