@@ -215,8 +215,6 @@ local plugins = {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = {
 			ensure_installed = {
-				"black",
-				"isort",
 				"stylua",
 			},
 		},
@@ -227,6 +225,7 @@ local plugins = {
 			servers = {
 				bashls = {},
 				dockerls = {},
+				gopls = {},
 				html = {},
 				pylsp = {},
 				pyright = {},
@@ -410,13 +409,20 @@ local plugins = {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
-				python = { "isort", "black" },
 			},
 		},
 	},
 	{
 		"pocco81/auto-save.nvim",
 		opts = {},
+	},
+	{
+		"vidocqh/auto-indent.nvim",
+		opts = {},
+	},
+	{
+		"chrisgrieser/nvim-puppeteer",
+		lazy = false,
 	},
 }
 
