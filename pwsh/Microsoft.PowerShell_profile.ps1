@@ -15,8 +15,8 @@ function repo {
 
 # ghproxy
 function ghproxy-git {
-    git clone https://ghproxy.com/$args
+    git clone https://ghproxy.net/$args
 }
 function ghproxy-aria2c {
-    aria2c https://ghproxy.com/$args
+    aria2c https://ghproxy.net/$args
 }
