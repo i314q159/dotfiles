@@ -12,6 +12,7 @@
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.startupPrompt": "never",
     "terminal.integrated.fontSize": 17,
+    "terminal.integrated.shellIntegration.history": 0,
     "window.restoreWindows": "none",
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "material-icon-theme",
