@@ -20,3 +20,8 @@ function ghproxy-git {
 function ghproxy-aria2c {
     aria2c https://ghproxy.net/$args
 }
+
+# eza
+function ll {
+    eza -a --icons
+}
