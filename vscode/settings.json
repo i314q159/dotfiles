@@ -18,4 +18,5 @@
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "icons-carbon",
     "workbench.startupEditor": "none",
+    "extensions.autoUpdate": false,
 }
