@@ -19,4 +19,7 @@
     "workbench.productIconTheme": "icons-carbon",
     "workbench.startupEditor": "none",
     "extensions.autoUpdate": false,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
