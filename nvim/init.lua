@@ -139,7 +139,6 @@ local plugins = {
 					{ "filetype" },
 				},
 			},
-			extensions = { "lazy" },
 		},
 	},
 	{
@@ -225,7 +224,6 @@ local plugins = {
 			servers = {
 				bashls = {},
 				dockerls = {},
-				gopls = {},
 				html = {},
 				pylsp = {},
 				pyright = {},
