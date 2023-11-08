@@ -15,7 +15,7 @@
     "terminal.integrated.shellIntegration.history": 0,
     "window.restoreWindows": "none",
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "workbench.productIconTheme": "icons-carbon",
     "workbench.startupEditor": "none",
     "extensions.autoUpdate": false,
