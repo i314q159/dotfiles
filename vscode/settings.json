@@ -3,7 +3,7 @@
     "editor.cursorStyle": "block",
     "editor.fontFamily": "Cascadia Code",
     "editor.fontLigatures": true,
-    "editor.fontSize": 17,
+    "editor.fontSize": 18,
     "editor.minimap.enabled": false,
     "explorer.confirmDelete": false,
     "files.autoSave": "afterDelay",
@@ -26,5 +26,5 @@
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
-    "workbench.commandPalette.history": 0,
+    "debug.console.historySuggestions": false,
 }
