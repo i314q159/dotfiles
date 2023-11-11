@@ -1,1 +1,0 @@
-cp ~/scoop/apps/gcc/current/bin/gcc.exe ~/scoop/apps/gcc/current/bin/x86_64-w64-mingw32-gcc.exe

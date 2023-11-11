@@ -1,1 +1,0 @@
-cp ~/scoop/apps/luarocks/current/config.lua ./config.lua
