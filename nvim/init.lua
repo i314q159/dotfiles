@@ -422,6 +422,10 @@ local plugins = {
 		"chrisgrieser/nvim-puppeteer",
 		lazy = false,
 	},
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+	},
 }
 
 require("lazy").setup(plugins, opts)
