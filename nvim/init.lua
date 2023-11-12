@@ -424,7 +424,15 @@ local plugins = {
 	},
 	{
 		"stevearc/oil.nvim",
-		opts = {},
+		keys = {
+			{ "<leader>o", "<cmd>Oil --float<cr>", desc = "Open parent directory" },
+		},
+		opts = {
+			default_file_explorer = false,
+		},
+		win_options = {
+			cursorcolumn = true,
+		},
 	},
 }
 
