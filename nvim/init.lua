@@ -434,6 +434,16 @@ local plugins = {
 			cursorcolumn = true,
 		},
 	},
+	{
+		"folke/trouble.nvim",
+		keys = {
+			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "TroubleToggle" },
+		},
+		opts = {
+			icons = false,
+		},
+		lazy = false,
+	},
 }
 
 require("lazy").setup(plugins, opts)
