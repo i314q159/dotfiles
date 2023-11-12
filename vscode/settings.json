@@ -27,4 +27,6 @@
     "zig.initialSetupDone": true,
     "redhat.telemetry.enabled": false,
     "debug.console.historySuggestions": false,
+    "terminal.integrated.enablePersistentSessions": false,
+    "git.confirmSync": false,
 }
