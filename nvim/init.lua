@@ -52,8 +52,6 @@ vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true 
 
 vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
-vim.api.nvim_set_keymap("v", "<S-Up>", ":m-2<cr>", { silent = true })
-vim.api.nvim_set_keymap("v", "<S-Down>", ":m+<cr>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
