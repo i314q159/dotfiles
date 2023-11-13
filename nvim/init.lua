@@ -444,6 +444,15 @@ local plugins = {
 		},
 		lazy = false,
 	},
+	{
+		"j-hui/fidget.nvim",
+		opts = {},
+	},
+	{
+		"sontungexpt/stcursorword",
+		event = "VeryLazy",
+		config = true,
+	},
 }
 
 require("lazy").setup(plugins, opts)
