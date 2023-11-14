@@ -110,7 +110,7 @@ local plugins = {
 		"nvim-lualine/lualine.nvim",
 		opts = {
 			options = {
-				icons_enabled = false,
+				icons_enabled = true,
 				section_separators = "",
 				component_separators = "",
 			},
@@ -440,7 +440,7 @@ local plugins = {
 			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "TroubleToggle" },
 		},
 		opts = {
-			icons = false,
+			icons = true,
 		},
 		lazy = false,
 	},
@@ -452,6 +452,20 @@ local plugins = {
 		"sontungexpt/stcursorword",
 		event = "VeryLazy",
 		config = true,
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		opts = {},
+	},
+	{
+		"f-person/git-blame.nvim",
+		keys = {
+			{ "<leader>g", "<cmd>GitBlameToggle<cr>", desc = "GitBlameToggle" },
+		},
+		opts = {
+			gitblame_use_blame_commit_file_urls = true,
+		},
+		lazy = false,
 	},
 }
 
