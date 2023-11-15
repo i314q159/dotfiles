@@ -416,10 +416,6 @@ local plugins = {
 		},
 	},
 	{
-		"pocco81/auto-save.nvim",
-		opts = {},
-	},
-	{
 		"vidocqh/auto-indent.nvim",
 		opts = {},
 	},
