@@ -431,7 +431,7 @@ local plugins = {
 	{
 		"stevearc/oil.nvim",
 		keys = {
-			{ "<leader>o", "<cmd>Oil --float<cr>", desc = "Open Parent Directory" },
+			{ "<leader>e", "<cmd>Oil --float<cr>", desc = "Open Parent Directory" },
 		},
 		opts = {
 			default_file_explorer = false,
@@ -464,9 +464,7 @@ local plugins = {
 		keys = {
 			{ "<leader>g", "<cmd>GitBlameToggle<cr>", desc = "GitBlame Toggle" },
 		},
-		opts = {
-			gitblame_use_blame_commit_file_urls = true,
-		},
+		opts = {},
 		lazy = false,
 	},
 	{
@@ -483,6 +481,24 @@ local plugins = {
 	{
 		"i314q159/lsp-info",
 		opts = {},
+	},
+	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		cmd = { "Outline", "OutlineOpen" },
+		keys = {
+			{ "<leader>o", "<cmd>Outline<cr>", desc = "Toggle outline" },
+		},
+		opts = {
+			outline_window = {
+				width = 30,
+				relative_width = true,
+				auto_jump = true,
+				show_numbers = true,
+				show_relative_numbers = true,
+				wrap = true,
+			},
+		},
 	},
 }
 
