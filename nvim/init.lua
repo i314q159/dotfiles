@@ -133,18 +133,12 @@ local plugins = {
 						cond = require("lazy.status").has_updates,
 					},
 					{
-						-- function()
-						-- 	do
-						-- 		local names = {}
-						-- 		for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-						-- 			table.insert(names, server.name)
-						-- 		end
-						-- 	end
-						-- 	return "󰙴 " .. table.concat(names, " ")
-						-- end,
-
 						function()
-							return "󰙴 "
+							local names = {}
+							for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
+								table.insert(names, server.name)
+							end
+							return "󰙴 " .. table.concat(names, " ")
 						end,
 					},
 					{ "datetime", style = "iso" },
