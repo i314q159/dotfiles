@@ -481,7 +481,14 @@ local plugins = {
 		keys = {
 			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree Toggle" },
 		},
-		opts = {},
+		opts = {
+			view = {
+				side = "right",
+				number = true,
+				relativenumber = true,
+				width = math.modf(vim.api.nvim_win_get_width(0) / 4),
+			},
+		},
 	},
 	{
 		"hinell/lsp-timeout.nvim",
