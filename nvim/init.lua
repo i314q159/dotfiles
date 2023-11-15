@@ -43,8 +43,6 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.editorconfig = true
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 -- keymap
 vim.api.nvim_set_keymap("n", "<S-h>", "<C-w>h", { noremap = true, silent = true })
@@ -93,12 +91,16 @@ local plugins = {
 	},
 	{
 		"axieax/urlview.nvim",
+		lazy = false,
+		keys = {
+			{ "<leader>u", "<cmd>UrlView buffer<cr>", desc = "Urlview Buffer" },
+		},
 		opts = {},
 	},
 	{
 		"nguyenvukhang/nvim-toggler",
 		keys = {
-			{ "<leader>i", "require('nvim-toggler').toggle", desc = "Toggle word" },
+			{ "<leader>i", "require('nvim-toggler').toggle", desc = "Toggle Word" },
 		},
 		opts = {},
 	},
@@ -151,8 +153,8 @@ local plugins = {
 		"toppair/reach.nvim",
 		opts = {},
 		keys = {
-			{ "<leader>b", "<cmd>ReachOpen buffers<cr>", desc = "ReachOpen buffers" },
-			{ "<leader>t", "<cmd>ReachOpen colorschemes<cr>", desc = "ReachOpen colorschemes" },
+			{ "<leader>b", "<cmd>ReachOpen buffers<cr>", desc = "ReachOpen Buffers" },
+			{ "<leader>t", "<cmd>ReachOpen colorschemes<cr>", desc = "ReachOpen Colorschemes" },
 		},
 	},
 	{
@@ -175,8 +177,8 @@ local plugins = {
 		"lewis6991/gitsigns.nvim",
 		opts = {},
 		keys = {
-			{ "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns preview_hunk" },
-			{ "<leader>n", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns next_hunkk" },
+			{ "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns Preview Hunk" },
+			{ "<leader>n", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns Next Hunk" },
 		},
 		lazy = false,
 	},
@@ -428,7 +430,7 @@ local plugins = {
 	{
 		"stevearc/oil.nvim",
 		keys = {
-			{ "<leader>o", "<cmd>Oil --float<cr>", desc = "Open parent directory" },
+			{ "<leader>o", "<cmd>Oil --float<cr>", desc = "Open Parent Directory" },
 		},
 		opts = {
 			default_file_explorer = false,
@@ -440,7 +442,7 @@ local plugins = {
 	{
 		"folke/trouble.nvim",
 		keys = {
-			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "TroubleToggle" },
+			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
 		},
 		opts = {
 			icons = true,
@@ -463,7 +465,7 @@ local plugins = {
 	{
 		"f-person/git-blame.nvim",
 		keys = {
-			{ "<leader>g", "<cmd>GitBlameToggle<cr>", desc = "GitBlameToggle" },
+			{ "<leader>g", "<cmd>GitBlameToggle<cr>", desc = "GitBlame Toggle" },
 		},
 		opts = {
 			gitblame_use_blame_commit_file_urls = true,
@@ -477,7 +479,17 @@ local plugins = {
 	{
 		"nvim-tree/nvim-tree.lua",
 		keys = {
-			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTreeToggle" },
+			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree Toggle" },
+		},
+		opts = {},
+	},
+	{
+		"hinell/lsp-timeout.nvim",
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		keys = {
+			{ "<leader>p", "<cmd>Telescope<cr>", desc = "Telescope" },
 		},
 		opts = {},
 	},
