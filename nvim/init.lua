@@ -227,6 +227,7 @@ local plugins = {
 				html = {},
 				pylsp = {},
 				pyright = {},
+				rust_analyzer = {},
 				tsserver = {},
 
 				lua_ls = {
