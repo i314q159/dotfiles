@@ -474,9 +474,6 @@ local plugins = {
 		opts = {},
 	},
 	{
-		"hinell/lsp-timeout.nvim",
-	},
-	{
 		"nvim-telescope/telescope.nvim",
 		keys = {
 			{ "<leader>p", "<cmd>Telescope<cr>", desc = "Telescope" },

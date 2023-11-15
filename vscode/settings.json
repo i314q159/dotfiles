@@ -29,4 +29,5 @@
     "debug.console.historySuggestions": false,
     "terminal.integrated.enablePersistentSessions": false,
     "git.confirmSync": false,
+    "git.openRepositoryInParentFolders": "never",
 }
