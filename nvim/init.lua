@@ -134,11 +134,7 @@ local plugins = {
 					},
 					{
 						function()
-							local names = {}
-							for _, server in pairs(vim.lsp.get_clients({ bufnr = 0 })) do
-								table.insert(names, server.name)
-							end
-							return "󰙴 " .. table.concat(names, " ")
+							return require("lsp-info").lsp_info()
 						end,
 					},
 					{ "datetime", style = "iso" },
@@ -455,10 +451,6 @@ local plugins = {
 		lazy = false,
 	},
 	{
-		"j-hui/fidget.nvim",
-		opts = {},
-	},
-	{
 		"sontungexpt/stcursorword",
 		event = "VeryLazy",
 		config = true,
@@ -489,6 +481,10 @@ local plugins = {
 		keys = {
 			{ "<leader>p", "<cmd>Telescope<cr>", desc = "Telescope" },
 		},
+		opts = {},
+	},
+	{
+		"i314q159/lsp-info",
 		opts = {},
 	},
 }
