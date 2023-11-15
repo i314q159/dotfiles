@@ -43,6 +43,8 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.editorconfig = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- keymap
 vim.api.nvim_set_keymap("n", "<S-h>", "<C-w>h", { noremap = true, silent = true })
@@ -467,6 +469,17 @@ local plugins = {
 			gitblame_use_blame_commit_file_urls = true,
 		},
 		lazy = false,
+	},
+	{
+		"m-demare/hlargs.nvim",
+		opts = {},
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		keys = {
+			{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NvimTreeToggle" },
+		},
+		opts = {},
 	},
 }
 
