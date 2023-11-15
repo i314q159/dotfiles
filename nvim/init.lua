@@ -500,6 +500,12 @@ local plugins = {
 			},
 		},
 	},
+	{
+		"okuuva/auto-save.nvim",
+		cmd = "ASToggle",
+		event = { "InsertLeave", "TextChanged" },
+		opts = {},
+	},
 }
 
 require("lazy").setup(plugins, opts)
