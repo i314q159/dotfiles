@@ -53,10 +53,15 @@ vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
 
+vim.api.nvim_set_keymap("n", "+", "<C-a>", { silent = true })
+vim.api.nvim_set_keymap("n", "-", "<C-x>", { silent = true })
+
 vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap("n", "<C-f>", "*", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-a>", "gg<S-v>G", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -200,6 +205,7 @@ local plugins = {
 	{
 		"williamboman/mason.nvim",
 		opts = {
+			max_concurrent_installers = require("math").huge,
 			github = {
 				download_url_template = mirror .. "https://github.com/%s/releases/download/%s/%s",
 			},
@@ -499,12 +505,6 @@ local plugins = {
 				wrap = true,
 			},
 		},
-	},
-	{
-		"okuuva/auto-save.nvim",
-		cmd = "ASToggle",
-		event = { "InsertLeave", "TextChanged" },
-		opts = {},
 	},
 }
 
