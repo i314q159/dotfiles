@@ -436,6 +436,9 @@ local plugins = {
 	},
 	{
 		"stevearc/oil.nvim",
+		cmd = {
+			"Oil",
+		},
 		keys = {
 			{ "<leader>e", "<cmd>Oil --float<cr>", desc = "Open Parent Directory" },
 		},
