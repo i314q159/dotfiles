@@ -1,3 +1,3 @@
-sudo zypper in -y opi
+zypper in -y opi
 opi vscode
 opi edge

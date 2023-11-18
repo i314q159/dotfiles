@@ -409,7 +409,7 @@ local plugins = {
 	{
 		"roobert/f-string-toggle.nvim",
 		opts = {
-			key_binding = "<leader>f",
+			key_binding = "fs",
 		},
 	},
 	{
@@ -483,7 +483,7 @@ local plugins = {
 	{
 		"nvim-telescope/telescope.nvim",
 		keys = {
-			{ "<leader>p", "<cmd>Telescope<cr>", desc = "Telescope" },
+			{ "<leader>f", "<cmd>Telescope<cr>", desc = "Telescope" },
 		},
 		opts = {},
 	},
@@ -508,6 +508,10 @@ local plugins = {
 				wrap = true,
 			},
 		},
+	},
+	{
+		"sQVe/sort.nvim",
+		opts = {},
 	},
 }
 

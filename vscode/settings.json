@@ -18,7 +18,6 @@
     "workbench.iconTheme": "vscode-icons",
     "workbench.productIconTheme": "icons-carbon",
     "workbench.startupEditor": "none",
-    "extensions.autoUpdate": false,
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -29,5 +28,6 @@
     "debug.console.historySuggestions": false,
     "terminal.integrated.enablePersistentSessions": false,
     "git.confirmSync": false,
+    "terminal.integrated.enableMultiLinePasteWarning": false,
     "git.openRepositoryInParentFolders": "never",
 }

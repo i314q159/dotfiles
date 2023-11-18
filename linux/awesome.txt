@@ -1,0 +1,6 @@
+git
+neofetch
+neovim
+tealdeer
+yt-dlp
+zellij
