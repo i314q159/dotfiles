@@ -1,8 +1,0 @@
-deb https://mirrors.cernet.edu.cn/kali kali-rolling main non-free contrib
-# deb-src https://mirrors.cernet.edu.cn/kali kali-rolling main non-free contrib
-
-# deb https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main non-free contrib
-# deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main non-free contrib
-
-# deb https://mirrors.sjtug.sjtu.edu.cn/kali kali-rolling main non-free contrib
-# deb-src https://mirrors.sjtug.sjtu.edu.cn/kali kali-rolling main non-free contrib
