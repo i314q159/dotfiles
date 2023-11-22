@@ -1,2 +1,2 @@
 git config --global url.https://mirrors.tuna.tsinghua.edu.cn/git/AOSP/.insteadof https://android.googlesource.com
-git config --global url.https://ghproxy.net/https://github.com/.insteadof https://github.com
+# git config --global url.https://ghproxy.net/https://github.com/.insteadof https://github.com
