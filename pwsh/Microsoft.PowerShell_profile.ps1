@@ -28,5 +28,5 @@ function ll {
 
 # rpc
 function rpc {
-   aria2c --enable-rpc --rpc-allow-origin-all --rpc-listen-all --continue --dir="D:\aria2_d"
+   aria2c --enable-rpc
 }
