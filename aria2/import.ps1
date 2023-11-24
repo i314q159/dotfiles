@@ -1,1 +1,0 @@
-cp aria2.conf ~/scoop/apps/aria2/current/aria2.conf
