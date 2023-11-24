@@ -230,6 +230,7 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"stylua",
+				"xmlformatter",
 			},
 		},
 	},
@@ -239,6 +240,7 @@ local plugins = {
 			servers = {
 				bashls = {},
 				dockerls = {},
+				gopls = {},
 				html = {},
 				pylsp = {},
 				pyright = {},
@@ -423,6 +425,7 @@ local plugins = {
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
+				xml = { "xmlformatter" },
 			},
 		},
 	},
