@@ -30,4 +30,5 @@
     "git.confirmSync": false,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "git.openRepositoryInParentFolders": "never",
+    "explorer.confirmDragAndDrop": false,
 }
