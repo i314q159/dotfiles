@@ -3,4 +3,3 @@
 set -euo pipefail
 
 cp ./bash.rc ~/.bashrc
-source ~/.bashrc

@@ -9,8 +9,3 @@ source "/usr/share/autojump/autojump.bash"
 # alias
 alias l='ls -al --color=auto'
 
-# function
-function hypr {
-    exec Hyprland
-}
-
