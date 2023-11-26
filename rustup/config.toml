@@ -1,5 +1,8 @@
 [source.crates-io]
-replace-with = "cernet"
+replace-with = "rsproxy-sparse"
 
 [source.cernet]
 registry = "sparse+https://mirrors.cernet.edu.cn/crates.io-index/"
+
+[source.rsproxy-sparse]
+registry = "sparse+https://rsproxy.cn/index/"
