@@ -53,15 +53,12 @@ vim.api.nvim_set_keymap("n", "<S-l>", "<C-w>l", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
 
-vim.api.nvim_set_keymap("n", "+", "<C-a>", { silent = true })
-vim.api.nvim_set_keymap("n", "-", "<C-x>", { silent = true })
-
 vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<C-f>", "*", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<C-a>", "gg<S-v>G", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>a", "gg<S-v>G", { noremap = true, silent = true })
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -246,6 +243,7 @@ local plugins = {
 				pyright = {},
 				rust_analyzer = {},
 				tsserver = {},
+				zls = {},
 
 				lua_ls = {
 					settings = {
@@ -400,15 +398,6 @@ local plugins = {
 		cmd = { "Scriptify" },
 	},
 	{
-		"Mofiqul/dracula.nvim",
-		opts = {
-			transparent_bg = false,
-			italic_comment = true,
-		},
-		lazy = false,
-		priority = 1000,
-	},
-	{
 		"roobert/f-string-toggle.nvim",
 		opts = {
 			key_binding = "fs",
@@ -516,9 +505,18 @@ local plugins = {
 		"sQVe/sort.nvim",
 		opts = {},
 	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			style = "night",
+			transparent = false,
+		},
+	},
 }
 
 require("lazy").setup(plugins, opts)
-vim.cmd("colorscheme dracula")
+vim.cmd("colorscheme tokyonight-night")
 vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Lazy<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>Mason<cr>", { noremap = true, silent = true })
