@@ -30,5 +30,6 @@
     "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.iconTheme": "material-icon-theme",
     "extensions.ignoreRecommendations": true,
-    "explorer.compactFolders": false
+    "explorer.compactFolders": false,
+    "json.schemaDownload.enable": false
 }
