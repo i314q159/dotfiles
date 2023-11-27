@@ -25,8 +25,3 @@ function ghproxy-aria2c {
 function ll {
     eza -a --icons
 }
-
-# rpc
-function rpc {
-   aria2c --enable-rpc
-}
