@@ -289,14 +289,18 @@ local plugins = {
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-path",
 			"saadparwaiz1/cmp_luasnip",
+			"ray-x/cmp-treesitter",
+			"onsails/lspkind.nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
+			local lspkind = require("lspkind")
 
 			cmp.setup({
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "luasnip" },
+					{ name = "treesitter" },
 					{ name = "path" },
 					{ name = "buffer" },
 					{ name = "calc" },
@@ -313,6 +317,13 @@ local plugins = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
 					end,
+				},
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "symbol",
+						maxwidth = 50,
+						ellipsis_char = "...",
+					}),
 				},
 			})
 
