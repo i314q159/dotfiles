@@ -114,6 +114,9 @@ local plugins = {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"i314q159/lsc",
+		},
 		opts = {
 			options = {
 				icons_enabled = true,
@@ -142,7 +145,7 @@ local plugins = {
 					{ "datetime", style = "iso" },
 					{
 						function()
-							return require("lazy").stats().loaded .. "/" .. require("lazy").stats().count
+							return require("lsc").loaded_slash_count()
 						end,
 					},
 					{ "encoding" },
