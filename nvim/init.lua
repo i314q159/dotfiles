@@ -461,7 +461,9 @@ local plugins = {
 			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
 		},
 		opts = {
+			position = "bottom",
 			icons = true,
+			auto_close = true,
 		},
 		lazy = false,
 	},
@@ -524,13 +526,13 @@ local plugins = {
 		lazy = false,
 		priority = 1000,
 		opts = {
-			style = "night",
+			style = "moon",
 			transparent = false,
 		},
 	},
 }
 
 require("lazy").setup(plugins, opts)
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme tokyonight-moon")
 vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Lazy<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>Mason<cr>", { noremap = true, silent = true })
