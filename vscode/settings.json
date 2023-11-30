@@ -33,5 +33,6 @@
     "json.schemaDownload.enable": false,
     "git.autofetch": true,
     "editor.minimap.renderCharacters": false,
-    "github.gitProtocol": "ssh"
+    "github.gitProtocol": "ssh",
+    "git.openAfterClone": "whenNoFolderOpen"
 }
