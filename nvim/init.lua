@@ -188,7 +188,7 @@ local plugins = {
 		opts = {},
 		keys = {
 			{ "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns Preview Hunk" },
-			{ "<leader>n", "<cmd>Gitsigns next_hunk<cr>", desc = "Gitsigns Next Hunk" },
+			{ "<leader>n", "<cmd>Gitsigns next_hunk<cr><cr>", desc = "Gitsigns Next Hunk" },
 		},
 		lazy = false,
 	},
@@ -242,7 +242,7 @@ local plugins = {
 				dockerls = {},
 				gopls = {},
 				html = {},
-				pylsp = {},
+				["pylsp@1.2.1"] = {},
 				pyright = {},
 				rust_analyzer = {},
 				tsserver = {},
@@ -439,21 +439,6 @@ local plugins = {
 	{
 		"chrisgrieser/nvim-puppeteer",
 		lazy = false,
-	},
-	{
-		"stevearc/oil.nvim",
-		cmd = {
-			"Oil",
-		},
-		keys = {
-			{ "<leader>e", "<cmd>Oil --float<cr>", desc = "Open Parent Directory" },
-		},
-		opts = {
-			default_file_explorer = false,
-		},
-		win_options = {
-			cursorcolumn = true,
-		},
 	},
 	{
 		"folke/trouble.nvim",
