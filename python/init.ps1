@@ -1,0 +1,1 @@
+pip config set global.editor code
