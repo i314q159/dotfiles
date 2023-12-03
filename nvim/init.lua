@@ -242,7 +242,7 @@ local plugins = {
 				dockerls = {},
 				gopls = {},
 				html = {},
-				["pylsp@1.2.1"] = {},
+				pylsp = {},
 				pyright = {},
 				rust_analyzer = {},
 				tsserver = {},
@@ -521,3 +521,12 @@ require("lazy").setup(plugins, opts)
 vim.cmd("colorscheme tokyonight-moon")
 vim.api.nvim_set_keymap("n", "<leader>l", "<cmd>Lazy<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>m", "<cmd>Mason<cr>", { noremap = true, silent = true })
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 200,
+		})
+	end,
+})
