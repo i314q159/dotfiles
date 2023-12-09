@@ -246,6 +246,7 @@ local plugins = {
 				pyright = {},
 				rust_analyzer = {},
 				tsserver = {},
+				vimls = {},
 				zls = {},
 
 				lua_ls = {
