@@ -14,9 +14,6 @@
     "window.restoreWindows": "none",
     "workbench.productIconTheme": "icons-carbon",
     "workbench.startupEditor": "none",
-    "[json]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "zig.path": "",
     "zig.zls.path": "",
     "zig.initialSetupDone": true,
@@ -36,5 +33,7 @@
     "git.openAfterClone": "whenNoFolderOpen",
     "json.schemaDownload.enable": false,
     "files.autoGuessEncoding": true,
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "terminal.integrated.env.windows": {},
+    "workbench.editor.enablePreview": false,
 }
