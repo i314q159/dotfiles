@@ -13,7 +13,7 @@ Invoke-Expression (&starship init powershell)
 
 # repo
 function repo {
-    python d:/repo/repo.py $args
+    python d:/repo/repo $args
 }
 
 # ghproxy
