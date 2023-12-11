@@ -54,7 +54,6 @@ vim.api.nvim_set_keymap("n", "<S-Up>", ":m-2<cr>", { silent = true })
 vim.api.nvim_set_keymap("n", "<S-Down>", ":m+<cr>", { silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>v", "<cmd>edit $MYVIMRC<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>c", "<cmd>bdelete<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>q", "<cmd>wqa<cr>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<C-f>", "*", { noremap = true, silent = true })
@@ -164,7 +163,6 @@ local plugins = {
 		opts = {},
 		keys = {
 			{ "<leader>b", "<cmd>ReachOpen buffers<cr>", desc = "ReachOpen Buffers" },
-			{ "<leader>t", "<cmd>ReachOpen colorschemes<cr>", desc = "ReachOpen Colorschemes" },
 		},
 	},
 	{
@@ -341,6 +339,9 @@ local plugins = {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"windwp/nvim-ts-autotag",
+		},
 		build = ":TSUpdate",
 		config = function()
 			require("nvim-treesitter.install").prefer_git = true
@@ -361,6 +362,9 @@ local plugins = {
 				modules = {},
 				ensure_installed = {},
 				ignore_install = {},
+				autotag = {
+					enable = true,
+				},
 			})
 		end,
 	},
@@ -444,7 +448,7 @@ local plugins = {
 	{
 		"folke/trouble.nvim",
 		keys = {
-			{ "<leader>w", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
+			{ "<leader>t", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
 		},
 		opts = {
 			position = "bottom",
@@ -515,6 +519,10 @@ local plugins = {
 			style = "moon",
 			transparent = false,
 		},
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
 	},
 }
 
