@@ -2,11 +2,14 @@
 Set-Alias open explorer
 Set-Alias tm recycle-bin
 
-# posh-git
-Import-Module posh-git
-
 # scoop-completion
 Import-Module scoop-completion
+
+# scoop-search
+Invoke-Expression (&scoop-search --hook)
+
+# starship
+Invoke-Expression (&starship init powershell)
 
 # repo
 function repo {
@@ -20,4 +23,3 @@ function ghproxy-git {
 function ghproxy-aria2c {
     aria2c https://ghproxy.net/$args
 }
-
