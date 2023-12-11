@@ -494,7 +494,7 @@ local plugins = {
 		lazy = true,
 		cmd = { "Outline", "OutlineOpen" },
 		keys = {
-			{ "<leader>o", "<cmd>Outline<cr>", desc = "Toggle outline" },
+			{ "<leader>o", "<cmd>Outline<cr>", desc = "Toggle Outline" },
 		},
 		opts = {
 			outline_window = {
