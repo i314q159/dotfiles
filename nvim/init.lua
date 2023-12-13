@@ -160,6 +160,9 @@ local plugins = {
 	},
 	{
 		"toppair/reach.nvim",
+		cmd = {
+			"ReachOpen",
+		},
 		opts = {},
 		keys = {
 			{ "<leader>b", "<cmd>ReachOpen buffers<cr>", desc = "ReachOpen Buffers" },
