@@ -4,4 +4,4 @@
 git remote add origin git@github.com:i314q159/dotfiles.git
 ```
 
-![Alt text](img/dog.png)
+![dog](img/dog.png)
