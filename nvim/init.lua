@@ -87,7 +87,7 @@ local opts = {
 
 local plugins = {
 	{
-		"jghauser/mkdir.nvim",
+		"mateuszwieloch/automkdir.nvim",
 		"nvim-lua/plenary.nvim",
 	},
 	{
