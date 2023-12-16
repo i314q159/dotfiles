@@ -37,4 +37,6 @@
     "zig.initialSetupDone": true,
     "zig.path": "",
     "zig.zls.path": "",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
 }
