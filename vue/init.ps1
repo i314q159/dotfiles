@@ -1,1 +1,1 @@
-npm init vue@latest
+npx create-vue@latest vue_zero
