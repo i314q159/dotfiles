@@ -1,0 +1,2 @@
+https://ghproxy.net/https://raw.githubusercontent.com/freefq/free/master/v2
+https://ghproxy.net/https://raw.githubusercontent.com/Flik6/getNode/main/v2ray.txt
