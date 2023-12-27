@@ -7,4 +7,14 @@ export LANG="en_US.UTF-8"
 source "/usr/share/autojump/autojump.bash"
 
 # alias
-alias l='ls -al --color=auto'
+alias ll="ls -al --color=auto"
+
+# ghproxy    
+ghproxy_url="https://ghproxy.net/"
+function ghproxy-curl() {
+    curl -O $ghproxy_url$1
+}
+
+function ghproxy-git() {
+    git clone $ghproxy_url$1
+}
