@@ -39,4 +39,7 @@
     "zig.zls.path": "",
     "python.analysis.autoImportCompletions": true,
     "python.analysis.typeCheckingMode": "basic",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
