@@ -29,7 +29,7 @@
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.shellIntegration.history": 0,
     "window.restoreWindows": "none",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "GitHub Dark",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "icons-carbon",
