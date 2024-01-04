@@ -232,6 +232,7 @@ local plugins = {
 			ensure_installed = {
 				"stylua",
 				"xmlformatter",
+				"goimports",
 			},
 		},
 	},
@@ -437,6 +438,7 @@ local plugins = {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				xml = { "xmlformatter" },
+				go = { "goimports" },
 			},
 		},
 	},
