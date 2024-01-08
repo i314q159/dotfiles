@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-cp ~/.bashrc ./bashrc
+cp ~/.bashrc bashrc

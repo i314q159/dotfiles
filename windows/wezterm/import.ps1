@@ -1,1 +1,1 @@
-cp ./wezterm.lua ~/.config/wezterm/wezterm.lua
+cp wezterm.lua ~/.config/wezterm/wezterm.lua

@@ -1,1 +1,1 @@
-cp ./Microsoft.PowerShell_profile.ps1 $PROFILE
+cp Microsoft.PowerShell_profile.ps1 $PROFILE

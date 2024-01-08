@@ -1,1 +1,1 @@
-cp ~/.wslconfig ./wslconfig
+cp ~/.wslconfig wslconfig

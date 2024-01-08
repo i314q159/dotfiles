@@ -1,1 +1,1 @@
-cp ./init.lua ~/AppData/Local/nvim/init.lua
+cp init.lua ~/AppData/Local/nvim/init.lua
