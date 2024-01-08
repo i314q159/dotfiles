@@ -529,6 +529,12 @@ local plugins = {
 		"windwp/nvim-ts-autotag",
 		opts = {},
 	},
+	{
+		"xlboy/vscode-opener.nvim",
+		keys = {
+			{ "<leader>c", "<cmd>lua require('vscode-opener').open()<CR>", desc = "Open VSCode Opener Menu" },
+		},
+	},
 }
 
 require("lazy").setup(plugins, opts)
