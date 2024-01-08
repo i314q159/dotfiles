@@ -1,1 +1,0 @@
-podman run -d -p 25:25 -p 80:80 -p 443:443 -p 110:110 -p 143:143 -p 465:465 -p 587:587 -p 993:993 -p 995:995 -e TZ=Asia/Shanghai -v /mnt/d/podman/poste/data:/data --name post.io docker.io/analogic/poste.io

@@ -1,5 +1,0 @@
-[source.crates-io]
-replace-with = "cernet"
-
-[source.cernet]
-registry = "sparse+https://mirrors.cernet.edu.cn/crates.io-index/"

@@ -1,1 +1,0 @@
-podman run -d --name gerrit -p 8080:8080 -p 29418:29418 -v /mnt/d/podman/gerrit/git:/var/gerrit/git docker.io/gerritcodereview/gerrit
