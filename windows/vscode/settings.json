@@ -14,12 +14,15 @@
     "files.autoSave": "afterDelay",
     "files.insertFinalNewline": true,
     "git.autofetch": true,
+    "git.autorefresh": true,
     "git.confirmSync": false,
     "git.openAfterClone": "whenNoFolderOpen",
     "git.openRepositoryInParentFolders": "never",
     "github.gitProtocol": "ssh",
     "go.toolsManagement.autoUpdate": true,
     "json.schemaDownload.enable": false,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
     "security.workspace.trust.startupPrompt": "never",
@@ -37,9 +40,4 @@
     "zig.initialSetupDone": true,
     "zig.path": "",
     "zig.zls.path": "",
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
 }
