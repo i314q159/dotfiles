@@ -1,4 +1,4 @@
-git config --global core.editor nvim
+git config --global core.editor code
 git config --global --add safe.directory '*'
 git config --global init.defaultBranch main
 
