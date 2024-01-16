@@ -41,4 +41,5 @@
     "zig.path": "",
     "zig.zls.path": "",
     "remote.SSH.configFile": "~/.ssh/config",
+    "sonarlint.focusOnNewCode": true,
 }
