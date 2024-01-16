@@ -40,4 +40,5 @@
     "zig.initialSetupDone": true,
     "zig.path": "",
     "zig.zls.path": "",
+    "remote.SSH.configFile": "~/.ssh/config",
 }
