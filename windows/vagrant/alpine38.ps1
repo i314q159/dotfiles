@@ -1,1 +1,0 @@
-vagrant init generic/alpine38
