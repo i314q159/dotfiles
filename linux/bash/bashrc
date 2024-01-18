@@ -1,11 +1,14 @@
-export LANG="en_US.UTF-8"
-
+# proxy
 #export http_proxy="127.0.0.1:7890"
 #export https_proxy="127.0.0.1:7890"
 #export all_proxy="127.0.0.1:7890"
 
-# source
-source "/usr/share/autojump/autojump.bash"
+# bin
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
+# nvim
+# export PATH=$HOME/bin/nvim-linux64/bin:$PATH
 
 # alias
 alias ll="ls -al --color=auto"
