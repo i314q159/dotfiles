@@ -61,6 +61,7 @@ vim.api.nvim_set_keymap("n", "<leader>a", "gg<S-v>G", { noremap = true, silent =
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-- local mirror = "https://ghproxy.net/"
 local mirror = ""
 
 if not vim.loop.fs_stat(lazypath) then
@@ -534,6 +535,12 @@ local plugins = {
 		keys = {
 			{ "<leader>c", "<cmd>lua require('vscode-opener').open()<CR>", desc = "Open VSCode Opener Menu" },
 		},
+	},
+	{
+		"Meqr1/s.nvim",
+		config = function()
+			require("s")
+		end,
 	},
 }
 
