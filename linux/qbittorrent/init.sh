@@ -1,4 +1,4 @@
-# ip:8080
+# localhost:8080
 # admin
 # adminadmin
 qbittorrent-nox -d
