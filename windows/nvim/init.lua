@@ -232,8 +232,6 @@ local plugins = {
 		opts = {
 			ensure_installed = {
 				"stylua",
-				"xmlformatter",
-				"goimports",
 			},
 		},
 	},
