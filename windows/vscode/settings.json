@@ -6,6 +6,11 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 17,
     "editor.minimap.renderCharacters": false,
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    },
     "explorer.compactFolders": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
@@ -41,6 +46,5 @@
     "zig.path": "",
     "zig.zls.path": "",
     "remote.SSH.configFile": "~/.ssh/config",
-    "sonarlint.focusOnNewCode": true,
     "remote.autoForwardPorts": false,
 }
