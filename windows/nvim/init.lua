@@ -61,7 +61,7 @@ vim.api.nvim_set_keymap("n", "<leader>a", "gg<S-v>G", { noremap = true, silent =
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local mirror = "https://ghproxy.net/"
+local mirror = ""
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -292,7 +292,7 @@ local lines = {
 							return require("lsp-info").lsp_info()
 						end,
 					},
-					{ "datetime",  style = "iso" },
+					{ "datetime", style = "iso" },
 					{
 						function()
 							return require("lsc").loaded_slash_count()
@@ -415,7 +415,7 @@ local plugins = {
 		"lewis6991/gitsigns.nvim",
 		opts = {},
 		keys = {
-			{ "<leader>h", "<cmd>Gitsigns preview_hunk<cr>",  desc = "Gitsigns Preview Hunk" },
+			{ "<leader>h", "<cmd>Gitsigns preview_hunk<cr>", desc = "Gitsigns Preview Hunk" },
 			{ "<leader>n", "<cmd>Gitsigns next_hunk<cr><cr>", desc = "Gitsigns Next Hunk" },
 		},
 		lazy = false,
