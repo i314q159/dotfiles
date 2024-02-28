@@ -362,12 +362,26 @@ local folkes = {
 	},
 }
 
+local rusts = {
+	{
+		"saecki/crates.nvim",
+		tag = "stable",
+		event = {
+			"BufRead Cargo.toml",
+		},
+		config = function()
+			require("crates").setup()
+		end,
+	},
+}
+
 local plugins = {
 	lsps,
 	cmps,
 	treesitters,
 	lines,
 	folkes,
+	rusts,
 	{
 		"mateuszwieloch/automkdir.nvim",
 		"nvim-lua/plenary.nvim",
