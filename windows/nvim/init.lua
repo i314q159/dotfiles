@@ -317,6 +317,10 @@ local lines = {
 			},
 		},
 	},
+	{
+		"i314q159/lsp-info",
+		opts = {},
+	},
 }
 
 local folkes = {
@@ -525,10 +529,6 @@ local plugins = {
 		keys = {
 			{ "<leader>f", "<cmd>Telescope<cr>", desc = "Telescope" },
 		},
-		opts = {},
-	},
-	{
-		"i314q159/lsp-info",
 		opts = {},
 	},
 	{
