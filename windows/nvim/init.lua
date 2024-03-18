@@ -61,7 +61,7 @@ vim.api.nvim_set_keymap("n", "<leader>a", "gg<S-v>G", { noremap = true, silent =
 
 -- folke/lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-local mirror = ""
+local mirror = "https://ghproxy.net/"
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
