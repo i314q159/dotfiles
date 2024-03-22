@@ -389,6 +389,7 @@ local plugins = {
 	{
 		"mateuszwieloch/automkdir.nvim",
 		"nvim-lua/plenary.nvim",
+		"kilavila/nvim-gitignore",
 	},
 	{
 		"axieax/urlview.nvim",

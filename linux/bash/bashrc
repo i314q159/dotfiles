@@ -10,6 +10,9 @@ export PATH=$HOME/.local/bin:$PATH
 # nvim
 # export PATH=$HOME/bin/nvim-linux64/bin:$PATH
 
+# repo
+export REPO_URL="https://mirrors.tuna.tsinghua.edu.cn/git/git-repo"
+
 # alias
 alias ll="ls -al --color=auto"
 
@@ -22,3 +25,5 @@ function ghproxy-curl() {
 function ghproxy-git() {
     git clone $ghproxy_url$1
 }
+
+eval "$(starship init bash)"
