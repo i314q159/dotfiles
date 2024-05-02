@@ -1,1 +1,2 @@
-ntpdate ntp.aliyun.com
+ntpdate -u time.apple.com
+date -R
