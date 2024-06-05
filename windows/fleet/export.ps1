@@ -1,0 +1,1 @@
+cp ~/.fleet/settings.json .
