@@ -1,4 +1,3 @@
 git add .
-git commit -m "update"
-git push github main
-git push gitee main
+git commit -m "Big brother is watching you"
+git push origin main

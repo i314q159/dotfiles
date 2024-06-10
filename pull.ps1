@@ -1,2 +1,2 @@
-git fetch github main
-git pull github main
+git fetch origin main
+git pull origin main
