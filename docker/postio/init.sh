@@ -1,0 +1,15 @@
+docker run \
+    -p 25:25 \
+    -p 127.0.0.1:53333:80 \
+    -p 127.0.0.1:53334:443 \
+    -p 110:110 \
+    -p 143:143 \
+    -p 465:465 \
+    -p 587:587 \
+    -p 993:993 \
+    -p 995:995 \
+    -e TZ=Asia/Shanghai \
+    -v /home/email/data:/data \
+    --name poste.io \
+    -d \
+    -t docker.io/analogic/poste.io
