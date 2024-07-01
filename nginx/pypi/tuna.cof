@@ -1,0 +1,14 @@
+server {
+        server_name localhost;
+        listen 55555 default_server;
+
+        location /simple {
+                proxy_pass https://pypi.tuna.tsinghua.edu.cn;
+        }
+        location /packages {
+                proxy_pass https://pypi.tuna.tsinghua.edu.cn;
+        }
+        location /pypi {
+                proxy_pass https://pypi.tuna.tsinghua.edu.cn;
+        }
+}
