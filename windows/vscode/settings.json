@@ -6,6 +6,7 @@
     "editor.fontLigatures": true,
     "editor.fontSize": 17,
     "editor.minimap.renderCharacters": false,
+    "editor.stickyScroll.enabled": false,
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "on",
@@ -47,4 +48,14 @@
     "zig.zls.path": "",
     "remote.SSH.configFile": "~/.ssh/config",
     "remote.autoForwardPorts": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    "editor.minimap.enabled": false,
 }
