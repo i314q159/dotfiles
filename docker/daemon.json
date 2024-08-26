@@ -3,6 +3,11 @@
     "127.0.0.1:5000"
   ],
   "registry-mirrors": [
+    "https://jockerhub.com",
+    "https://dockerpull.com",
+    "https://dockerproxy.cn",
+    "https://docker.gs",
+    "https://docker.1panel.dev",
     "https://docker.1panel.live"
   ]
 }
