@@ -3,6 +3,7 @@
     "127.0.0.1:5000"
   ],
   "registry-mirrors": [
+    "https://docker.1panel.live",
     "https://docker.1ms.run",
     "https://docker.xuanyuan.me"
   ]
