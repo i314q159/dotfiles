@@ -1,1 +1,0 @@
-vagrant init archlinux/archlinux
