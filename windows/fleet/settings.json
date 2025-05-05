@@ -1,7 +1,0 @@
-{
-    "theme": "dark_purple",
-    "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 14.0,
-    "git.push.confirm": false,
-    "terminal.bell": false
-}
