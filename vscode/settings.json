@@ -38,7 +38,7 @@
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.shellIntegration.history": 0,
     "window.restoreWindows": "none",
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "Catppuccin Mocha",
     "workbench.editor.enablePreview": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.productIconTheme": "icons-carbon",
@@ -68,5 +68,9 @@
         "markdown": false,
         "scminput": false,
         "lua": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
 }
