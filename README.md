@@ -1,1 +1,1 @@
-# i314q159 dotfiles
+# linux_config
