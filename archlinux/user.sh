@@ -1,6 +1,7 @@
+pacman -Sy
 pacman -S sudo vim
 useradd -m -G wheel -s /bin/bash i314q159
-vim /etc/ sudoers
+vim /etc/sudoers
 
 # %wheel ALL=(ALL:ALL) ALL
 
